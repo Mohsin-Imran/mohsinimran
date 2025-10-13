@@ -144,8 +144,8 @@ export default function Contact() {
         </svg>
       ),
       label: "Website",
-      value: "https://portfolio.techz.website",
-      link: "https://portfolio.techz.website",
+      value: "https://mohsinportfolio-rust.vercel.app/",
+      link: "https://mohsinportfolio-rust.vercel.app/",
       delay: "delay-400",
     }
 

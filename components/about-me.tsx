@@ -38,8 +38,8 @@ export default function AboutMe() {
     {
       icon: Globe,
       label: "Website",
-      value: "portfolio.techz.website",
-      link: "https://portfolio.techz.website",
+      value: "portfolio.website",
+      link: "https://mohsinportfolio-rust.vercel.app/",
       isLink: true,
     },
   ]
