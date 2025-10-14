@@ -35,7 +35,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Marque Team",
+    title: "Marqu Team",
     description:
       "Created a responsive, SEO-optimized website for Marqu team with modern design, fast load times, and custom interactive features to showcase their services.",
     image: "/p2.png",
