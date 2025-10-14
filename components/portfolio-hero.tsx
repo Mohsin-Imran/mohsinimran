@@ -7,8 +7,11 @@ import { faPhp, faReact, faLaravel } from "@fortawesome/free-brands-svg-icons"
 export default function PortfolioHero() {
   const texts = [
     "Full-Stack Developer",
-    "Frontend Developer",
+    "PHP & Laravel Expert",
     "Backend Developer",
+    "React Developer",
+    "WordPress Developer",
+    "Frontend Developer",
     "Web Expert",
   ]
 
