@@ -48,7 +48,7 @@ const projects: Project[] = [
     description:
       "Designed and developed a modern, fully responsive WordPress website for an agricultural export company specializing in premium rice and sesame seeds. The site features dedicated product pages, event listings, certifications, ESG highlights, contact forms, and newsletter integration. With a clean UI, SEO-ready structure, and mobile optimization, the website delivers a professional and engaging experience for global users",
     image: "/p5.png",
-    technologies: ["WordPress", "Elementor"],
+    technologies: ["WordPress", "Elementor","Ecommerce Development Consultation"],
     link: "https://www.shafiagro.com/",
   },
   {
