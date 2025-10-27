@@ -114,7 +114,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
 
-      <div className="container-fluid mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         {/* Main footer content */}
         <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 transition-all duration-1000 ${
