@@ -48,7 +48,7 @@ export default function PortfolioHero() {
   }, [subIndex, index, reverse])
   return (
     <section id="home" className="min-h-screen bg-background text-foreground pt-24 lg:pt-15">
-      <main className="container mx-auto px-6 py-20 lg:px-12">
+      <main className="container-fluid mx-auto px-6 py-20 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-6">

@@ -64,7 +64,7 @@ export default function Header() {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden animate-fade-in-down bg-black/95 backdrop-blur-md border-t border-yellow-400/20">
-          <ul className="container mx-auto flex flex-col px-6 py-4">
+          <ul className="container-fluid mx-auto flex flex-col px-6 py-4">
             {navItems.map((item) => (
               <li key={item}>
                 <a
