@@ -65,8 +65,8 @@ export default function PortfolioHero() {
             </div>
 
             <p className="animate-fade-in-left animation-delay-600 text-base leading-relaxed text-white lg:text-md">
-              I'm Mohsin, a Full-Stack Developer with 4 years of experience in building dynamic, secure, and scalable web applications. I specialize in PHP, Laravel, HTML, CSS, Bootstrap, JavaScript, Ajax, MySQL, and MariaDB.
-              I’ve developed robust backends, intuitive frontends, and real-time features like chats and notifications. Skilled in API integration, payment gateways, and e-commerce solutions, I focus on clean, efficient, and high-performance code. Passionate about innovation, I create modern, reliable, and user-focused applications.
+              I'm Mohsin, a Full-Stack Developer skilled in building dynamic, secure, and scalable web applications. I specialize in PHP, Laravel, Next.js, Node.js, HTML, CSS, Bootstrap, JavaScript, Ajax, MySQL, and MariaDB. I’ve developed robust backends, intuitive frontends, real-time features like chats and notifications, and fully optimized user experiences.
+              I’m experienced in API development, third-party integrations, payment gateways, and end-to-end e-commerce solutions. With a strong focus on clean architecture, maintainable code, and high performance, I build modern, reliable, and user-centric applications. Passionate about innovation, I always aim to deliver solutions that truly create impact.
             </p>
 
             {/* Skills */}
