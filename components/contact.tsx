@@ -129,7 +129,7 @@ export default function Contact() {
         </svg>
       ),
       label: "Address",
-      value: "Alsa Chamma Homes, 606, 53 Mir Hammal Khan Rd, Garden West Karachi, Pakistan",
+      value: "Dubai, United Arab Emirates",
       delay: "delay-300",
     },
     {
