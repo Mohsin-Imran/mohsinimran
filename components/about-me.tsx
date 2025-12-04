@@ -86,17 +86,9 @@ export default function AboutMe() {
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              I'm Mohsin, a Full-Stack Developer with 4 years of experience in
-              building dynamic and secure web applications. I specialize in PHP,
-              Laravel, JavaScript, HTML, CSS, Bootstrap, MySQL, and MariaDB.
+              I'm Mohsin, a Full-Stack Developer skilled in building dynamic, secure, and scalable web applications. I specialize in PHP, Laravel, Next.js, Node.js, HTML, CSS, Bootstrap, JavaScript, Ajax, MySQL, and MariaDB. I’ve developed robust backends, intuitive frontends, real-time features like chats and notifications, and fully optimized user experiences.
               <br />
-              I’ve developed scalable backends, responsive frontends, and
-              real-time features like chat and notifications. My work includes
-              e-commerce, SaaS platforms, and payment gateway integrations
-              (Stripe, PayPal).
-              <br />
-              Passionate about clean code and modern technologies, I focus on
-              creating efficient, user-friendly, and future-ready web solutions.
+              I’m experienced in API development, third-party integrations, payment gateways, and end-to-end e-commerce solutions. With a strong focus on clean architecture, maintainable code, and high performance, I build modern, reliable, and user-centric applications. Passionate about innovation, I always aim to deliver solutions that truly create impact.
             </p>
 
             {/* Contact Info */}
