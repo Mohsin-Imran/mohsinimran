@@ -28,12 +28,12 @@ export default function AboutMe() {
       value: "mmnemon549@gmail.com",
       link: "mailto:mmnemon549@gmail.com",
     },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+923214475956",
-      link: "tel:+923214475956",
-    },
+    // {
+    //   icon: Phone,
+    //   label: "Phone",
+    //   value: "+923214475956",
+    //   link: "tel:+923214475956",
+    // },
     // { icon: Globe, label: "Country", value: "Pakistan" },
     {
       icon: Globe,
@@ -57,7 +57,7 @@ export default function AboutMe() {
             }`}
         >
           About Me
-        <div className="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full" />
+          <div className="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full" />
         </h2>
 
         {/* Content Grid */}
@@ -86,9 +86,9 @@ export default function AboutMe() {
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              I'm Mohsin, a Full-Stack Developer skilled in building dynamic, secure, and scalable web applications. I specialize in PHP, Laravel, Next.js, Node.js, HTML, CSS, Bootstrap, JavaScript, Ajax, MySQL, and MariaDB. I’ve developed robust backends, intuitive frontends, real-time features like chats and notifications, and fully optimized user experiences.
+              I'm Mohsin, a Full-Stack Developer specializing in Frontend, Backend, AI, Mobile App, and SaaS Product Development. I design robust architectures and user-friendly interfaces that deliver seamless, high-performance experiences with a focus on clean, secure, and scalable code.
               <br />
-              I’m experienced in API development, third-party integrations, payment gateways, and end-to-end e-commerce solutions. With a strong focus on clean architecture, maintainable code, and high performance, I build modern, reliable, and user-centric applications. Passionate about innovation, I always aim to deliver solutions that truly create impact.
+              I have hands-on experience building real-time features like notifications and live chat, integrating payment solutions, developing REST APIs, and delivering complete end-to-end applications. Passionate about technology and innovation, I stay current with the latest trends to create modern, reliable solutions that exceed expectations and drive real results.
             </p>
 
             {/* Contact Info */}

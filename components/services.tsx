@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { Brain as BrainIcon, Rocket, Code } from "lucide-react"
+
 
 const CodeIcon = () => (
   <svg className="w-10 h-10 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,24 +47,24 @@ const ArrowRightIcon = () => (
 
 const services = [
   {
-    icon: CodeIcon,
-    title: "Backend Developer",
+    icon: BrainIcon,
+    title: "AI Solutions Development",
     description:
-      "I'm a backend PHP Laravel developer, specializing in crafting robust and scalable solutions for your web applications. With expertise in Laravel framework, I design efficient backend systems that ensure seamless functionality and optimal performance. Let's work together to bring your vision to life with tailored PHP Laravel solutions.",
+      "I build AI-driven features and intelligent systems that enhance automation, decision-making, and user experiences, delivering smart, scalable, and future-ready applications.",
     gradient: "from-yellow-400 to-yellow-600",
   },
   {
-    icon: PaletteIcon,
-    title: "Frontend & UI/UX",
+    icon: Rocket,
+    title: "SaaS Product Development",
     description:
-      "I specialize in front-end and UI/UX development, creating tailored solutions that enhance user experiences. Proficient in HTML, CSS, and JavaScript, I design visually appealing interfaces, focusing on seamless interactions. From responsive websites to mobile apps, I prioritize usability and aesthetics to deliver impactful results.",
+      "I design and develop scalable SaaS products with secure architectures, subscription systems, payment integrations, and high-performance cloud-ready solutions.",
     gradient: "from-yellow-400 to-yellow-600",
   },
   {
-    icon: CrownIcon,
-    title: "FullStack Developer",
+    icon: Code,
+    title: "Full-Stack Development",
     description:
-      "I'm a seasoned full-stack developer specializing in front-end and back-end development. With expertise in multiple programming languages and frameworks, I create scalable web solutions, from dynamic apps to e-commerce platforms. Leveraging cutting-edge technologies to deliver high-quality results on time and within budget.",
+      "I deliver complete end-to-end web solutions, combining modern frontend, powerful backend systems, REST APIs, and real-time features for reliable, production-ready applications.",
     gradient: "from-yellow-400 to-yellow-600",
   },
 ]

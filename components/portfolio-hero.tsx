@@ -6,14 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhp, faReact, faLaravel } from "@fortawesome/free-brands-svg-icons"
 export default function PortfolioHero() {
   const texts = [
-    "Full-Stack Developer",
-    "PHP & Laravel Expert",
-    "Backend Developer",
-    "React Developer",
-    "WordPress Developer",
-    "Frontend Developer",
-    "Web Expert",
+    "AI-Driven Full-Stack Engineer",
+    "Scalable SaaS Application Developer",
+    "PHP & Laravel Systems Architect",
+    "Modern Backend Engineer",
+    "React & Frontend Performance Specialist",
+    "WordPress Solutions Architect",
+    "High-Performance Web Engineer",
+    "Digital Product Builder",
   ]
+
 
   const [displayText, setDisplayText] = useState("")
   const [index, setIndex] = useState(0)
@@ -65,8 +67,8 @@ export default function PortfolioHero() {
             </div>
 
             <p className="animate-fade-in-left animation-delay-600 text-base leading-relaxed text-white lg:text-md">
-              I'm Mohsin, a Full-Stack Developer skilled in building dynamic, secure, and scalable web applications. I specialize in PHP, Laravel, Next.js, Node.js, HTML, CSS, Bootstrap, JavaScript, Ajax, MySQL, and MariaDB. I’ve developed robust backends, intuitive frontends, real-time features like chats and notifications, and fully optimized user experiences.
-              I’m experienced in API development, third-party integrations, payment gateways, and end-to-end e-commerce solutions. With a strong focus on clean architecture, maintainable code, and high performance, I build modern, reliable, and user-centric applications. Passionate about innovation, I always aim to deliver solutions that truly create impact.
+              I'm Mohsin, a Full-Stack Developer specializing in Frontend, Backend, AI, Mobile App, and SaaS Product Development. I design robust architectures and user-friendly interfaces that deliver seamless, high-performance experiences with a focus on clean, secure, and scalable code.
+I have hands-on experience building real-time features like notifications and live chat, integrating payment solutions, developing REST APIs, and delivering complete end-to-end applications. Passionate about technology and innovation, I stay current with the latest trends to create modern, reliable solutions that exceed expectations and drive real results.
             </p>
 
             {/* Skills */}

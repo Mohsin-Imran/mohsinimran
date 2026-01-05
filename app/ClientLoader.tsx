@@ -1,82 +1,49 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import type React from "react"
 
 export default function ClientLoader({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000) // loader duration
+    const timer = setTimeout(() => setLoading(false), 2000)
     return () => clearTimeout(timer)
   }, [])
 
   if (loading) {
     return (
-      <div className="loader-wrapper">
-        <div className="loader-circle">
-          <div className="loader-inner"></div>
-        </div>
+      <div className="loader-screen">
+        <div className="loader-ring" />
 
         <style jsx>{`
-          .loader-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          .loader-screen {
             height: 100vh;
             width: 100%;
-            background-color: #000;
-            overflow: hidden;
-          }
-
-          .loader-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 4px solid transparent;
-            border-top: 4px solid #facc15;
-            animation: spin 1s linear infinite, glow 1.5s ease-in-out infinite alternate;
+            background: radial-gradient(circle at center, #0b0b0b, #000);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
           }
 
-          .loader-inner {
-            width: 40px;
-            height: 40px;
+          .loader-ring {
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
-            background: radial-gradient(circle, #facc15 0%, #000 70%);
-            animation: pulse 1.2s ease-in-out infinite;
+            background: conic-gradient(
+              from 0deg,
+              #F0B100,
+              #ffd666,
+              #F0B100
+            );
+            animation: spin 0.9s linear infinite;
+            mask: radial-gradient(circle 26px, transparent 96%, black 100%);
+            -webkit-mask: radial-gradient(circle 26px, transparent 96%, black 100%);
           }
 
           @keyframes spin {
             to {
               transform: rotate(360deg);
-            }
-          }
-
-          @keyframes glow {
-            from {
-              box-shadow: 0 0 10px #facc15;
-            }
-            to {
-              box-shadow: 0 0 30px #facc15;
-            }
-          }
-
-          @keyframes pulse {
-            0% {
-              transform: scale(1);
-              opacity: 0.8;
-            }
-            50% {
-              transform: scale(1.3);
-              opacity: 1;
-            }
-            100% {
-              transform: scale(1);
-              opacity: 0.8;
             }
           }
         `}</style>
@@ -85,18 +52,21 @@ export default function ClientLoader({ children }: { children: React.ReactNode }
   }
 
   return (
-    <div className="fade-in">
+    <div className="page-fade">
       {children}
       <style jsx>{`
-        .fade-in {
-          animation: fadeIn 1s ease-in forwards;
+        .page-fade {
+          animation: fade 0.6s ease forwards;
         }
-        @keyframes fadeIn {
+
+        @keyframes fade {
           from {
             opacity: 0;
+            transform: translateY(6px);
           }
           to {
             opacity: 1;
+            transform: translateY(0);
           }
         }
       `}</style>

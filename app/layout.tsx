@@ -7,8 +7,8 @@ import "./globals.css"
 import ClientLoader from "./ClientLoader"
 
 export const metadata: Metadata = {
-  title: "Mohsin Portfolio",
-  description: "Personal Portfolio of Mohsin Memon",
+  title: "Portfolio",
+  description: "Personal Portfolio of Mohsin Imran",
   icons: {
     icon: "/images/profile.jpeg",
   },
@@ -16,12 +16,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className="dark">
       <body
+        suppressHydrationWarning
         className={`font-sans bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}
       >
         <ClientLoader>{children}</ClientLoader>

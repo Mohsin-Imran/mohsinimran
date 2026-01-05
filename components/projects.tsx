@@ -44,7 +44,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Rice & Sesame Export Website",
+    title: "Rice Export Website",
     description:
       "Designed and developed a modern, fully responsive WordPress website for an agricultural export company specializing in premium rice and sesame seeds. The site features dedicated product pages, event listings, certifications, ESG highlights, contact forms, and newsletter integration. With a clean UI, SEO-ready structure, and mobile optimization, the website delivers a professional and engaging experience for global users",
     image: "/p5.png",
