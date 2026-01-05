@@ -39,7 +39,7 @@ export default function AboutMe() {
       icon: Globe,
       label: "Website",
       value: "portfolio.website",
-      link: "https://mohsinportfolio-rust.vercel.app/",
+      link: "https://www.mohsinimran.online",
       isLink: true,
     },
   ]
