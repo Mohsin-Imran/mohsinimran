@@ -76,7 +76,6 @@ export default function AboutMe() {
             </div>
           </div>
 
-          {/* Right Side - Content */}
           <div
             className={`w-full lg:w-[60%] space-y-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
