@@ -129,8 +129,8 @@ export default function Contact() {
         </svg>
       ),
       label: "Website",
-      value: "https://mohsinportfolio-rust.vercel.app/",
-      link: "https://mohsinportfolio-rust.vercel.app/",
+      value: "https://www.mohsinimran.online",
+      link: "https://www.mohsinimran.online",
       delay: "delay-400",
     }
 
