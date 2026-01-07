@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { Brain as BrainIcon, Rocket, Code } from "lucide-react"
 
 
+import { PopupButton } from "react-calendly";
 const CodeIcon = () => (
   <svg className="w-10 h-10 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path
@@ -112,11 +113,10 @@ export default function Services() {
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
             }`}
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4">Services</h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4">My Quality Services</h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full" />
 
         </div>
-
         {/* Services grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {

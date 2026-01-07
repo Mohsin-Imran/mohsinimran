@@ -68,29 +68,49 @@ export default function PortfolioHero() {
 
             <p className="animate-fade-in-left animation-delay-600 text-base leading-relaxed text-white lg:text-md">
               I'm Mohsin, a Full-Stack Developer specializing in Frontend, Backend, AI, Mobile App, and SaaS Product Development. I design robust architectures and user-friendly interfaces that deliver seamless, high-performance experiences with a focus on clean, secure, and scalable code.
-I have hands-on experience building real-time features like notifications and live chat, integrating payment solutions, developing REST APIs, and delivering complete end-to-end applications. Passionate about technology and innovation, I stay current with the latest trends to create modern, reliable solutions that exceed expectations and drive real results.
+              I have hands-on experience building real-time features like notifications and live chat, integrating payment solutions, developing REST APIs, and delivering complete end-to-end applications. Passionate about technology and innovation, I stay current with the latest trends to create modern, reliable solutions that exceed expectations and drive real results.
             </p>
 
             {/* Skills */}
             <div className="flex flex-wrap gap-3">
-              {/* PHP */}
-              <span className="group flex items-center gap-2 rounded-full border-2 border-yellow-500 bg-yellow-100 px-5 py-1 text-sm font-semibold text-yellow-600 transition-all duration-300 hover:bg-yellow-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/30 cursor-pointer">
-                <FontAwesomeIcon icon={faPhp} className="text-lg transition-transform duration-300 group-hover:scale-110" />
-                PHP
-              </span>
-
-              {/* React */}
-              <span className="group flex items-center gap-2 rounded-full border-2 border-yellow-500 bg-yellow-100 px-5 py-1 text-sm font-semibold text-yellow-600 transition-all duration-300 hover:bg-yellow-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/30 cursor-pointer">
-                <FontAwesomeIcon icon={faReact} className="text-lg transition-transform duration-300 group-hover:scale-110" />
-                React
-              </span>
-
-              {/* Laravel */}
-              <span className="group flex items-center gap-2 rounded-full border-2 border-yellow-500 bg-yellow-100 px-5 py-1 text-sm font-semibold text-yellow-600 transition-all duration-300 hover:bg-yellow-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/30 cursor-pointer">
-                <FontAwesomeIcon icon={faLaravel} className="text-lg transition-transform duration-300 group-hover:scale-110" />
-                Laravel
-              </span>
+              <a
+                href="#projects"
+                className="bg-white text-black font-semibold text-sm py-3 px-10 rounded-full
+        transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                View My Work
+              </a>
+              <a
+                href="https://calendly.com/mohsin-imran/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#FDC700] hover:bg-[#e5b307] text-white text-gray-100 font-semibold text-sm py-3 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                Book a Product Call
+              </a>
             </div>
+            <ul className="space-y-1">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
+                <span>
+                  Performance-first architecture built to support scalable, product-led growth.
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
+                <span>
+                 End-to-end ownership from MVP to scale, using clean reusable systems.
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
+                <span>
+                  UX decisions driven by real business goals, not just visual aesthetics.
+                </span>
+              </li>
+            </ul>
 
           </div>
 
