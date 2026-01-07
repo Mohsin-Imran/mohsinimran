@@ -114,7 +114,7 @@ export default function Contact() {
         </svg>
       ),
       label: "Address",
-      value: "Dubai, United Arab Emirates",
+      value: "Karachi, Pakistan",
       delay: "delay-300",
     },
     {
