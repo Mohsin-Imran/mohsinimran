@@ -91,38 +91,7 @@ export default function AboutMe() {
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3 pt-4">
-              {contactInfo.map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-2 bg-white/5 backdrop-blur-sm rounded-lg border border-yellow-500/20 hover:border-yellow-500/50 hover:bg-white/10 transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Icon className="w-5 h-5 text-yellow-400" />
-                      <span className="text-white-400 font-medium">
-                        {item.label}
-                      </span>
-                    </div>
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-white-400 hover:text-white-300"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span className="font-semibold text-white">
-                        {item.value}
-                      </span>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
+
 
             {/* Address */}
             {/* <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-yellow-500/20">
@@ -141,15 +110,32 @@ export default function AboutMe() {
             </div> */}
 
             {/* Resume Button */}
-            <button
-              onClick={() => window.open("/resume/mohsinimran_resume.pdf", "_blank")}
-              className="w-full py-2 px-6 bg-yellow-500 text-white font-semibold rounded-lg 
-             hover:bg-yellow-400 transform hover:scale-[1.03] 
-             transition-all duration-300 shadow-lg hover:shadow-yellow-500/50
-             cursor-pointer"
-            >
-              View Resume
-            </button>
+            <div className="flex gap-4">
+
+              {/* View Resume */}
+              <button
+                onClick={() =>
+                  window.open("/resume/mohsinimran_resume.pdf", "_blank")
+                }
+                className="bg-white text-black font-semibold text-sm py-3 px-10 rounded-full
+                  transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1
+                  cursor-pointer"
+              >
+                View Resume
+              </button>
+
+              <a
+                href="https://calendly.com/mohsin-imran/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#FDC700] hover:bg-[#e5b307] text-white font-semibold text-sm py-3 px-10 rounded-full
+                transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                Book a Product Call
+              </a>
+
+            </div>
+
 
           </div>
         </div>

@@ -30,7 +30,7 @@ const CardHeroSection: React.FC = () => {
 
           <a
             href="mailto:mnmemon549@email.com"
-            className="border border-gray-500 text-white font-semibold text-lg py-4 px-10 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
+            className="border border-gray-500 text-black font-semibold text-lg py-4 px-10 rounded-full bg-white hover:text-gray-900 transition-all duration-300"
           >
             Email Me
           </a>
