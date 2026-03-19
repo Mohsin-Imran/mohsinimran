@@ -110,7 +110,7 @@ export default function AboutMe() {
             </div> */}
 
             {/* Resume Button */}
-            <div className="flex gap-4 max-[450px]:grid max-[450px]:grid-cols-1 max-[450px]:gap-3">
+            <div className="flex flex-wrap gap-3">
 
               {/* View Resume */}
              <button
