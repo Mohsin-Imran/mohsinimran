@@ -110,16 +110,16 @@ export default function AboutMe() {
             </div> */}
 
             {/* Resume Button */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 max-[450px]:grid max-[450px]:grid-cols-1 max-[450px]:gap-3">
 
               {/* View Resume */}
-              <button
+             <button
                 onClick={() =>
                   window.open("/resume/mohsinimran_resume.pdf", "_blank")
                 }
                 className="bg-white text-black font-semibold text-sm py-3 px-10 rounded-full
                   transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1
-                  cursor-pointer"
+                  cursor-pointer text-center max-[450px]:text-left"
               >
                 View Resume
               </button>

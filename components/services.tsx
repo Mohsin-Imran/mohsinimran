@@ -113,7 +113,14 @@ export default function Services() {
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
             }`}
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4">My Quality Services</h2>
+         <h2
+          style={{
+            fontSize: window.innerWidth <= 450 ? "28px" : ""
+          }}
+          className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4"
+        >
+          My Quality Services
+        </h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full" />
 
         </div>
