@@ -54,7 +54,12 @@ export default function PortfolioHero() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-6">
-            <h1 className="animate-fade-in-left animation-delay-200 text-4xl font-bold leading-tight lg:text-5xl xl:text-1xl text-yellow-500">
+            <h1
+              style={{
+                fontSize: window.innerWidth <= 450 ? "28px" : ""
+              }}
+              className="animate-fade-in-left animation-delay-200 text-4xl font-bold leading-tight lg:text-5xl xl:text-1xl text-yellow-500"
+            >
               Hi, I'm Mohsin M Imran
             </h1>
 
@@ -100,7 +105,7 @@ export default function PortfolioHero() {
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
                 <span>
-                 End-to-end ownership from MVP to scale, using clean reusable systems.
+                  End-to-end ownership from MVP to scale, using clean reusable systems.
                 </span>
               </li>
 
