@@ -131,7 +131,7 @@ const organizationSchema = {
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'PK',
-    addressLocality: 'Pakistan',
+    addressLocality: 'Remote',
   },
 }
 
@@ -145,7 +145,7 @@ const personSchema = {
   jobTitle: ['Full Stack Developer', 'Web Designer', 'SaaS Architect', 'AI Integration Specialist'],
   email: 'mmnemon549@gmail.com',
   telephone: '+92-3214475956',
-  nationality: 'Pakistani',
+  nationality: 'Remote',
   alumniOf: {
     '@type': 'EducationalOrganization',
     name: 'Self-Taught Developer',

@@ -105,7 +105,7 @@ export default function AboutMe() {
                   </span>
                   <p className="text-white">
                     Alsa Chamma Homes, 606, 53 Mir Hammal Khan Rd, Garden West
-                    Karachi, Pakistan
+                    Remote
                   </p>
                 </div>
               </div>

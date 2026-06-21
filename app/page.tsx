@@ -13,10 +13,10 @@ import Call from "@/components/call"
 export const metadata: Metadata = {
   title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
   description:
-    "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
+    "Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
   keywords: [
     "Full Stack Developer",
-    "Karachi Web Developer",
+    "Web Developer",
     "Laravel Developer",
     "Next.js Developer",
     "React Developer",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
+      "Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
     type: "website",
     url: "https://www.mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",

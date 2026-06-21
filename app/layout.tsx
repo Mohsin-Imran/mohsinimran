@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.mohsinimran.online"),
   title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
   description:
-    "Karachi-based Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
+    "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
   keywords: [
     "Full Stack Developer",
-    "Karachi Web Developer",
+    "Web Developer",
     "Laravel Developer",
     "Next.js Developer",
     "React Developer",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Mohsin Imran Portfolio",
     title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Karachi-based Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
+      "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
     images: [
       {
         url: "https://www.mohsinimran.online/images/profile.jpeg",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Karachi-based Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
+      "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
     images: ["https://www.mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
