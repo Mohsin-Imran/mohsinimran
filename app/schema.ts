@@ -5,18 +5,38 @@ export function generatePersonSchema() {
     name: 'Mohsin Imran',
     url: 'https://www.mohsinimran.online',
     image: 'https://www.mohsinimran.online/images/profile.jpeg',
-    description: 'Full Stack Developer & Web Designer - AI-Driven Full-Stack Engineer, Scalable SaaS Application Developer',
-    jobTitle: ['Full Stack Developer', 'Web Designer', 'SaaS Developer'],
+    description:
+      'Karachi-based Full Stack Developer specializing in Laravel, Next.js, React, Figma, SEO, and conversion-focused product engineering.',
+    jobTitle: ['Full Stack Developer', 'Web Developer', 'SEO Specialist'],
     email: 'mmnemon549@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Karachi',
+      addressCountry: 'PK',
+    },
     sameAs: [
       'https://linkedin.com/in/mohsin-imran',
       'https://github.com/mohsinimran',
       'https://twitter.com/mohsinimran',
     ],
-    knowsAbout: ['Full Stack Development', 'PHP', 'Laravel', 'React', 'Next.js', 'MySQL', 'REST APIs', 'SaaS Development', 'WordPress', 'Web Design', 'Frontend Development', 'Backend Development', 'AI Integration'],
+    knowsAbout: [
+      'Full Stack Development',
+      'PHP',
+      'Laravel',
+      'React',
+      'Next.js',
+      'MySQL',
+      'REST APIs',
+      'SaaS Development',
+      'WordPress',
+      'UI/UX Design',
+      'SEO',
+      'Web Performance',
+      'AI Integration',
+    ],
     worksFor: {
       '@type': 'Organization',
-      name: 'Self Employed',
+      name: 'Independent Developer',
     },
   }
 }
@@ -27,19 +47,12 @@ export function generateWebsiteSchema() {
     '@type': 'WebSite',
     name: 'Mohsin Imran Portfolio',
     url: 'https://www.mohsinimran.online',
-    description: 'Full Stack Developer & Web Designer Portfolio - Specializing in AI-Driven Development, SaaS Applications, and Modern Web Solutions',
+    description:
+      'Karachi-based Full Stack Developer portfolio showcasing Laravel, Next.js, React, and Figma product work with SEO-first performance.',
     sameAs: [
       'https://linkedin.com/in/mohsin-imran',
       'https://github.com/mohsinimran',
     ],
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://www.mohsinimran.online/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
   }
 }
 

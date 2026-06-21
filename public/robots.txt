@@ -1,8 +1,7 @@
 User-agent: *
-Disallow: /node_modules/
-Disallow: /.next/
-Disallow: /api/
+Allow: /
 
 Sitemap: https://www.mohsinimran.online/sitemap.xml
+Host: https://www.mohsinimran.online
 
 

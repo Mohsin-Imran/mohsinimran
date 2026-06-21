@@ -11,41 +11,44 @@ import Footer from "@/components/footer"
 import Call from "@/components/call"
 
 export const metadata: Metadata = {
-  title: "Mohsin Imran | Full Stack Developer, UI/UX Designer & SEO Specialist",
+  title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
   description:
-    "Launch high-performance websites, SaaS products, and digital experiences with Mohsin Imran. Full Stack development, Figma UI/UX, SEO optimization, and product strategy.",
+    "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
   keywords: [
     "Full Stack Developer",
-    "UI UX Designer",
-    "SEO Specialist",
+    "Karachi Web Developer",
     "Laravel Developer",
     "Next.js Developer",
-    "Figma Design",
+    "React Developer",
+    "Figma Designer",
+    "SEO Specialist",
     "SaaS Development",
-    "Web Performance",
+    "Web Design",
   ],
   openGraph: {
-    title: "Mohsin Imran | Full Stack Developer, UI/UX Designer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Launch high-performance websites, SaaS products, and digital experiences with Mohsin Imran. Full Stack development, Figma UI/UX, SEO optimization, and product strategy.",
+      "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
     type: "website",
     url: "https://www.mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",
+    locale: "en_US",
     images: [
       {
         url: "https://www.mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Mohsin Imran Portfolio",
+        alt: "Mohsin Imran Portfolio | Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohsin Imran | Full Stack Developer, UI/UX Designer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Launch high-performance websites, SaaS products, and digital experiences with Mohsin Imran. Full Stack development, Figma UI/UX, SEO optimization, and product strategy.",
+      "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
     images: ["https://www.mohsinimran.online/images/profile.jpeg"],
+    creator: "@mohsinimran",
   },
   alternates: {
     canonical: "https://www.mohsinimran.online",

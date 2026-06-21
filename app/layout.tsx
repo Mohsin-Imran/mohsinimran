@@ -5,23 +5,22 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { generateOrganizationSchema, generatePersonSchema, generateWebsiteSchema, generateFAQSchema } from "./schema"
 import "./globals.css"
-import ClientLoader from "./ClientLoader"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mohsinimran.online"),
-  title: "Mohsin Imran | Full Stack Developer, UI/UX Designer & SEO Specialist",
+  title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
   description:
-    "Build high-performance websites, SaaS products, and marketing experiences with Mohsin Imran. Full Stack development, Figma UI/UX, technical SEO, and launch-ready digital products.",
+    "Karachi-based Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
   keywords: [
     "Full Stack Developer",
-    "UI UX Designer",
-    "SEO Specialist",
+    "Karachi Web Developer",
     "Laravel Developer",
     "Next.js Developer",
+    "React Developer",
     "Figma Designer",
-    "SaaS Development",
-    "E-commerce Developer",
-    "Web Performance",
+    "SEO Specialist",
+    "SaaS Product Development",
+    "Digital Product Design",
   ],
   authors: [{ name: "Mohsin Imran", url: "https://www.mohsinimran.online" }],
   creator: "Mohsin Imran",
@@ -35,24 +34,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",
-    title: "Mohsin Imran | Full Stack Developer, UI/UX Designer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Build high-performance websites, SaaS products, and marketing experiences with Mohsin Imran. Full Stack development, Figma UI/UX, technical SEO, and launch-ready digital products.",
+      "Karachi-based Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
     images: [
       {
         url: "https://www.mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Mohsin Imran Portfolio",
+        alt: "Mohsin Imran Portfolio | Full Stack Developer & SEO Specialist",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohsin Imran | Full Stack Developer, UI/UX Designer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
-      "Build high-performance websites, SaaS products, and marketing experiences with Mohsin Imran. Full Stack development, Figma UI/UX, technical SEO, and launch-ready digital products.",
+      "Karachi-based Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
     images: ["https://www.mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
@@ -138,7 +137,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`font-sans bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}
       >
-        <ClientLoader>{children}</ClientLoader>
+        {children}
         <Analytics />
       </body>
     </html>

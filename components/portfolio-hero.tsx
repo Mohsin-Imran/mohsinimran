@@ -16,10 +16,9 @@ export default function PortfolioHero() {
     "Digital Product Builder",
   ]
 
-
-  const [displayText, setDisplayText] = useState("")
+  const [displayText, setDisplayText] = useState(texts[0])
   const [index, setIndex] = useState(0)
-  const [subIndex, setSubIndex] = useState(0)
+  const [subIndex, setSubIndex] = useState(texts[0].length)
   const [reverse, setReverse] = useState(false)
 
   useEffect(() => {
