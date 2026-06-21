@@ -214,7 +214,7 @@ export default function Footer() {
           <p className="text-gray-400">
             © {new Date().getFullYear()} All rights reserved by{" "}
             <a
-              href="https://mohsinportfolio-rust.vercel.app/"
+              href="https://www.mohsinimran.online"
               target="_blank"
               rel="noopener noreferrer"
               className="text-yellow-400 hover:text-yellow-300 transition-colors duration-300 font-semibold"

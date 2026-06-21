@@ -54,12 +54,7 @@ export default function PortfolioHero() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-6">
-            <h1
-              style={{
-                fontSize: window.innerWidth <= 450 ? "28px" : ""
-              }}
-              className="animate-fade-in-left animation-delay-200 text-4xl font-bold leading-tight lg:text-5xl xl:text-1xl text-yellow-500"
-            >
+            <h1 className="animate-fade-in-left animation-delay-200 text-4xl font-bold leading-tight lg:text-5xl xl:text-1xl text-yellow-500">
               Hi, I'm Mohsin M Imran
             </h1>
 
@@ -72,11 +67,11 @@ export default function PortfolioHero() {
             </div>
 
             <p className="animate-fade-in-left animation-delay-600 text-base leading-relaxed text-white lg:text-md">
-              I'm Mohsin, a Full-Stack Developer specializing in Frontend, Backend, AI, Mobile App, and SaaS Product Development. I design robust architectures and user-friendly interfaces that deliver seamless, high-performance experiences with a focus on clean, secure, and scalable code.
-              I have hands-on experience building real-time features like notifications and live chat, integrating payment solutions, developing REST APIs, and delivering complete end-to-end applications. Passionate about technology and innovation, I stay current with the latest trends to create modern, reliable solutions that exceed expectations and drive real results.
+              I'm Mohsin, a Full-Stack Developer and Product Engineer who builds SEO-optimized web products, SaaS platforms, and conversion-focused digital experiences.
+              I deliver robust Laravel, Next.js, React, and WordPress systems with fast load times, secure APIs, and polished UI that helps startups and growth teams scale.
             </p>
 
-            {/* Skills */}
+            {/* Value List */}
             <div className="flex flex-wrap gap-3">
               <a
                 href="#projects"
@@ -98,21 +93,21 @@ export default function PortfolioHero() {
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
                 <span>
-                  Performance-first architecture built to support scalable, product-led growth.
+                  SEO-first performance architecture built for fast page speed, conversion, and growth.
                 </span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
                 <span>
-                  End-to-end ownership from MVP to scale, using clean reusable systems.
+                  End-to-end product ownership from discovery through launch, with clean Laravel and Next.js systems.
                 </span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
                 <span>
-                  UX decisions driven by real business goals, not just visual aesthetics.
+                  Business-driven UX and API integrations that convert visitors into customers.
                 </span>
               </li>
             </ul>

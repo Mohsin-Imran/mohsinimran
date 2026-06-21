@@ -81,13 +81,15 @@ export default function AboutMe() {
               }`}
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white-400">
-              Full Stack Developer
+              Full Stack Developer & Product Engineer
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              I'm Mohsin, a Full-Stack Developer specializing in Frontend, Backend, AI, Mobile App, and SaaS Product Development. I design robust architectures and user-friendly interfaces that deliver seamless, high-performance experiences with a focus on clean, secure, and scalable code.
-              <br />
-              I have hands-on experience building real-time features like notifications and live chat, integrating payment solutions, developing REST APIs, and delivering complete end-to-end applications. Passionate about technology and innovation, I stay current with the latest trends to create modern, reliable solutions that exceed expectations and drive real results.
+              I build scalable web applications and SaaS platforms using Laravel, Next.js, React, and WordPress. My work is focused on fast performance, secure APIs, conversion-driven UX, and search-engine-friendly page structure that helps brands rank higher and grow faster.
+            </p>
+
+            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+              From user research and interface design to backend architecture and deployment, I help founders and teams launch polished digital products that are easy to use, maintain, and optimize for search engines.
             </p>
 
             {/* Contact Info */}

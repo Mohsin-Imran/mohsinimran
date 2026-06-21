@@ -10,13 +10,12 @@ const CardHeroSection: React.FC = () => {
           Let's Build
         </p>
 
-        <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-8">
+        <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6">
           Have a live SaaS product that's slowing you down?
-          <br />
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
-            I help founders regain velocity by owning the tech end-to-end.
-            </p>
-        </h1>
+        </h2>
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+          I help founders regain velocity by owning the tech end-to-end.
+        </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a

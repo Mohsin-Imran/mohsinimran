@@ -1,0 +1,77 @@
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /resume/
+Allow: /api/contact/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /api/ (except contact form)
+
+Crawl-delay: 0.5
+Request-rate: 30/1m
+
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Allow: /resume/
+Allow: /api/contact/
+Crawl-delay: 0
+Request-rate: unlimited
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: *.png$
+Allow: *.jpg$
+Allow: *.jpeg$
+Allow: *.gif$
+Allow: *.webp$
+
+User-agent: Bingbot
+Allow: /
+Allow: /images/
+Allow: /resume/
+Crawl-delay: 0.5
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baidu
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+# Sitemap locations
+Sitemap: https://www.mohsinimran.online/sitemap.xml
+Sitemap: https://www.mohsinimran.online/api/sitemap
+
+# Host specification
+Host: https://www.mohsinimran.online
+
+# Clean URLs
+Clean-param: page /articles/
+Clean-param: utm_source /
+Clean-param: utm_medium /
+Clean-param: utm_campaign /

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Mohsin Imran</ShortName>
+  <Description>Search Mohsin Imran Portfolio</Description>
+  <Url type="text/html" template="https://www.mohsinimran.online/search?q={searchTerms}"/>
+  <Url type="application/x-suggestions+json" template="https://www.mohsinimran.online/search/suggestions?q={searchTerms}"/>
+  <Contact>mmnemon549@gmail.com</Contact>
+  <Tags>developer portfolio full stack laravel react</Tags>
+  <LongName>Mohsin Imran Full Stack Developer Portfolio</LongName>
+  <Image height="16" width="16" type="image/x-icon">https://www.mohsinimran.online/images/profile.jpeg</Image>
+  <Query role="example" searchTerms="full stack developer"/>
+  <Developer>Mohsin Imran</Developer>
+  <Attribution>Mohsin Imran Portfolio</Attribution>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>
+  <Language>en-us</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>
