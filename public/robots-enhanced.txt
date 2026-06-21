@@ -64,11 +64,11 @@ User-agent: archive.org_bot
 Disallow: /
 
 # Sitemap locations
-Sitemap: https://www.mohsinimran.online/sitemap.xml
-Sitemap: https://www.mohsinimran.online/api/sitemap
+Sitemap: https://mohsinimran.online/sitemap.xml
+Sitemap: https://mohsinimran.online/api/sitemap
 
 # Host specification
-Host: https://www.mohsinimran.online
+Host: https://mohsinimran.online
 
 # Clean URLs
 Clean-param: page /articles/

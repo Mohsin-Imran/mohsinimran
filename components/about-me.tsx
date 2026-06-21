@@ -39,7 +39,7 @@ export default function AboutMe() {
       icon: Globe,
       label: "Website",
       value: "Website",
-      link: "https://www.mohsinimran.online",
+      link: "https://mohsinimran.online",
       isLink: true,
     },
   ]

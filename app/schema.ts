@@ -3,8 +3,8 @@ export function generatePersonSchema() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Mohsin Imran',
-    url: 'https://www.mohsinimran.online',
-    image: 'https://www.mohsinimran.online/images/profile.jpeg',
+    url: 'https://mohsinimran.online',
+    image: 'https://mohsinimran.online/images/profile.jpeg',
     description:
       'Full Stack Developer specializing in Laravel, Next.js, React, Figma, SEO, and conversion-focused product engineering.',
     jobTitle: ['Full Stack Developer', 'Web Developer', 'SEO Specialist'],
@@ -41,7 +41,7 @@ export function generateWebsiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Mohsin Imran Portfolio',
-    url: 'https://www.mohsinimran.online',
+    url: 'https://mohsinimran.online',
     description:
       'Full Stack Developer portfolio showcasing Laravel, Next.js, React, and Figma product work with SEO-first performance.',
     sameAs: [
@@ -124,8 +124,8 @@ export function generateOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Mohsin Imran Portfolio',
-    url: 'https://www.mohsinimran.online',
-    logo: 'https://www.mohsinimran.online/images/profile.jpeg',
+    url: 'https://mohsinimran.online',
+    logo: 'https://mohsinimran.online/images/profile.jpeg',
     description: 'Full Stack Developer & Web Designer - Specializing in SaaS, AI-Driven Development, and Modern Web Solutions',
     sameAs: [
       'https://linkedin.com/in/mohsin-imran',
@@ -146,8 +146,8 @@ export function generateLocalBusinessSchema() {
     '@type': 'LocalBusiness',
     name: 'Mohsin Imran',
     description: 'Full Stack Developer & Web Designer',
-    url: 'https://www.mohsinimran.online',
-    image: 'https://www.mohsinimran.online/images/profile.jpeg',
+    url: 'https://mohsinimran.online',
+    image: 'https://mohsinimran.online/images/profile.jpeg',
     email: 'mmnemon549@gmail.com',
     priceRange: 'Negotiable',
     serviceArea: {

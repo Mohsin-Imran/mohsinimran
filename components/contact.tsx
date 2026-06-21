@@ -129,8 +129,8 @@ export default function Contact() {
         </svg>
       ),
       label: "Website",
-      value: "https://www.mohsinimran.online",
-      link: "https://www.mohsinimran.online",
+      value: "https://mohsinimran.online",
+      link: "https://mohsinimran.online",
       delay: "delay-400",
     }
 

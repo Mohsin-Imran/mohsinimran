@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mohsinimran.online/sitemap.xml
-Host: https://www.mohsinimran.online
+Sitemap: https://mohsinimran.online/sitemap.xml
+Host: https://mohsinimran.online
 
 

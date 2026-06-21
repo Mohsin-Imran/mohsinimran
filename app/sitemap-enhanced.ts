@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.mohsinimran.online'
+  const baseUrl = 'https://mohsinimran.online'
   
   // Homepage - highest priority
   const homePage = {

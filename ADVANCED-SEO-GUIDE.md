@@ -2,7 +2,7 @@
 
 ## 🚀 Super Powerful SEO Implementation (June 21, 2026)
 
-**Domain:** `https://www.mohsinimran.online` ✅  
+**Domain:** `https://mohsinimran.online` ✅  
 **Status:** COMPREHENSIVE SEO OVERHAUL COMPLETE
 
 ---
@@ -338,8 +338,8 @@ Host: Specifies preferred domain
 After implementation:
 ```
 [ ] Run: npm run build (no errors)
-[ ] Check sitemap loads: https://www.mohsinimran.online/sitemap.xml
-[ ] Check robots.txt loads: https://www.mohsinimran.online/robots.txt
+[ ] Check sitemap loads: https://mohsinimran.online/sitemap.xml
+[ ] Check robots.txt loads: https://mohsinimran.online/robots.txt
 [ ] Validate Schema: https://schema.org/validator
 [ ] Validate OG Tags: https://ogp.me/
 [ ] Test Mobile: Chrome DevTools Mobile View
@@ -378,5 +378,5 @@ Once implemented:
 ---
 
 *Setup Date: June 21, 2026*  
-*Domain: https://www.mohsinimran.online*  
+*Domain: https://mohsinimran.online*  
 *Status: READY FOR DEPLOYMENT ✅*

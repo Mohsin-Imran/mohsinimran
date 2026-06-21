@@ -7,7 +7,7 @@ import { generateOrganizationSchema, generatePersonSchema, generateWebsiteSchema
 import "./globals.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.mohsinimran.online"),
+  metadataBase: new URL("https://mohsinimran.online"),
   title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
   description:
     "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "SaaS Product Development",
     "Digital Product Design",
   ],
-  authors: [{ name: "Mohsin Imran", url: "https://www.mohsinimran.online" }],
+  authors: [{ name: "Mohsin Imran", url: "https://mohsinimran.online" }],
   creator: "Mohsin Imran",
   publisher: "Mohsin Imran",
   icons: {
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.mohsinimran.online",
+    url: "https://mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",
     title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
       "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
     images: [
       {
-        url: "https://www.mohsinimran.online/images/profile.jpeg",
+        url: "https://mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
         alt: "Mohsin Imran Portfolio | Full Stack Developer & SEO Specialist",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
       "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
-    images: ["https://www.mohsinimran.online/images/profile.jpeg"],
+    images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
   robots: {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.mohsinimran.online",
+    canonical: "https://mohsinimran.online",
   },
   applicationName: "Mohsin Imran Portfolio",
   appleWebApp: {
@@ -131,7 +131,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://calendly.com" />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        <link rel="canonical" href="https://www.mohsinimran.online" />
+        <link rel="canonical" href="https://mohsinimran.online" />
       </head>
       <body
         suppressHydrationWarning

@@ -5,7 +5,7 @@
 ### 1. Social Media Profile Optimization
 ```
 LinkedIn: Complete profile
-- [ ] Add portfolio URL: https://www.mohsinimran.online
+- [ ] Add portfolio URL: https://mohsinimran.online
 - [ ] Headline: "Full Stack Developer | SaaS | AI-Driven Development"
 - [ ] Summary: Mention expertise and services
 - [ ] Add profile picture matching portfolio
@@ -19,7 +19,7 @@ GitHub: Complete README
 - [ ] Share your projects with stars
 - [ ] Follow relevant developers
 - [ ] Add to GitHub profile:
-  - Website: https://www.mohsinimran.online
+  - Website: https://mohsinimran.online
   - Email: mmnemon549@gmail.com
   - Bio: Full Stack Developer | SaaS | PHP | React
 
@@ -51,7 +51,7 @@ Priority Directories:
 1. **GitHub README.md**
    ```markdown
    ### Portfolio & Projects
-   View my complete portfolio: [Mohsin Imran](https://www.mohsinimran.online)
+   View my complete portfolio: [Mohsin Imran](https://mohsinimran.online)
    
    Recent Projects:
    - [Vurks](https://vurks.com) - Freelance Marketplace
@@ -273,7 +273,7 @@ We recently launched [project name], which [brief description].
 I think it would be valuable for your readers to know about it.
 
 Would you be interested in linking to our portfolio as a resource?
-https://www.mohsinimran.online
+https://mohsinimran.online
 
 Looking forward to your thoughts!
 
@@ -298,7 +298,7 @@ Topics I could discuss:
 - AI integration in web apps
 - Payment integration and compliance
 
-Portfolio: https://www.mohsinimran.online
+Portfolio: https://mohsinimran.online
 LinkedIn: https://linkedin.com/in/mohsin-imran
 
 Would this be of interest?

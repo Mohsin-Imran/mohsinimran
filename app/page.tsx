@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
     type: "website",
-    url: "https://www.mohsinimran.online",
+    url: "https://mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",
     locale: "en_US",
     images: [
       {
-        url: "https://www.mohsinimran.online/images/profile.jpeg",
+        url: "https://mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
         alt: "Mohsin Imran Portfolio | Full Stack Developer",
@@ -47,11 +47,11 @@ export const metadata: Metadata = {
     title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
     description:
       "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
-    images: ["https://www.mohsinimran.online/images/profile.jpeg"],
+    images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
   alternates: {
-    canonical: "https://www.mohsinimran.online",
+    canonical: "https://mohsinimran.online",
   },
 }
 

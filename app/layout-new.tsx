@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.mohsinimran.online",
+    url: "https://mohsinimran.online",
     title: "Mohsin Imran | Full Stack Developer & Web Designer",
     description: "Explore Mohsin Imran's professional portfolio. Full Stack Developer specializing in web development, design, and digital solutions.",
     siteName: "Mohsin Imran Portfolio",
     images: [
       {
-        url: "https://www.mohsinimran.online/images/profile.jpeg",
+        url: "https://mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
         alt: "Mohsin Imran - Full Stack Developer",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mohsin Imran | Full Stack Developer & Web Designer",
     description: "Explore Mohsin Imran's professional portfolio. Full Stack Developer specializing in web development, design, and digital solutions.",
-    images: ["https://www.mohsinimran.online/images/profile.jpeg"],
+    images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
   robots: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.mohsinimran.online",
+    canonical: "https://mohsinimran.online",
   },
   verification: {
     google: "google-site-verification-code",
@@ -70,8 +70,8 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Mohsin Imran',
-    url: 'https://www.mohsinimran.online',
-    image: 'https://www.mohsinimran.online/images/profile.jpeg',
+    url: 'https://mohsinimran.online',
+    image: 'https://mohsinimran.online/images/profile.jpeg',
     description: 'Full Stack Developer & Web Designer - AI-Driven Full-Stack Engineer',
     jobTitle: ['Full Stack Developer', 'Web Designer', 'SaaS Developer'],
     email: 'mmnemon549@gmail.com',
@@ -86,7 +86,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Mohsin Imran Portfolio',
-    url: 'https://www.mohsinimran.online',
+    url: 'https://mohsinimran.online',
     description: 'Full Stack Developer & Web Designer Portfolio',
   },
 ]

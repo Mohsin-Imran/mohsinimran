@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Web Development Services",
     "Portfolio",
   ],
-  authors: [{ name: "Mohsin Imran", url: "https://www.mohsinimran.online" }],
+  authors: [{ name: "Mohsin Imran", url: "https://mohsinimran.online" }],
   creator: "Mohsin Imran",
   publisher: "Mohsin Imran",
   icons: {
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.mohsinimran.online",
+    url: "https://mohsinimran.online",
     siteName: "Mohsin Imran - Full Stack Developer & Web Designer",
     title: "Mohsin Imran | Full Stack Developer & Web Designer Portfolio",
     description: "Award-winning Full Stack Developer specializing in AI-Driven Development, SaaS Applications, Laravel, React, and Modern Web Solutions.",
     images: [
       {
-        url: "https://www.mohsinimran.online/images/profile.jpeg",
+        url: "https://mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
         alt: "Mohsin Imran - Professional Full Stack Developer",
         type: "image/jpeg",
       },
       {
-        url: "https://www.mohsinimran.online/images/profile.jpeg",
+        url: "https://mohsinimran.online/images/profile.jpeg",
         width: 800,
         height: 600,
         alt: "Mohsin Imran Portfolio",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     creator: "@mohsinimran",
     title: "Mohsin Imran | Full Stack Developer & Web Designer",
     description: "Award-winning Full Stack Developer - AI, SaaS, Laravel, React, Web Design",
-    images: ["https://www.mohsinimran.online/images/profile.jpeg"],
+    images: ["https://mohsinimran.online/images/profile.jpeg"],
   },
   robots: {
     index: true,
@@ -84,10 +84,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.mohsinimran.online",
+    canonical: "https://mohsinimran.online",
     languages: {
-      "en-US": "https://www.mohsinimran.online",
-      "en": "https://www.mohsinimran.online",
+      "en-US": "https://mohsinimran.online",
+      "en": "https://mohsinimran.online",
     },
   },
   verification: {
@@ -112,8 +112,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Mohsin Imran',
-  url: 'https://www.mohsinimran.online',
-  logo: 'https://www.mohsinimran.online/images/profile.jpeg',
+  url: 'https://mohsinimran.online',
+  logo: 'https://mohsinimran.online/images/profile.jpeg',
   description: 'Full Stack Developer & Web Designer - Specializing in AI-Driven Development, SaaS Applications, Laravel, React, and Modern Web Solutions',
   sameAs: [
     'https://linkedin.com/in/mohsin-imran',
@@ -139,8 +139,8 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Mohsin Imran',
-  url: 'https://www.mohsinimran.online',
-  image: 'https://www.mohsinimran.online/images/profile.jpeg',
+  url: 'https://mohsinimran.online',
+  image: 'https://mohsinimran.online/images/profile.jpeg',
   description: 'Award-winning Full Stack Developer specializing in AI-Driven Development, SaaS Applications, Laravel, React, and Web Design',
   jobTitle: ['Full Stack Developer', 'Web Designer', 'SaaS Architect', 'AI Integration Specialist'],
   email: 'mmnemon549@gmail.com',
@@ -187,7 +187,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Mohsin Imran Portfolio',
-  url: 'https://www.mohsinimran.online',
+  url: 'https://mohsinimran.online',
   description: 'Full Stack Developer & Web Designer Portfolio - Specializing in SaaS, AI-Driven Development, and Modern Web Solutions',
   sameAs: [
     'https://linkedin.com/in/mohsin-imran',
@@ -197,7 +197,7 @@ const websiteSchema = {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://www.mohsinimran.online/search?q={search_term_string}',
+      urlTemplate: 'https://mohsinimran.online/search?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -291,7 +291,7 @@ export default function RootLayout({
         <link rel="search" type="application/opensearchdescription+xml" title="Mohsin Imran" href="/opensearch.xml" />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://www.mohsinimran.online" />
+        <link rel="canonical" href="https://mohsinimran.online" />
       </head>
       <body
         suppressHydrationWarning

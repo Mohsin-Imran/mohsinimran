@@ -1,7 +1,7 @@
 # SEO Configuration & Strategies
 
 ## Domain URL
-**Primary Domain:** https://www.mohsinimran.online
+**Primary Domain:** https://mohsinimran.online
 
 ---
 
@@ -96,7 +96,7 @@ Twitter: https://twitter.com/mohsinimran
 - Ensure consistency across:
   - Name: "Mohsin Imran"
   - Email: mmnemon549@gmail.com
-  - Website: https://www.mohsinimran.online
+  - Website: https://mohsinimran.online
   - Social profiles
 
 ---
@@ -163,7 +163,7 @@ Twitter: https://twitter.com/mohsinimran
 
 ### To Do
 1. [ ] Go to Google Search Console
-2. [ ] Add property: https://www.mohsinimran.online
+2. [ ] Add property: https://mohsinimran.online
 3. [ ] Verify ownership (via HTML file or DNS)
 4. [ ] Submit sitemap.xml
 5. [ ] Check for indexing issues
@@ -186,7 +186,7 @@ Twitter: https://twitter.com/mohsinimran
 
 ### To Do
 1. [ ] Go to Bing Webmaster Tools
-2. [ ] Add https://www.mohsinimran.online
+2. [ ] Add https://mohsinimran.online
 3. [ ] Verify ownership
 4. [ ] Submit XML Sitemap
 5. [ ] Monitor crawl stats

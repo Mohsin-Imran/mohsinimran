@@ -1,7 +1,7 @@
 # 🎯 SEO IMPLEMENTATION SUMMARY - Complete
 
 **Date:** 2026-06-21  
-**Domain:** https://www.mohsinimran.online  
+**Domain:** https://mohsinimran.online  
 **Status:** ✅ ON-PAGE & TECHNICAL SEO COMPLETE | 🚀 OFF-PAGE READY TO EXECUTE
 
 ---
@@ -78,7 +78,7 @@ Creator: Mohsin Imran
 ```
 1. ⚡ Google Search Console
    - [ ] Go to: https://search.google.com/search-console
-   - [ ] Add property: https://www.mohsinimran.online
+   - [ ] Add property: https://mohsinimran.online
    - [ ] Verify (choose any method)
    - [ ] Submit sitemap.xml
    - [ ] Request indexing
@@ -317,7 +317,7 @@ Focus:
 - `public/robots.txt` - Crawler rules
 - `app/sitemap.ts` - Sitemap
 
-**Domain:** `https://www.mohsinimran.online`
+**Domain:** `https://mohsinimran.online`
 
 ---
 
@@ -351,5 +351,5 @@ Focus:
 ---
 
 *Last Updated: June 21, 2026*  
-*Portfolio: https://www.mohsinimran.online*  
+*Portfolio: https://mohsinimran.online*  
 *Contact: mmnemon549@gmail.com*
