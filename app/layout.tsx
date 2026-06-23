@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",
-    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
     description:
-      "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
+      "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
     images: [
       {
         url: "https://mohsinimran.online/images/profile.jpeg",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
     description:
-      "Full Stack Developer building SEO-optimized Laravel, Next.js, React and Figma digital products for startups and growth teams.",
+      "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
     images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },

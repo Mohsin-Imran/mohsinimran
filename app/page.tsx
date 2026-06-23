@@ -11,9 +11,9 @@ import Footer from "@/components/footer"
 import Call from "@/components/call"
 
 export const metadata: Metadata = {
-  title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
+  title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
   description:
-    "Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
+    "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
   keywords: [
     "Full Stack Developer",
     "Web Developer",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "Web Design",
   ],
   openGraph: {
-    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
     description:
-      "Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
+      "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
     type: "website",
     url: "https://mohsinimran.online",
     siteName: "Mohsin Imran Portfolio",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohsin Imran | Full Stack Developer & SEO Specialist",
+    title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
     description:
-      "Karachi-based Full Stack Developer creating SEO-optimized Laravel, Next.js, React, and Figma digital products for startups and recruiters.",
+      "Karachi-based Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
     images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
