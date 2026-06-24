@@ -16,9 +16,9 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "chatknot",
+    title: "Chatknot",
     description:
-      "chatknot is a real-time chat application that allows users to connect and communicate seamlessly. With features like instant messaging, file sharing, and group chats, it provides a comprehensive communication solution for individuals and teams.",
+      "Chatknot is a real-time chat application that allows users to connect and communicate seamlessly. With features like instant messaging, file sharing, and group chats, it provides a comprehensive communication solution for individuals and teams.",
     image: "/p9.png",
     technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
     link: "https://chatknot.com/",
