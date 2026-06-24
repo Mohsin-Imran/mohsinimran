@@ -15,15 +15,27 @@ interface ExperienceItem {
 }
 
 const experiences: ExperienceItem[] = [
+  // {
+  //   id: 1,
+  //   position: "Backend Architect",
+  //   company: "Vurks",
+  //   location: "Dubai, United Arab Emirates.On-site",
+  //   startDate: "June 2025",
+  //   endDate: "Present",
+  //   description: [
+  //     "As Backend Architect at Vurks, I design and implement the core systems that power our platform, including APIs, databases, and server-side logic. My focus is on building scalable, secure, and high-performing backend solutions that ensure seamless connectivity between businesses and professionals. By optimizing data flows and system architecture, I help create a reliable foundation for Vurks’ growing ecosystem.",
+  //   ],
+  //   technologies: ["PHP", "Laravel","MySQL", "JavaScript", "REST API"],
+  // },
   {
     id: 1,
     position: "Backend Architect",
-    company: "Vurks",
-    location: "Dubai, United Arab Emirates.On-site",
+    company: "Chatknot",
+    location: "Karachi, Pakistan",
     startDate: "June 2025",
     endDate: "Present",
     description: [
-      "As Backend Architect at Vurks, I design and implement the core systems that power our platform, including APIs, databases, and server-side logic. My focus is on building scalable, secure, and high-performing backend solutions that ensure seamless connectivity between businesses and professionals. By optimizing data flows and system architecture, I help create a reliable foundation for Vurks’ growing ecosystem.",
+      "As Backend Architect at Chatknot, I design and implement the core systems that power our platform, including APIs, databases, and server-side logic. My focus is on building scalable, secure, and high-performing backend solutions that ensure seamless connectivity between businesses and professionals. By optimizing data flows and system architecture, I help create a reliable foundation for Chatknot’ growing ecosystem.",
     ],
     technologies: ["PHP", "Laravel","MySQL", "JavaScript", "REST API"],
   },

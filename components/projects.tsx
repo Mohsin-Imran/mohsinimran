@@ -16,12 +16,12 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Vurks",
+    title: "chatknot",
     description:
-      "Vurks is a freelance marketplace platform where professionals and businesses connect seamlessly. Users can send friend requests, chat in real-time, and manage payments using Stripe. The platform ensures secure transactions and instant communication, providing a smooth freelance collaboration experience.",
-    image: "/p3.png",
-    technologies: ["PHP", "Laravel", "MySQL", "Twilio", "Stripe", "WebSocket"],
-    link: "https://vurks.com/",
+      "chatknot is a real-time chat application that allows users to connect and communicate seamlessly. With features like instant messaging, file sharing, and group chats, it provides a comprehensive communication solution for individuals and teams.",
+    image: "/p9.png",
+    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+    link: "https://chatknot.com/",
   },
 
   {
