@@ -126,6 +126,9 @@
     * {
         @apply border-border outline-ring/50;
     }
+    html {
+        scroll-behavior: smooth;
+    }
     body {
         /* Explicitly set black background and white text */
         @apply bg-black text-white;
@@ -234,5 +237,126 @@ body {
     .animation-delay-1000 {
         animation-delay: 1s;
         opacity: 0;
+    }
+    .portfolio-page > .relative.z-10 > section {
+        position: relative;
+    }
+    .portfolio-page > .relative.z-10 > section::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        background: radial-gradient(circle at 50% 0%, rgba(253, 199, 0, 0.08), transparent 34%);
+        transition: opacity 400ms ease;
+    }
+    .portfolio-page > .relative.z-10 > section:hover::before {
+        opacity: 1;
+    }
+    .portfolio-page section {
+        transform-style: preserve-3d;
+    }
+    .portfolio-page section > * {
+        backface-visibility: hidden;
+    }
+    .parallax-stack {
+        margin-top: -14svh;
+        min-height: 118svh;
+        padding-top: 14svh;
+        transform: translateZ(0);
+    }
+    .parallax-stack--hero {
+        margin-top: 0;
+        min-height: 132svh;
+        padding-top: 0;
+    }
+    .parallax-stack--compact {
+        margin-top: 0;
+        min-height: auto;
+        padding-top: 0;
+    }
+    .parallax-panel {
+        min-height: 100svh;
+        overflow: hidden;
+        transform: translateZ(0);
+        box-shadow: 0 -34px 90px rgba(0, 0, 0, 0.68);
+        will-change: transform, opacity;
+        isolation: isolate;
+    }
+    .parallax-glow {
+        opacity: 0.66;
+        transform: translate3d(0, 0, 0);
+    }
+    .parallax-panel::after {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        border-top: 1px solid rgba(253, 199, 0, 0.16);
+        background: linear-gradient(to bottom, rgba(253, 199, 0, 0.045), transparent 18rem);
+        opacity: 0.9;
+    }
+    @supports (animation-timeline: view()) {
+        .parallax-panel {
+            animation: parallaxLayerExit linear both;
+            animation-timeline: view();
+            animation-range: exit 0% exit 100%;
+        }
+        .parallax-glow {
+            animation: parallaxGlowDrift linear both;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+        }
+    }
+    @keyframes parallaxLayerExit {
+        to {
+            opacity: 0.72;
+            transform: translate3d(0, -2rem, 0) scale(0.965);
+            filter: saturate(0.86) brightness(0.82);
+        }
+    }
+    @keyframes parallaxGlowDrift {
+        from {
+            transform: translate3d(0, 4rem, 0);
+            opacity: 0.2;
+        }
+        45% {
+            opacity: 0.72;
+        }
+        to {
+            transform: translate3d(0, -4rem, 0);
+            opacity: 0.18;
+        }
+    }
+    @media (max-width: 767px) {
+        .parallax-stack {
+            margin-top: -7svh;
+            min-height: 106svh;
+            padding-top: 7svh;
+        }
+        .parallax-stack--hero {
+            margin-top: 0;
+            min-height: 116svh;
+            padding-top: 0;
+        }
+        .parallax-stack--compact {
+            min-height: auto;
+        }
+        .parallax-panel {
+            min-height: 100svh;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0.001ms !important;
+        }
     }
 }

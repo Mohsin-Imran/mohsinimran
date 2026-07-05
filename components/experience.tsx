@@ -19,19 +19,19 @@ const experiences: ExperienceItem[] = [
     id: 1,
     position: "Backend Architect",
     company: "Vurks",
-    location: "Karachi, Pakistan",
+    location: "On-site / Remote",
     startDate: "June 2025",
     endDate: "Present",
     description: [
       "As Backend Architect at Vurks, I design and implement the core systems that power our platform, including APIs, databases, and server-side logic. My focus is on building scalable, secure, and high-performing backend solutions that ensure seamless connectivity between businesses and professionals. By optimizing data flows and system architecture, I help create a reliable foundation for Vurks’ growing ecosystem.",
     ],
-    technologies: ["PHP", "Laravel","MySQL", "JavaScript", "REST API"],
+    technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "REST API"],
   },
   // {
   //   id: 1,
   //   position: "Backend Architect",
   //   company: "Chatknot",
-  //   location: "Karachi, Pakistan",
+  //   location: "On-site / Remote",
   //   startDate: "June 2025",
   //   endDate: "Present",
   //   description: [
@@ -43,7 +43,7 @@ const experiences: ExperienceItem[] = [
     id: 2,
     position: "Software Engineer",
     company: "Chatknot",
-    location: "Karachi, Pakistan",
+    location: "On-site / Remote",
     startDate: "June 2024",
     endDate: "June 2025",
     description: [
@@ -55,7 +55,7 @@ const experiences: ExperienceItem[] = [
     id: 3,
     position: "Full Stack Developer",
     company: "iSky information Technology",
-    location: "Remote Dubai",
+    location: "Remote",
     startDate: "Oct 2024",
     endDate: "Dec 2024",
     description: [
@@ -67,7 +67,7 @@ const experiences: ExperienceItem[] = [
     id: 4,
     position: "Full Stack Developer",
     company: "Mindflare.Tech",
-    location: "A-708, Software, Saima Trade Tower, House LI Chundrigar Rd, Saddar Karachi, Karachi City, Sindh 75000",
+    location: "On-site",
     startDate: "Sep 2023",
     endDate: "Sep 2024",
     description: [
@@ -79,7 +79,7 @@ const experiences: ExperienceItem[] = [
     id: 5,
     position: "PHP Laravel Developer",
     company: "Brainwave Technologies",
-    location: "DHA Phase Plot No. Office #1, 9-C Zamzama Blvd, Zamzama",
+    location: "On-site",
     startDate: "Mar 2023",
     endDate: "Aug 2023",
     description: [
@@ -94,7 +94,7 @@ const experiences: ExperienceItem[] = [
     id: 6,
     position: "PHP Laravel Developer",
     company: "CentoSquare",
-    location: "Pakistan Karachi Shahrah-e-Faisal",
+    location: "On-site",
     startDate: "Nov 2022",
     endDate: "Feb 2023",
     description: [
@@ -195,7 +195,9 @@ export default function Experience() {
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">{exp.position}</h3>
+                          <h3 className="text-[22px] font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                            {exp.company} - {exp.position} 
+                          </h3>
                           <div className="flex items-center gap-2 text-yellow-400 mb-2">
                             <Building2 className="w-4 h-4" />
                             <span className="font-medium">{exp.company}</span>

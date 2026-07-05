@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false)
@@ -93,17 +94,23 @@ export default function Footer() {
   ]
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Skills", href: "#skills" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Services", href: "/services" },
+    { name: "Skills", href: "/#skills" },
   ]
 
   const moreLinks = [
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Projects", href: "/#projects" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/#contact" },
   ]
+
+  const visibleSocialLinks = socialLinks.filter(
+    (social) => !["Facebook", "Instagram", "YouTube"].includes(social.name),
+  )
 
   return (
     <footer id="footer" className="relative bg-[#0A0A0A] text-white py-16 overflow-hidden">
@@ -123,18 +130,30 @@ export default function Footer() {
         >
           {/* Brand section */}
           <div className="lg:col-span-2">
-            <h2 className="text-4xl font-bold mb-4">
-              PORT<span className="text-yellow-400">FOLIO</span>
-            </h2>
+            <div className="mb-4 flex items-center gap-4">
+              <div className="relative h-16 w-16 overflow-hidden rounded-full border border-yellow-400/40 shadow-lg shadow-yellow-400/15">
+                <Image
+                  src="/logo.png"
+                  alt="Mohsin Stack logo"
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold">
+                  Mohsin <span className="text-yellow-400">Stack</span>
+                </h2>
+                <p className="text-sm text-gray-400">Full stack development portfolio</p>
+              </div>
+            </div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Welcome to my portfolio! Explore a collection of my creative endeavors, from graphic design to web
-              development. Each project reflects my passion for innovation and attention to detail. Let's connect and
-              collaborate to bring your ideas to life.
+              Mohsin Imran is a freelance full stack developer for Laravel, Next.js, React, custom SaaS, AI API integrations, WordPress, eCommerce and SEO-optimized web development.
             </p>
 
             {/* Social icons with animations */}
             <div className="flex flex-wrap gap-4">
-              {socialLinks.map((social, index) => (
+              {visibleSocialLinks.map((social, index) => (
                 <a
                   key={social.name}
                   href={social.url}
@@ -212,7 +231,7 @@ export default function Footer() {
           }`}
         >
           <p className="text-gray-400">
-            © {new Date().getFullYear()} All rights reserved by{" "}
+            Â© {new Date().getFullYear()} All rights reserved by{" "}
             <a
               href="https://mohsinimran.online"
               target="_blank"

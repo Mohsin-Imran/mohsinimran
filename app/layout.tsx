@@ -3,30 +3,75 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
-import { generateOrganizationSchema, generatePersonSchema, generateWebsiteSchema, generateFAQSchema } from "./schema"
+import {
+  generateFAQSchema,
+  generateLocalBusinessSchema,
+  generateOrganizationSchema,
+  generatePersonSchema,
+  generateServiceSchema,
+  generateWebsiteSchema,
+} from "./schema"
+import { primarySeoDescription, primarySeoTitle, seoFaqs, seoServices, siteUrl } from "@/lib/seo"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mohsinimran.online"),
-  title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
-  description:
-  "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `Mohsin Imran | ${primarySeoTitle}`,
+    template: "%s | Mohsin Imran",
+  },
+  description: primarySeoDescription,
   keywords: [
+    "Mohsin Imran",
     "AI Developer",
     "AI Engineer",
     "AI Integration Developer",
-    "ChatGPT Developer",
+    "AI Developer",
     "OpenAI API Developer",
     "AI Automation",
     "AI Agent Developer",
+    "AI Product Expert",
+    "AI Product Developer",
+    "AI Web App Developer Pakistan",
     "Full Stack Developer Pakistan",
     "Laravel Developer",
     "Next.js Developer",
     "React Developer",
     "SEO Specialist",
     "Web Developer Pakistan",
+    "Full Stack Developer Karachi",
+    "Laravel Developer Pakistan",
+    "Next.js SEO Developer",
+    "SaaS Developer",
+    "WordPress SEO Developer",
+    "Laravel + Next.js developer for hire",
+    "Custom SaaS development",
+    "React developer freelance",
+    "WordPress developer Karachi",
+    "eCommerce website developer",
+    "ChatGPT API integration developer",
+    "OpenRouter integration developer",
+    "AI product expert Pakistan",
+    "full stack developer AI product expert",
+    "SEO-optimized web development",
+    "Backend API developer",
+    "full-stack development",
+    "backend architecture",
+    "API integration",
+    "RESTful API",
+    "scalable web applications",
+    "MVP development",
+    "SaaS product development",
+    "page speed optimization",
+    "mobile-responsive design",
+    "Stripe PayPal payment integration",
+    "AWS DigitalOcean hosting",
+    "zero-downtime deployment",
+    "CRM integration",
+    "WebSocket development",
+    "technical consultant",
   ],
-  authors: [{ name: "Mohsin Imran", url: "https://mohsinimran.online" }],
+  authors: [{ name: "Mohsin Imran", url: siteUrl }],
   creator: "Mohsin Imran",
   publisher: "Mohsin Imran",
   icons: {
@@ -36,26 +81,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mohsinimran.online",
+    url: siteUrl,
     siteName: "Mohsin Imran Portfolio",
-    title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
-    description:
-      "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
+    title: `Mohsin Imran | ${primarySeoTitle}`,
+    description: primarySeoDescription,
     images: [
       {
         url: "https://mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Mohsin Imran Portfolio | Full Stack Developer & SEO Specialist",
+        alt: "Mohsin Imran - Full Stack Laravel and Next.js Developer",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohsin Imran | Full Stack Developer, AI Developer, Laravel, Next.js & React Expert",
-    description:
-      "Mohsin Imran is a Full Stack Developer and AI Developer specializing in Laravel, Next.js, React, PHP, AI integrations, ChatGPT APIs, SaaS applications, SEO, WordPress, eCommerce, and custom web development services.",
+    title: `Mohsin Imran | ${primarySeoTitle}`,
+    description: primarySeoDescription,
     images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
   },
@@ -72,7 +115,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://mohsinimran.online",
+    canonical: siteUrl,
   },
   applicationName: "Mohsin Imran Portfolio",
   appleWebApp: {
@@ -89,23 +132,9 @@ const jsonLdScripts = [
   generateOrganizationSchema(),
   generatePersonSchema(),
   generateWebsiteSchema(),
-  generateFAQSchema([
-    {
-      question: "Who is Mohsin Imran?",
-      answer:
-        "Mohsin Imran is a Full Stack Developer and UX-focused digital product builder who delivers Laravel, Next.js, React, WordPress and SEO-ready website solutions.",
-    },
-    {
-      question: "What services does Mohsin Imran offer?",
-      answer:
-        "Services include Full Stack Development, UI/UX design, technical SEO, SaaS development, e-commerce, WordPress, and custom web solutions.",
-    },
-    {
-      question: "How can I book a call?",
-      answer:
-        "Book a consultation on Calendly or email mmnemon549@gmail.com to discuss your web development project.",
-    },
-  ]),
+  generateLocalBusinessSchema(),
+  ...seoServices.map((service) => generateServiceSchema(service)),
+  generateFAQSchema(seoFaqs),
 ]
 
 export default function RootLayout({
@@ -123,19 +152,8 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#000000" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Mohsin Imran Portfolio" />
-        <meta name="application-name" content="Mohsin Imran Portfolio" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://calendly.com" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        <link rel="canonical" href="https://mohsinimran.online" />
       </head>
       <body
         suppressHydrationWarning

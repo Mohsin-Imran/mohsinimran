@@ -11,10 +11,10 @@ const CardHeroSection: React.FC = () => {
         </p>
 
         <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6">
-          Have a live SaaS product that's slowing you down?
+          Need a technical consultant for a SaaS product, MVP, or SEO audit?
         </h2>
         <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
-          I help founders regain velocity by owning the tech end-to-end.
+          I help founders improve backend architecture, API integration, page speed, mobile-responsive design, secure payments, cloud hosting, and zero-downtime deployment.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -28,10 +28,10 @@ const CardHeroSection: React.FC = () => {
           </a>
 
           <a
-            href="mailto:mnmemon549@email.com"
+            href="mailto:mnmemon549@email.com?subject=Free%20Website%20Audit%20Request"
             className="border border-gray-500 text-black font-semibold text-lg py-4 px-10 rounded-full bg-white hover:text-gray-900 transition-all duration-300"
           >
-            Email Me
+            Get a Free Website Audit
           </a>
         </div>
       </div>

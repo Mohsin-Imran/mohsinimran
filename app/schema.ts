@@ -6,13 +6,12 @@ export function generatePersonSchema() {
     url: 'https://mohsinimran.online',
     image: 'https://mohsinimran.online/images/profile.jpeg',
     description:
-      'Full Stack Developer specializing in Laravel, Next.js, React, Figma, SEO, and conversion-focused product engineering.',
-    jobTitle: ['Full Stack Developer', 'Web Developer', 'SEO Specialist'],
+      'Full Stack Web Application Developer and AI Product Expert in Pakistan specializing in Laravel, Next.js, React, custom SaaS development, AI integrations, WordPress, eCommerce and SEO-optimized web development.',
+    jobTitle: ['Full Stack Web Application Developer', 'AI Product Expert', 'Freelance Full Stack Developer', 'Laravel Developer', 'Next.js Developer', 'AI Developer'],
     email: 'mmnemon549@gmail.com',
     sameAs: [
-      'https://linkedin.com/in/mohsin-imran',
-      'https://github.com/mohsinimran',
-      'https://twitter.com/mohsinimran',
+      'https://www.linkedin.com/in/mohsin-imran-5833a9243/',
+      'https://github.com/Mohsin-Imran',
     ],
     knowsAbout: [
       'Full Stack Development',
@@ -28,6 +27,13 @@ export function generatePersonSchema() {
       'SEO',
       'Web Performance',
       'AI Integration',
+      'AI Product Development',
+      'AI Web App Development',
+      'ChatGPT API Integration',
+      'OpenAI API',
+      'OpenRouter Integration',
+      'eCommerce Development',
+      'Backend API Development',
     ],
     worksFor: {
       '@type': 'Organization',
@@ -43,10 +49,10 @@ export function generateWebsiteSchema() {
     name: 'Mohsin Imran Portfolio',
     url: 'https://mohsinimran.online',
     description:
-      'Full Stack Developer portfolio showcasing Laravel, Next.js, React, and Figma product work with SEO-first performance.',
+      'Full Stack Web Application Developer and AI Product Expert portfolio for Laravel, Next.js, React, custom SaaS development, AI integrations, WordPress, eCommerce and SEO-optimized web development.',
     sameAs: [
-      'https://linkedin.com/in/mohsin-imran',
-      'https://github.com/mohsinimran',
+      'https://www.linkedin.com/in/mohsin-imran-5833a9243/',
+      'https://github.com/Mohsin-Imran',
     ],
   }
 }
@@ -126,11 +132,10 @@ export function generateOrganizationSchema() {
     name: 'Mohsin Imran Portfolio',
     url: 'https://mohsinimran.online',
     logo: 'https://mohsinimran.online/images/profile.jpeg',
-    description: 'Full Stack Developer & Web Designer - Specializing in SaaS, AI-Driven Development, and Modern Web Solutions',
+    description: 'Full Stack Web Application Developer and AI Product Expert in Pakistan for Laravel, Next.js, React, custom SaaS, AI integration, WordPress, eCommerce and technical SEO projects.',
     sameAs: [
-      'https://linkedin.com/in/mohsin-imran',
-      'https://github.com/mohsinimran',
-      'https://twitter.com/mohsinimran',
+      'https://www.linkedin.com/in/mohsin-imran-5833a9243/',
+      'https://github.com/Mohsin-Imran',
     ],
     contact: {
       '@type': 'ContactPoint',
@@ -145,14 +150,14 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Mohsin Imran',
-    description: 'Full Stack Developer & Web Designer',
+    description: 'Full Stack Web Application Developer, Laravel Developer, Next.js Developer and AI Product Expert in Karachi, Pakistan.',
     url: 'https://mohsinimran.online',
     image: 'https://mohsinimran.online/images/profile.jpeg',
     email: 'mmnemon549@gmail.com',
     priceRange: 'Negotiable',
     serviceArea: {
       '@type': 'Place',
-      name: 'Pakistan',
+      name: 'Karachi, Pakistan',
     },
   }
 }

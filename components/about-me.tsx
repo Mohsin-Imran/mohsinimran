@@ -1,7 +1,7 @@
 "use client"
 
-import { Mail, Phone, MapPin, Globe, User } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 export default function AboutMe() {
   const [isVisible, setIsVisible] = useState(false)
@@ -20,29 +20,6 @@ export default function AboutMe() {
       if (sectionRef.current) observer.unobserve(sectionRef.current)
     }
   }, [])
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "mmnemon549@gmail.com",
-      link: "mailto:mmnemon549@gmail.com",
-    },
-    // {
-    //   icon: Phone,
-    //   label: "Phone",
-    //   value: "+923214475956",
-    //   link: "tel:+923214475956",
-    // },
-    // { icon: Globe, label: "Country", value: "Pakistan" },
-    {
-      icon: Globe,
-      label: "Website",
-      value: "Website",
-      link: "https://mohsinimran.online",
-      isLink: true,
-    },
-  ]
 
   return (
     <section
@@ -68,9 +45,12 @@ export default function AboutMe() {
               }`}
           >
             <div className="relative group">
-              <img
+              <Image
                 src="/images/profile.jpeg"
-                alt="Mohsin Memon"
+                alt="Mohsin Imran - Full Stack Web Application Developer and AI Product Expert"
+                width={448}
+                height={448}
+                sizes="(min-width: 1024px) 40vw, 90vw"
                 className="w-full max-w-md rounded-2xl object-cover  transition-transform duration-500 group-hover:scale-105"
               />
             </div>
@@ -81,15 +61,15 @@ export default function AboutMe() {
               }`}
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white-400">
-              Full Stack Developer & Product Engineer
+              Full Stack Web Application Developer & AI Product Expert
             </h3>
 
             <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              I build scalable web applications and SaaS platforms using Laravel, Next.js, React, and WordPress. My work is focused on fast performance, secure APIs, conversion-driven UX, and search-engine-friendly page structure that helps brands rank higher and grow faster.
+              I am Mohsin Imran, a freelance full stack developer, AI product expert, and product engineer. I build Laravel and Next.js applications for founders, startups, agencies, and service businesses that need reliable backend architecture, polished React interfaces, AI-powered product features, SEO-friendly pages, and long-term scalability.
             </p>
 
             <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              From user research and interface design to backend architecture and deployment, I help founders and teams launch polished digital products that are easy to use, maintain, and optimize for search engines.
+              My work covers custom SaaS development, AI web app development, AI automation, backend API development with RESTful API or GraphQL, database design with MySQL or MongoDB, WordPress and eCommerce websites, WooCommerce or Shopify stores, AI API integration, OpenAI and OpenRouter integration, CRM integration with HubSpot, GoHighLevel or Zoho, cloud hosting on AWS or DigitalOcean, and technical SEO improvements for clients worldwide.
             </p>
 
             {/* Contact Info */}
@@ -115,16 +95,16 @@ export default function AboutMe() {
             <div className="flex flex-wrap gap-3">
 
               {/* View Resume */}
-             <button
-                onClick={() =>
-                  window.open("/resume/mohsinimran_resume.pdf", "_blank")
-                }
+             <a
+                href="/resume/mohsinimran_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-black font-semibold text-sm py-3 px-10 rounded-full
                   transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1
                   cursor-pointer text-center max-[450px]:text-left"
               >
                 View Resume
-              </button>
+              </a>
 
               <a
                 href="https://calendly.com/mohsin-imran/30min"

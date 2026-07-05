@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { ArrowUpRight, ExternalLink } from "lucide-react"
 
 interface Project {
   id: number
@@ -16,17 +18,18 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Vurks",
+    title: "Vurks - Freelance Marketplace Platform",
     description:
       "Vurks is a freelance marketplace platform where professionals and businesses connect seamlessly. Users can send friend requests, chat in real-time, and manage payments using Stripe. The platform ensures secure transactions and instant communication, providing a smooth freelance collaboration experience.",
     image: "/p3.png",
     technologies: ["PHP", "Laravel", "MySQL", "Twilio", "Stripe", "WebSocket"],
     link: "https://vurks.com/",
+    featured: false,
   },
 
   {
     id: 2,
-    title: "Zawaj Dating App",
+    title: "Zawaj Connect - Real-Time Dating App",
     description:
       "A real-time dating app where users can send friend requests and chat instantly. Premium features are available with secure Stripe payment integration.",
     image: "/p1.png",
@@ -35,7 +38,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Marqu Team",
+    title: "Marqu - SEO-Optimized WordPress Website",
     description:
       "Created a responsive, SEO-optimized website for Marqu team with modern design, fast load times, and custom interactive features to showcase their services.",
     image: "/p2.png",
@@ -53,7 +56,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Home Emergency Services",
+    title: "247 Home Rescue - UK Home Services Website",
     description:
       "I designed and developed a fully responsive, SEO-optimized WordPress website for 247 Home Rescue, a UK-based company offering boiler cover, home emergency services, and appliance repair. The website ensures seamless user experience across all devices, with custom service pages, lead forms, intuitive navigation, and fast load times. Built for performance, reliability, and maximum user engagement to support their growth and online presence",
     image: "/p4.png",
@@ -62,7 +65,7 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: "Student LMS",
+    title: "Student LMS Platform",
     description:
       "Student LMS is a platform that simplifies learning management. It provides easy access to courses, assignments, and student progress tracking.",
     image: "/p6.png",
@@ -73,7 +76,6 @@ const projects: Project[] = [
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false)
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -111,7 +113,7 @@ export default function Projects() {
             className={`text-5xl md:text-6xl font-bold text-yellow-400 mb-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
           >
-            Projects
+            Featured Projects / Case Studies
           </h2>
 
           <div
@@ -122,6 +124,7 @@ export default function Projects() {
             className={`text-gray-400 mt-6 max-w-2xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
           >
+            Real Laravel, WordPress, WebSocket, eCommerce and SEO projects for marketplace platforms, UK service businesses, student LMS products and international business websites.
           </p>
         </div>
 
@@ -135,8 +138,6 @@ export default function Projects() {
               style={{
                 transitionDelay: `${index * 100}ms`,
               }}
-              onMouseEnter={() => setHoveredCard(project.id)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Card Container */}
               <div className="relative h-full min-h-[400px] from-gray-900 to-gray-800 border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-yellow-400 group-hover:shadow-2xl group-hover:shadow-yellow-500/20 group-hover:-translate-y-2">
@@ -144,8 +145,9 @@ export default function Projects() {
                 <div className="relative h-40  md:h-48 overflow-hidden rounded-2xl">
                   <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={`Mohsin Imran - Full Stack Laravel and Next.js Developer case study screenshot for ${project.title}`}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover object-top p-2 transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -181,16 +183,36 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {/* View Project Button */}
-                  <button
-                    onClick={() => window.open(project.link, "_blank")}
-                    className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105 active:scale-95 cursor-pointer"
-                  >
-                    View Project
-                    <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </button>
+                  <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <Link
+                      href={`/portfolio/${
+                        project.id === 1
+                          ? "vurks"
+                          : project.id === 2
+                            ? "zawaj-connect"
+                            : project.id === 3
+                              ? "marqu"
+                              : project.id === 4
+                                ? "rice-export-website"
+                                : project.id === 5
+                                  ? "247-home-rescue"
+                                  : "student-lms-platform"
+                      }`}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 px-5 py-3 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/50 active:scale-95"
+                    >
+                      View 
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Link>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-yellow-400/50 bg-white/5 px-5 py-3 font-semibold text-yellow-400 transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black active:scale-95"
+                    >
+                      View Live
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </div>
 
 
                 </div>

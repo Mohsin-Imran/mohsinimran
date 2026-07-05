@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next"
+import { allSeoRoutes } from "@/lib/seo-pages"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://mohsinimran.online"
-  const routes = [""]
+  const routes = ["", ...allSeoRoutes.map((url) => url.replace(`${baseUrl}/`, ""))]
 
   return routes.map((route) => ({
     url: route ? `${baseUrl}/${route}` : baseUrl,

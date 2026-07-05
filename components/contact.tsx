@@ -113,26 +113,26 @@ export default function Contact() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      label: "Address",
-      value: "Karachi, Pakistan",
+      label: "Availability",
+      value: "Remote projects worldwide",
       delay: "delay-300",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0c2.21 0 4 4 4 8s-1.79 8-4 8-4-4-4-8 1.79-8 4-8z"
-          />
-        </svg>
-      ),
-      label: "Website",
-      value: "https://mohsinimran.online",
-      link: "https://mohsinimran.online",
-      delay: "delay-400",
     }
+    // {
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //         strokeWidth={2}
+    //         d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0c2.21 0 4 4 4 8s-1.79 8-4 8-4-4-4-8 1.79-8 4-8z"
+    //       />
+    //     </svg>
+    //   ),
+    //   label: "Website",
+    //   value: "https://mohsinimran.online",
+    //   link: "https://mohsinimran.online",
+    //   delay: "delay-400",
+    // }
 
   ]
 
@@ -151,7 +151,7 @@ export default function Contact() {
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h2 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4">
-            Contact <span className="text-yellow-400">Us</span>
+            Contact / <span className="text-yellow-400">Book a Call</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full" />
         </div>
@@ -162,8 +162,8 @@ export default function Contact() {
             className={`transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
           >
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-yellow-500/20 shadow-2xl">
-              <h3 className="text-3xl font-bold text-white mb-2">Let's Work Together</h3>
-              <p className="text-gray-400 mb-8">Let's collaborate to create impactful solutions together!</p>
+              <h3 className="text-3xl font-bold text-white mb-2">Discuss Your Website, SaaS or SEO Audit</h3>
+              <p className="text-gray-400 mb-8">Share your project goals, or request a free website audit for technical SEO, page speed, mobile-responsive design and conversion improvements.</p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
@@ -243,6 +243,9 @@ export default function Contact() {
                     <option value="UI/UX Design">UI/UX Design</option>
                     <option value="Backend Development">Backend Development</option>
                     <option value="Full Stack Development">Full Stack Development</option>
+                    <option value="Free Website Audit">Free Website Audit</option>
+                    <option value="AI Integration">AI Integration</option>
+                    <option value="Technical SEO">Technical SEO</option>
                     <option value="Consulting">Consulting</option>
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
@@ -318,6 +321,41 @@ export default function Contact() {
           <div
             className={`space-y-6 transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
           >
+            <div className="rounded-2xl border border-yellow-500/20 bg-gradient-to-br from-yellow-500/10 via-slate-900/70 to-slate-950/80 p-6 shadow-2xl shadow-yellow-500/10 transition-all duration-500 hover:border-yellow-400/50">
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-yellow-300">Next Step</p>
+                  <h4 className="mt-2 text-2xl font-bold text-white">Free Project Review</h4>
+                </div>
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-black shadow-lg shadow-yellow-400/30">
+                  <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6M9 9h6m-6 4h4m-7 8h10a2 2 0 002-2V5a2 2 0 00-2-2H8L4 7v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "Website or SaaS audit",
+                  "SEO and speed review",
+                  "Tech stack recommendation",
+                  "Clear estimate and timeline",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-black">
+                      ✓
+                    </span>
+                    <span className="text-sm font-medium text-gray-200">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4">
+                <p className="text-sm leading-relaxed text-gray-300">
+                  Send your project details and I will reply with the best next move for Laravel, Next.js, AI integration, WordPress, eCommerce or technical SEO.
+                </p>
+              </div>
+            </div>
             {contactInfo.map((info, index) => (
               <div
                 key={index}

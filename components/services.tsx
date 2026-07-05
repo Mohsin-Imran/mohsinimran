@@ -1,123 +1,82 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { motion, useInView, AnimatePresence, Variants } from "framer-motion"
+import Link from "next/link"
+import { motion, useInView, AnimatePresence, type Variants } from "framer-motion"
 import {
-  Monitor,
-  ShoppingCart,
-  Server,
-  Search,
-  Users,
-  Globe,
-  Cloud,
-  LifeBuoy,
-  Settings,
   ArrowUpRight,
-  Sparkles,
+  Monitor,
   Palette,
+  Search,
+  ShoppingCart,
+  Sparkles,
+  Users,
 } from "lucide-react"
 
 const SERVICES = [
   {
-    key: "web",
-    title: "Web & Application Development",
+    key: "laravel",
+    slug: "laravel-development-services",
+    title: "Laravel Developer for Hire",
     description:
-      "Custom web applications, SaaS products, and marketing websites built with Laravel, Next.js, React, and WordPress for speed, reliability and conversions.",
+      "Laravel web app development, Laravel API development, Laravel SaaS development, custom backend architecture and Laravel MySQL projects.",
     icon: Monitor,
-    tags: ["Laravel", "Next.js", "React", "WordPress"],
+    tags: ["Laravel", "SaaS", "REST API", "MySQL"],
     color: "#F59E0B",
   },
   {
-    key: "ecom",
-    title: "E‑commerce Stores",
+    key: "nextjs",
+    slug: "nextjs-react-development",
+    title: "Next.js Developer for Hire",
     description:
-      "Conversion-focused e‑commerce on Shopify, WooCommerce or Magento with payment gateway setup and checkout optimisation.",
-    icon: ShoppingCart,
-    tags: ["Shopify", "WooCommerce", "Magento", "Stripe"],
-    color: "#EF4444",
+      "Next.js SaaS development, React frontend development, fast-loading Next.js websites and SEO optimization for modern web apps.",
+    icon: Sparkles,
+    tags: ["Next.js", "React", "Frontend", "SEO"],
+    color: "#3B82F6",
   },
   {
-    key: "crm",
-    title: "CRM & Marketing Automation",
+    key: "ai",
+    slug: "ai-web-app-development",
+    title: "AI Web App Developer",
     description:
-      "GoHighLevel, HubSpot or Zoho integrations, funnel building and email automation so leads never fall through the cracks.",
+      "AI API integration, OpenAI and OpenRouter integrations, AI SaaS development, AI chatbots and AI-powered web applications.",
     icon: Users,
-    tags: ["GoHighLevel", "HubSpot", "Zoho"],
+    tags: ["OpenAI API", "AI", "AI SaaS", "Chatbot"],
     color: "#8B5CF6",
   },
   {
-    key: "seo",
-    title: "Technical SEO & Performance",
+    key: "wordpress",
+    slug: "wordpress-ecommerce-development",
+    title: "WordPress Developer for Hire",
     description:
-      "Site audits, schema, Core Web Vitals improvements and Lighthouse optimisation to help pages rank and convert.",
+      "WooCommerce store development, Shopify websites, WordPress landing page design, eCommerce development and Magento support.",
+    icon: ShoppingCart,
+    tags: ["WordPress", "WooCommerce", "Shopify", "Magento"],
+    color: "#EF4444",
+  },
+  {
+    key: "seo",
+    slug: "technical-seo-services",
+    title: "Technical SEO Expert",
+    description:
+      "Core Web Vitals optimization, website speed optimization, Lighthouse performance audits, schema markup and technical SEO audits.",
     icon: Search,
     tags: ["Schema", "Lighthouse", "Core Web Vitals"],
     color: "#10B981",
   },
   {
-    key: "backend",
-    title: "Backend & API Integration",
+    key: "design",
+    slug: "ui-ux-design-services",
+    title: "UI/UX Designer for Web Apps",
     description:
-      "REST/GraphQL APIs, ERP/CRM integrations and backend logic for secure, scalable systems.",
-    icon: Server,
-    tags: ["Laravel", "Node.js", "PHP", "MySQL"],
-    color: "#3B82F6",
-  },
-  {
-    key: "migration",
-    title: "Migration & Hosting",
-    description:
-      "Platform migrations, zero-downtime deploys, DNS/SSL, and hosting on AWS, DigitalOcean or managed providers.",
-    icon: Globe,
-    tags: ["AWS", "DigitalOcean", "cPanel"],
-    color: "#06B6D4",
-  },
-  {
-    key: "domain",
-    title: "Domain & Hosting",
-    description:
-      "Domain registration, DNS configuration and managed hosting plans tailored to traffic and availability needs.",
-    icon: Cloud,
-    tags: ["Domain", "DNS", "SSL"],
-    color: "#EC4899",
-  },
-  {
-    key: "maintenance",
-    title: "Maintenance & Support",
-    description:
-      "Ongoing security updates, backups, priority support and monitoring so your site stays healthy.",
-    icon: LifeBuoy,
-    tags: ["Backups", "Security", "Monitoring"],
-    color: "#F97316",
-  },
-  {
-    key: "uiux",
-    title: "UI / UX & Figma Design",
-    description:
-      "Custom UI/UX and Figma design systems for polished interfaces, user journeys, and conversion-focused screens.",
+      "Figma design services, conversion-focused UI design, SaaS UI design, landing page design and website redesign for web apps.",
     icon: Palette,
-    tags: ["UI/UX", "Figma", "Prototyping"],
+    tags: ["UI/UX", "Figma", "SaaS UI", "Landing Page"],
     color: "#6366F1",
   },
-  {
-    key: "graphic",
-    title: "Graphic Design",
-    description:
-      "Brand assets, icons, marketing visuals and polished graphics that give your digital product a professional visual identity.",
-    icon: Sparkles,
-    tags: ["Branding", "Visuals", "Illustration"],
-    color: "#EC4899",
-  },
-  {
-    key: "consult",
-    title: "Consulting & Strategy",
-    description:
-      "Technical strategy, architecture reviews and fixed-scope proposals to reduce risk and accelerate delivery.",
-    icon: Settings,
-    tags: ["Architecture", "Strategy", "Roadmap"],
-    color: "#14B8A6",
-  },
 ]
+
+const MotionLink = motion(Link)
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -125,18 +84,21 @@ export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [activeFilter, setActiveFilter] = useState<string>("all")
 
-  const filteredServices = activeFilter === "all" 
-    ? SERVICES 
-    : SERVICES.filter(s => s.tags.some(t => t.toLowerCase().includes(activeFilter.toLowerCase())))
+  const filteredServices =
+    activeFilter === "all"
+      ? SERVICES
+      : SERVICES.filter((service) =>
+          service.tags.some((tag) => tag.toLowerCase().includes(activeFilter.toLowerCase())),
+        )
 
-  const allTags = Array.from(new Set(SERVICES.flatMap(s => s.tags)))
+  const allTags = Array.from(new Set(SERVICES.flatMap((service) => service.tags)))
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-    }
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
   }
 
   const itemVariants: Variants = {
@@ -145,55 +107,51 @@ export default function Services() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   }
 
   return (
-    <section 
-      id="services" 
-      ref={sectionRef} 
-      className="relative bg-[#050505] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    <section
+      id="services"
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#050505] px-4 py-24 sm:px-6 lg:px-8"
     >
-      {/* Animated Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/[0.03] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-yellow-500/[0.02] rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-yellow-500/[0.03] blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-yellow-500/[0.02] blur-3xl" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section Header */}
+      <div className="relative z-10 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            My <span className="text-yellow-400">Services</span>
+          <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+            Full Stack <span className="text-yellow-400">Development Services</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Every web development and growth service your business needs — handed over clean and built to drive results.
+          <p className="mx-auto max-w-2xl text-lg text-gray-400">
+            Dedicated Laravel, Next.js, AI web app, WordPress, eCommerce, technical SEO and UI/UX service pages built for stronger keyword targeting, speed and business growth.
           </p>
         </motion.div>
 
-        {/* Filter Tags */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-2 mb-12"
+          className="mb-12 flex flex-wrap justify-center gap-2"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveFilter("all")}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
               activeFilter === "all"
                 ? "bg-yellow-400 text-black"
-                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                : "border border-white/10 bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
             }`}
           >
             All Services
@@ -204,10 +162,10 @@ export default function Services() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter(tag)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 activeFilter === tag
                   ? "bg-yellow-400 text-black"
-                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                  : "border border-white/10 bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
               }`}
             >
               {tag}
@@ -215,12 +173,11 @@ export default function Services() {
           ))}
         </motion.div>
 
-        {/* Services Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {filteredServices.map((service, idx) => {
@@ -228,35 +185,34 @@ export default function Services() {
               const isHovered = hoveredIndex === idx
 
               return (
-                <motion.div
+                <MotionLink
                   key={service.key}
+                  href={`/services/${service.slug}`}
                   variants={itemVariants}
                   layout
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   whileHover={{ y: -8, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.3 }}
-                  className="group relative"
+                  className="group relative block focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+                  aria-label={`Open ${service.title} service page`}
                 >
-                  {/* Card */}
-                  <div className="relative h-full bg-gradient-to-b from-white/[0.08] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-6 overflow-hidden transition-all duration-500 hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/5">
-                    
-                    {/* Hover Glow */}
+                  <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 backdrop-blur-sm transition-all duration-500 hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/5">
                     <motion.div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       style={{
-                        background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${service.color}10, transparent 40%)`
+                        background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${service.color}10, transparent 40%)`,
                       }}
                     />
 
-                    {/* Icon */}
                     <motion.div
                       whileHover={{ rotate: 5, scale: 1.1 }}
-                      className="relative w-14 h-14 rounded-xl flex items-center justify-center mb-5"
+                      className="relative mb-5 flex h-14 w-14 items-center justify-center rounded-xl"
                       style={{ backgroundColor: `${service.color}15` }}
                     >
-                      <Icon 
-                        className="w-7 h-7 transition-colors duration-300" 
+                      <Icon
+                        className="h-7 w-7 transition-colors duration-300"
                         style={{ color: service.color }}
                       />
                       <motion.div
@@ -267,46 +223,41 @@ export default function Services() {
                       />
                     </motion.div>
 
-                    {/* Content */}
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                    <motion.div
+                      aria-hidden="true"
+                      className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white opacity-0 transition-colors duration-300 group-hover:border-yellow-400/40 group-hover:text-yellow-400"
+                      animate={isHovered ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 8, y: -8 }}
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                    </motion.div>
+
+                    <h3 className="mb-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-yellow-400">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                      {service.description}
-                    </p>
+                    <p className="mb-5 text-sm leading-relaxed text-gray-400">{service.description}</p>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-5">
+                    <div className="mb-5 flex flex-wrap gap-2">
                       {service.tags.map((tag) => (
-                        <span 
-                          key={tag} 
-                          className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10 hover:bg-yellow-400/10 hover:text-yellow-400 hover:border-yellow-400/20 transition-all duration-300"
+                        <span
+                          key={tag}
+                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-400 transition-all duration-300 hover:border-yellow-400/20 hover:bg-yellow-400/10 hover:text-yellow-400"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    {/* Learn More Link */}
                     <motion.div
                       initial={{ opacity: 0, x: -10 }}
                       animate={isHovered ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                       className="flex items-center gap-2 text-sm font-medium"
                       style={{ color: service.color }}
                     >
-                      <span>Learn more</span>
-                      <ArrowUpRight className="w-4 h-4" />
+                      <span>Open service page</span>
+                      <ArrowUpRight className="h-4 w-4" />
                     </motion.div>
-
-                    {/* Corner Decoration */}
-                    <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div 
-                        className="absolute top-4 right-4 w-2 h-2 rounded-full"
-                        style={{ backgroundColor: service.color }}
-                      />
-                    </div>
                   </div>
-                </motion.div>
+                </MotionLink>
               )
             })}
           </AnimatePresence>
@@ -315,4 +266,3 @@ export default function Services() {
     </section>
   )
 }
-

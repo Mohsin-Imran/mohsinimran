@@ -1,0 +1,48 @@
+ ⨯ [Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- E:\mohsinimran\.next\server\webpack-runtime.js
+- E:\mohsinimran\.next\server\pages\_document.js
+- E:\mohsinimran\node_modules\next\dist\server\require.js
+- E:\mohsinimran\node_modules\next\dist\server\next-server.js
+- E:\mohsinimran\node_modules\next\dist\server\next.js
+- E:\mohsinimran\node_modules\next\dist\server\lib\start-server.js
+- E:\mohsinimran\node_modules\next\dist\cli\next-start.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: Cannot find module './611.js'
+Require stack:
+- E:\mohsinimran\.next\server\webpack-runtime.js
+- E:\mohsinimran\.next\server\pages\_document.js
+- E:\mohsinimran\node_modules\next\dist\server\require.js
+- E:\mohsinimran\node_modules\next\dist\server\next-server.js
+- E:\mohsinimran\node_modules\next\dist\server\next.js
+- E:\mohsinimran\node_modules\next\dist\server\lib\start-server.js
+- E:\mohsinimran\node_modules\next\dist\cli\next-start.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- E:\mohsinimran\.next\server\webpack-runtime.js
+- E:\mohsinimran\.next\server\pages\_document.js
+- E:\mohsinimran\node_modules\next\dist\server\require.js
+- E:\mohsinimran\node_modules\next\dist\server\next-server.js
+- E:\mohsinimran\node_modules\next\dist\server\next.js
+- E:\mohsinimran\node_modules\next\dist\server\lib\start-server.js
+- E:\mohsinimran\node_modules\next\dist\cli\next-start.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ [Error: Cannot find module './611.js'
+Require stack:
+- E:\mohsinimran\.next\server\webpack-runtime.js
+- E:\mohsinimran\.next\server\pages\_document.js
+- E:\mohsinimran\node_modules\next\dist\server\require.js
+- E:\mohsinimran\node_modules\next\dist\server\next-server.js
+- E:\mohsinimran\node_modules\next\dist\server\next.js
+- E:\mohsinimran\node_modules\next\dist\server\lib\start-server.js
+- E:\mohsinimran\node_modules\next\dist\cli\next-start.js] {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}

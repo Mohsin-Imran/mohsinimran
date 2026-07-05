@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 export default function Header() {
@@ -13,7 +15,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navItems = ["Home", "About", "Services", "Skills", "Experience", "Projects", "Contact"]
+  const navItems = ["Home", "About", "Services", "Skills", "Experience", "Projects", "FAQ", "Blog", "Contact"]
+  const getNavHref = (item: string) => {
+    if (item === "Home") return "/"
+    if (item === "Services") return "/services"
+    if (item === "Blog") return "/blog"
+    return `/#${item.toLowerCase()}`
+  }
 
   return (
     <header
@@ -25,28 +33,45 @@ export default function Header() {
       <nav className="container mx-auto flex items-center justify-between px-6 py-4 lg:px-12">
 
         {/* Profile Logo + Name */}
-        <a href="#home" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-110 transition-transform duration-300">
-            M
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative h-12 w-12 overflow-hidden rounded-full border border-yellow-400/40 shadow-md shadow-yellow-400/15 transition-transform duration-300 group-hover:scale-110">
+            <Image
+              src="/logo.png"
+              alt="Mohsin Stack logo"
+              fill
+              sizes="48px"
+              className="object-cover"
+              // removed priority to avoid blocking LCP for small logo
+            />
           </div>
 
 
           <span className="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors duration-300">
             Mohsin M Imran
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item}>
-              <a
-                href={`#${item.toLowerCase()}`}
+              {item === "Services" || item === "Blog" || item === "Home" ? (
+                <Link
+                  href={getNavHref(item)}
+                  className="group relative text-sm font-medium transition-colors hover:text-yellow-400 lg:text-base"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
+                </Link>
+              ) : (
+                <a
+                href={getNavHref(item)}
                 className="group relative text-sm font-medium transition-colors hover:text-yellow-400 lg:text-base"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
               </a>
+              )}
             </li>
           ))}
         </ul>
@@ -67,13 +92,23 @@ export default function Header() {
           <ul className="container mx-auto flex flex-col px-6 py-4">
             {navItems.map((item) => (
               <li key={item}>
-                <a
-                  href={`#${item.toLowerCase()}`}
+                {item === "Services" || item === "Blog" || item === "Home" ? (
+                  <Link
+                    href={getNavHref(item)}
+                    className="block py-3 text-base font-medium transition-colors hover:text-yellow-400 border-b border-border/50 last:border-0"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                ) : (
+                  <a
+                  href={getNavHref(item)}
                   className="block py-3 text-base font-medium transition-colors hover:text-yellow-400 border-b border-border/50 last:border-0"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item}
                 </a>
+                )}
               </li>
             ))}
           </ul>
