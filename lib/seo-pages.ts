@@ -104,14 +104,23 @@ export const projectPages = [
       "Built a marketplace foundation with real-time communication, secure payment flows and scalable backend architecture.",
   },
   {
-    slug: "zawaj-connect",
-    title: "Zawaj Connect - Real-Time Dating App",
+    slug: "MANN3PL",
+    title: "MANN3PL – Third-Party Logistics & Warehousing Website",
     description:
-      "Case study for Zawaj Connect, a real-time dating app with Laravel, MySQL, WebSocket messaging and secure Stripe payment integration.",
-    stack: ["Laravel", "PHP", "MySQL", "Stripe", "WebSocket"],
+      "Case study for MANN3PL, a modern logistics and warehousing company website built to showcase third-party logistics (3PL), distribution, inventory management and transportation services with a fast, responsive and user-friendly experience.",
+    stack: ["PHP", "HTML", "CSS", "JavaScript",],
     result:
       "Delivered friend requests, premium features, real-time chat and a mobile-responsive user experience.",
   },
+  // {
+  //   slug: "zawaj-connect",
+  //   title: "Zawaj Connect - Real-Time Dating App",
+  //   description:
+  //     "Case study for Zawaj Connect, a real-time dating app with Laravel, MySQL, WebSocket messaging and secure Stripe payment integration.",
+  //   stack: ["Laravel", "PHP", "MySQL", "Stripe", "WebSocket"],
+  //   result:
+  //     "Delivered friend requests, premium features, real-time chat and a mobile-responsive user experience.",
+  // },
   {
     slug: "marqu",
     title: "Marqu - SEO-Optimized WordPress Website",
