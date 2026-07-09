@@ -27,15 +27,25 @@ const projects: Project[] = [
     featured: false,
   },
 
-  {
+   {
     id: 2,
-    title: "Zawaj Connect - Real-Time Dating App",
+    title: "MANN3PL – Third-Party Logistics & Warehousing Website",
     description:
-      "A real-time dating app where users can send friend requests and chat instantly. Premium features are available with secure Stripe payment integration.",
+      "A modern logistics and warehousing company website built to showcase third-party logistics (3PL), distribution, inventory management and transportation services with a fast, responsive and user-friendly experience.",
     image: "/p1.png",
-    technologies: ["PHP", "Laravel", "MySQL", "Tailwind", "Stripe", "WebSocket"],
-    link: "https://zawajconnect.com/",
+    technologies: ["PHP", "HTML", "CSS", "JavaScript"],
+    link: "https://mann3pl.com",
   },
+
+  // {
+  //   id: 2,
+  //   title: "Zawaj Connect - Real-Time Dating App",
+  //   description:
+  //     "A real-time dating app where users can send friend requests and chat instantly. Premium features are available with secure Stripe payment integration.",
+  //   image: "/p1.png",
+  //   technologies: ["PHP", "Laravel", "MySQL", "Tailwind", "Stripe", "WebSocket"],
+  //   link: "https://zawajconnect.com/",
+  // },
   {
     id: 3,
     title: "Marqu - SEO-Optimized WordPress Website",
