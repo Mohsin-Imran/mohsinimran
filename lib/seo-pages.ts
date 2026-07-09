@@ -104,7 +104,7 @@ export const projectPages = [
       "Built a marketplace foundation with real-time communication, secure payment flows and scalable backend architecture.",
   },
   {
-    slug: "MANN3PL",
+    slug: "mann-3pl",
     title: "MANN3PL Third-Party Logistics & Warehousing Website",
     description:
       "Case study for MANN3PL, a modern logistics and warehousing company website built to showcase third-party logistics (3PL), distribution, inventory management and transportation services with a fast, responsive and user-friendly experience.",
