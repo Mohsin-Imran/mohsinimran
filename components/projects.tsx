@@ -29,7 +29,7 @@ const projects: Project[] = [
 
    {
     id: 2,
-    title: "MANN3PL – Third-Party Logistics & Warehousing Website",
+    title: "MANN3PL Third-Party Logistics & Warehousing Website",
     description:
       "A modern logistics and warehousing company website built to showcase third-party logistics (3PL), distribution, inventory management and transportation services with a fast, responsive and user-friendly experience.",
     image: "/p1.png",
@@ -199,7 +199,7 @@ export default function Projects() {
                         project.id === 1
                           ? "vurks"
                           : project.id === 2
-                            ? "zawaj-connect"
+                            ? "mann-3pl"
                             : project.id === 3
                               ? "marqu"
                               : project.id === 4

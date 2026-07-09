@@ -105,7 +105,7 @@ export const projectPages = [
   },
   {
     slug: "MANN3PL",
-    title: "MANN3PL – Third-Party Logistics & Warehousing Website",
+    title: "MANN3PL Third-Party Logistics & Warehousing Website",
     description:
       "Case study for MANN3PL, a modern logistics and warehousing company website built to showcase third-party logistics (3PL), distribution, inventory management and transportation services with a fast, responsive and user-friendly experience.",
     stack: ["PHP", "HTML", "CSS", "JavaScript",],
