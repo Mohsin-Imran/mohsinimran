@@ -10,7 +10,7 @@ export function generatePersonSchema() {
     jobTitle: ['Full Stack Web Application Developer', 'AI Product Expert', 'Freelance Full Stack Developer', 'Laravel Developer', 'Next.js Developer', 'AI Developer'],
     email: 'mmnemon549@gmail.com',
     sameAs: [
-      'https://www.linkedin.com/in/mohsin-imran-5833a9243/',
+      'https://www.linkedin.com/in/mohsinimran-fullstack/',
       'https://github.com/Mohsin-Imran',
     ],
     knowsAbout: [
@@ -51,7 +51,7 @@ export function generateWebsiteSchema() {
     description:
       'Full Stack Web Application Developer and AI Product Expert portfolio for Laravel, Next.js, React, custom SaaS development, AI integrations, WordPress, eCommerce and SEO-optimized web development.',
     sameAs: [
-      'https://www.linkedin.com/in/mohsin-imran-5833a9243/',
+      'https://www.linkedin.com/in/mohsinimran-fullstack/',
       'https://github.com/Mohsin-Imran',
     ],
   }
@@ -134,7 +134,7 @@ export function generateOrganizationSchema() {
     logo: 'https://mohsinimran.online/images/profile.jpeg',
     description: 'Full Stack Web Application Developer and AI Product Expert in Pakistan for Laravel, Next.js, React, custom SaaS, AI integration, WordPress, eCommerce and technical SEO projects.',
     sameAs: [
-      'https://www.linkedin.com/in/mohsin-imran-5833a9243/',
+      'https://www.linkedin.com/in/mohsinimran-fullstack/',
       'https://github.com/Mohsin-Imran',
     ],
     contact: {
