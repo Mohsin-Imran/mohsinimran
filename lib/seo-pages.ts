@@ -112,15 +112,24 @@ export const projectPages = [
     result:
       "Delivered friend requests, premium features, real-time chat and a mobile-responsive user experience.",
   },
-  // {
-  //   slug: "zawaj-connect",
-  //   title: "Zawaj Connect - Real-Time Dating App",
-  //   description:
-  //     "Case study for Zawaj Connect, a real-time dating app with Laravel, MySQL, WebSocket messaging and secure Stripe payment integration.",
-  //   stack: ["Laravel", "PHP", "MySQL", "Stripe", "WebSocket"],
-  //   result:
-  //     "Delivered friend requests, premium features, real-time chat and a mobile-responsive user experience.",
-  // },
+  {
+    slug: "zawaj-connect",
+    title: "Zawaj Connect - Real-Time Dating App",
+    description:
+      "Case study for Zawaj Connect, a real-time dating app with Laravel, MySQL, WebSocket messaging and secure Stripe payment integration.",
+    stack: ["Laravel", "PHP", "MySQL", "Stripe", "WebSocket"],
+    result:
+      "Delivered friend requests, premium features, real-time chat and a mobile-responsive user experience.",
+  },
+  {
+    slug: "bare-and-balanced-spa",
+    title: "Bare and Balanced Spa - GoHighLevel Website",
+    description:
+      "Case study for Bare and Balanced Spa, a complete spa and wellness website built in GoHighLevel with responsive service pages, lead capture forms, CRM integration, appointment-focused calls to action and SEO-friendly service presentation.",
+    stack: ["GoHighLevel", "Website", "CRM", "Lead Forms", "SEO"],
+    result:
+      "Created a polished spa website with clear service discovery, mobile-responsive pages and a stronger lead capture flow for booking inquiries.",
+  },
   {
     slug: "marqu",
     title: "Marqu - SEO-Optimized WordPress Website",
@@ -156,6 +165,15 @@ export const projectPages = [
     stack: ["Laravel", "PHP", "MySQL", "Stripe", "Real-Time Features"],
     result:
       "Created a learning platform foundation for courses, assignments, payments and student progress tracking.",
+  },
+  {
+    slug: "kaizer-leather",
+    title: "Premium Handcrafted Leather Goods",
+    description:
+      "Case study for Kaizer Leather, a luxury e-commerce store featuring premium handcrafted full-grain leather bags, wallets and accessories handstitched in Dubai with bespoke patina personalization services.",
+    stack: ["WordPress", "WooCommerce", "E-commerce", "Product Management", "SEO Optimization"],
+    result:
+      "Built a sophisticated e-commerce platform with multiple product collections, corporate gifting features, and seamless customer experience for premium leather goods.",
   },
 ]
 

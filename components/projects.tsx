@@ -7,9 +7,10 @@ import { ArrowUpRight, ExternalLink } from "lucide-react"
 
 interface Project {
   id: number
+  slug: string
   title: string
   description: string
-  image: string
+  image?: string
   technologies: string[]
   link: string
   featured?: boolean
@@ -18,6 +19,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    slug: "vurks",
     title: "Vurks - Freelance Marketplace Platform",
     description:
       "Vurks is a freelance marketplace platform where professionals and businesses connect seamlessly. Users can send friend requests, chat in real-time, and manage payments using Stripe. The platform ensures secure transactions and instant communication, providing a smooth freelance collaboration experience.",
@@ -29,6 +31,7 @@ const projects: Project[] = [
 
    {
     id: 2,
+    slug: "mann-3pl",
     title: "MANN3PL Third-Party Logistics & Warehousing Website",
     description:
       "A modern logistics and warehousing company website built to showcase third-party logistics (3PL), distribution, inventory management and transportation services with a fast, responsive and user-friendly experience.",
@@ -36,18 +39,40 @@ const projects: Project[] = [
     technologies: ["PHP", "HTML", "CSS", "JavaScript"],
     link: "https://mann3pl.com",
   },
+  {
+    id: 8,
+    slug: "kaizer-leather",
+    title: "Premium Handcrafted Leather Goods",
+    description:
+      "Kaizer Leather is a luxury e-commerce store featuring premium handcrafted full-grain leather bags, wallets, and accessories handstitched in Dubai. The platform showcases signature collections for men and women, corporate gifting services, and a unique bespoke patina personalization service. Built with modern e-commerce capabilities, responsive design, and seamless product discovery across multiple collections.",
+    image: "/p11.png",
+    technologies: ["WordPress", "WooCommerce", "E-commerce", "Product Management", "SEO Optimization"],
+    link: "https://www.kaizerleather.com/",
+  },
+  {
+    id: 9,
+    slug: "bare-and-balanced-spa",
+    title: "Bare and Balanced Spa - GoHighLevel Website",
+    description:
+      "A complete spa and wellness website built in GoHighLevel for Bare and Balanced Spa with clean service pages, responsive design, lead capture forms, CRM integration and a conversion-focused appointment booking flow.",
+    image: "/p12.png",
+    technologies: ["GoHighLevel", "Website", "CRM", "Lead Forms", "SEO"],
+    link: "https://bareandbalancedspa.com/",
+  },
 
-  // {
-  //   id: 2,
-  //   title: "Zawaj Connect - Real-Time Dating App",
-  //   description:
-  //     "A real-time dating app where users can send friend requests and chat instantly. Premium features are available with secure Stripe payment integration.",
-  //   image: "/p1.png",
-  //   technologies: ["PHP", "Laravel", "MySQL", "Tailwind", "Stripe", "WebSocket"],
-  //   link: "https://zawajconnect.com/",
-  // },
+  {
+    id: 7,
+    slug: "zawaj-connect",
+    title: "Zawaj Connect - Real-Time Dating App",
+    description:
+      "A real-time dating app where users can send friend requests and chat instantly. Premium features are available with secure Stripe payment integration.",
+    image: "/p10.png",
+    technologies: ["PHP", "Laravel", "MySQL", "Tailwind", "Stripe", "WebSocket"],
+    link: "https://zawajconnect.com/",
+  },
   {
     id: 3,
+    slug: "marqu",
     title: "Marqu - SEO-Optimized WordPress Website",
     description:
       "Created a responsive, SEO-optimized website for Marqu team with modern design, fast load times, and custom interactive features to showcase their services.",
@@ -57,6 +82,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
+    slug: "rice-export-website",
     title: "Rice Export Website",
     description:
       "Designed and developed a modern, fully responsive WordPress website for an agricultural export company specializing in premium rice and sesame seeds. The site features dedicated product pages, event listings, certifications, ESG highlights, contact forms, and newsletter integration. With a clean UI, SEO-ready structure, and mobile optimization, the website delivers a professional and engaging experience for global users",
@@ -66,6 +92,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
+    slug: "247-home-rescue",
     title: "247 Home Rescue - UK Home Services Website",
     description:
       "I designed and developed a fully responsive, SEO-optimized WordPress website for 247 Home Rescue, a UK-based company offering boiler cover, home emergency services, and appliance repair. The website ensures seamless user experience across all devices, with custom service pages, lead forms, intuitive navigation, and fast load times. Built for performance, reliability, and maximum user engagement to support their growth and online presence",
@@ -75,6 +102,7 @@ const projects: Project[] = [
   },
   {
     id: 6,
+    slug: "student-lms-platform",
     title: "Student LMS Platform",
     description:
       "Student LMS is a platform that simplifies learning management. It provides easy access to courses, assignments, and student progress tracking.",
@@ -139,27 +167,40 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid - Bento Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`group relative overflow-hidden rounded-2xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+              className={`group relative flex h-full overflow-hidden rounded-2xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
                 } ${project.featured ? "md:col-span-2 md:row-span-2" : ""}`}
               style={{
                 transitionDelay: `${index * 100}ms`,
               }}
             >
               {/* Card Container */}
-              <div className="relative h-full min-h-[400px] from-gray-900 to-gray-800 border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-yellow-400 group-hover:shadow-2xl group-hover:shadow-yellow-500/20 group-hover:-translate-y-2">
+              <div className="relative flex h-[560px] w-full flex-col from-gray-900 to-gray-800 border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-yellow-400 group-hover:shadow-2xl group-hover:shadow-yellow-500/20 group-hover:-translate-y-2">
                 {/* Image Container */}
                 <div className="relative h-40  md:h-48 overflow-hidden rounded-2xl">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={`Mohsin Imran - Full Stack Laravel and Next.js Developer case study screenshot for ${project.title}`}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover object-top p-2 transition-transform duration-700 group-hover:scale-105"
-                  />
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`Mohsin Imran - Full Stack Laravel and Next.js Developer case study screenshot for ${project.title}`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover object-top p-2 transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-gradient-to-br from-zinc-950 via-zinc-900 to-yellow-950/50 p-6">
+                      <div className="text-center">
+                        <span className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow-400">
+                          GoHighLevel
+                        </span>
+                        <p className="mt-3 text-2xl font-bold leading-tight text-white">
+                          Bare and Balanced Spa
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
@@ -172,8 +213,8 @@ export default function Projects() {
 
 
                 {/* Content */}
-                <div className="p-6 relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                <div className="p-6 relative z-10 flex flex-1 flex-col">
+                  <h3 className="min-h-[64px] text-2xl font-bold text-white mb-3 line-clamp-2 group-hover:text-yellow-400 transition-colors duration-300">
                     {project.title}
                   </h3>
 
@@ -182,7 +223,7 @@ export default function Projects() {
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="mb-4 flex max-h-[72px] flex-wrap gap-2 overflow-hidden">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -193,21 +234,9 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="mt-auto grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <Link
-                      href={`/portfolio/${
-                        project.id === 1
-                          ? "vurks"
-                          : project.id === 2
-                            ? "mann-3pl"
-                            : project.id === 3
-                              ? "marqu"
-                              : project.id === 4
-                                ? "rice-export-website"
-                                : project.id === 5
-                                  ? "247-home-rescue"
-                                  : "student-lms-platform"
-                      }`}
+                      href={`/portfolio/${project.slug}`}
                       className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 px-5 py-3 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/50 active:scale-95"
                     >
                       View 
