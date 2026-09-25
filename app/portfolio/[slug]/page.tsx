@@ -68,21 +68,21 @@ export default async function PortfolioPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#071018] px-4 pb-20 pt-28 text-[#f4f1ea] sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-[var(--site-bg)] px-4 pb-20 pt-28 text-[var(--site-ink)] sm:px-6 lg:px-8">
         <article className="mx-auto max-w-6xl">
-          <Link href="/#projects" className="inline-flex items-center gap-2 text-sm font-semibold text-[#7CFFB2] transition hover:text-[#b6ffd4]">
+          <Link href="/#projects" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--site-label)] transition hover:text-[var(--site-label-hover)]">
             <ArrowLeft className="h-4 w-4" />
             Back to projects
           </Link>
 
           <div className="mt-8 grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Case study</p>
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--site-label)]">Case study</p>
               <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">{page.title}</h1>
-              <p className="mt-5 text-base leading-relaxed text-[#b7c3cf] sm:text-lg">{page.description}</p>
+              <p className="mt-5 text-base leading-relaxed text-[var(--site-muted)] sm:text-lg">{page.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {page.stack.map((item) => (
-                  <span key={item} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-[#d5ddd4]">
+                  <span key={item} className="rounded-full border border-[var(--site-line)] bg-[var(--site-well)] px-3 py-1 text-sm text-[var(--site-chip)]">
                     {item}
                   </span>
                 ))}
@@ -93,7 +93,7 @@ export default async function PortfolioPage({ params }: PageProps) {
                     href={media.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover-press inline-flex items-center justify-center gap-2 rounded-full bg-[#7CFFB2] px-6 py-3 text-sm font-semibold text-[#071018] hover:bg-[#b6ffd4]"
+                    className="hover-press inline-flex items-center justify-center gap-2 rounded-full bg-[#7CFFB2] px-6 py-3 text-sm font-semibold text-[var(--site-on-mint)] hover:bg-[#b6ffd4]"
                   >
                     Open live site
                     <ArrowUpRight className="h-4 w-4" />
@@ -103,7 +103,7 @@ export default async function PortfolioPage({ params }: PageProps) {
                   href="https://calendly.com/mohsin-imran/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold transition hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--site-line-strong)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
                 >
                   Book a product call
                 </a>
@@ -111,12 +111,12 @@ export default async function PortfolioPage({ params }: PageProps) {
             </div>
 
             {media && (
-              <div className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0c1826] shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-                <div className="flex items-center gap-2 border-b border-white/10 bg-[#101c2c] px-4 py-3">
+              <div className="overflow-hidden rounded-[1.6rem] border border-[var(--site-line)] bg-[var(--site-card)] shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+                <div className="flex items-center gap-2 border-b border-[var(--site-line)] bg-[var(--site-chrome)] px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-                  <span className="ml-3 truncate text-xs text-[#8ea0b3]">{media.link.replace(/^https?:\/\//, "")}</span>
+                  <span className="ml-3 truncate text-xs text-[var(--site-soft)]">{media.link.replace(/^https?:\/\//, "")}</span>
                 </div>
                 <Image
                   src={media.image}
@@ -133,9 +133,9 @@ export default async function PortfolioPage({ params }: PageProps) {
 
           <div className="mt-14 grid gap-4 lg:grid-cols-3">
             {sections.map((section) => (
-              <section key={section.label} className="rounded-[1.4rem] border border-white/10 bg-[#0c1826] p-6">
-                <h2 className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">{section.label}</h2>
-                <p className="mt-4 text-sm leading-relaxed text-[#b7c3cf] sm:text-base">{section.body}</p>
+              <section key={section.label} className="rounded-[1.4rem] border border-[var(--site-line)] bg-[var(--site-card)] p-6">
+                <h2 className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--site-label)]">{section.label}</h2>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--site-muted)] sm:text-base">{section.body}</p>
               </section>
             ))}
           </div>

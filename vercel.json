@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.mohsinimran.online" }],
+      "destination": "https://mohsinimran.online/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "www.mohsinimran.online" }],
+      "destination": "https://mohsinimran.online/:path+",
+      "statusCode": 301
+    }
+  ]
+}

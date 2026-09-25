@@ -227,20 +227,20 @@ export default function Skills() {
   }
 
   return (
-    <section id="skills" className="scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24">
+    <section id="skills" className="scroll-mt-24 border-t border-[var(--site-line)] bg-[var(--site-bg)] px-4 py-20 text-[var(--site-ink)] sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Capabilities</p>
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--site-label)]">Capabilities</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Skills & Tech Stack</h2>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed text-[#8ea0b3]">
+          <p className="max-w-xs text-sm leading-relaxed text-[var(--site-muted)]">
             Pick a group, then a tool. The detail on the right is the one I use most in that area.
           </p>
         </div>
 
-        <div className="grid overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0c1826] lg:grid-cols-[280px_1fr]">
-          <div className="border-b border-white/10 lg:border-b-0 lg:border-r">
+        <div className="grid overflow-hidden rounded-[1.75rem] border border-[var(--site-line)] bg-[var(--site-card)] lg:grid-cols-[280px_1fr]">
+          <div className="border-b border-[var(--site-line)] lg:border-b-0 lg:border-r">
             {groups.map((item, index) => {
               const active = index === groupIndex
               return (
@@ -249,15 +249,15 @@ export default function Skills() {
                   type="button"
                   onClick={() => selectGroup(index)}
                   className={`flex w-full items-start gap-4 px-6 py-5 text-left transition ${
-                    active ? "bg-[#7CFFB2] text-[#071018]" : "text-[#d5ddd4] hover:bg-white/[0.03]"
+                    active ? "bg-[#7CFFB2] text-[var(--site-on-mint)]" : "text-[var(--site-nav)] hover:bg-[var(--site-well)]"
                   }`}
                 >
-                  <span className={`mt-1 text-xs font-medium tracking-[0.16em] ${active ? "text-[#071018]/70" : "text-[#7CFFB2]"}`}>
+                  <span className={`mt-1 text-xs font-medium tracking-[0.16em] ${active ? "text-[#071018]/70" : "text-[var(--site-label)]"}`}>
                     {item.index}
                   </span>
                   <span>
                     <span className="block text-lg font-semibold tracking-tight">{item.title}</span>
-                    <span className={`mt-1 block text-sm ${active ? "text-[#071018]/75" : "text-[#8ea0b3]"}`}>{item.note}</span>
+                    <span className={`mt-1 block text-sm ${active ? "text-[#071018]/75" : "text-[var(--site-soft)]"}`}>{item.note}</span>
                   </span>
                 </button>
               )
@@ -273,20 +273,20 @@ export default function Skills() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.28, ease: "easeOut" }}
               >
-                <p className="text-xs uppercase tracking-[0.2em] text-[#7CFFB2]">{group.title}</p>
-                <h3 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">{skill.name}</h3>
-                <p className="mt-4 max-w-xl text-base leading-relaxed text-[#b7c3cf]">{skill.description}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-[var(--site-label)]">{group.title}</p>
+                <p className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">{skill.name}</p>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-[var(--site-muted)]">{skill.description}</p>
                 <ul className="mt-6 grid gap-2 sm:grid-cols-3">
                   {skill.points.map((point) => (
-                    <li key={point} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-relaxed text-[#d5ddd4]">
+                    <li key={point} className="rounded-2xl border border-[var(--site-line)] bg-[var(--site-bg)] px-4 py-3 text-sm leading-relaxed text-[var(--site-nav)]">
                       {point}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-5 flex flex-wrap items-center gap-2">
-                  <span className="text-xs uppercase tracking-[0.16em] text-[#8ea0b3]">Used for</span>
+                  <span className="text-xs uppercase tracking-[0.16em] text-[var(--site-soft)]">Used for</span>
                   {skill.usedFor.map((item) => (
-                    <span key={item} className="rounded-full border border-[#7CFFB2]/25 bg-[#7CFFB2]/10 px-3 py-1 text-xs text-[#7CFFB2]">
+                    <span key={item} className="rounded-full border border-[var(--site-label-line)] bg-[var(--site-label-soft)] px-3 py-1 text-xs text-[var(--site-label)]">
                       {item}
                     </span>
                   ))}
@@ -294,7 +294,7 @@ export default function Skills() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-6">
+            <div className="mt-8 flex flex-wrap gap-2 border-t border-[var(--site-line)] pt-6">
               {group.skills.map((item, index) => {
                 const active = index === skillIndex
                 return (
@@ -304,8 +304,8 @@ export default function Skills() {
                     onClick={() => setSkillIndex(index)}
                     className={`rounded-full px-4 py-2 text-sm transition ${
                       active
-                        ? "bg-white text-[#071018]"
-                        : "border border-white/15 text-[#d5ddd4] hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+                        ? "bg-[#7CFFB2] text-[var(--site-on-mint)]"
+                        : "border border-[var(--site-line)] text-[var(--site-nav)] hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
                     }`}
                   >
                     {item.name}

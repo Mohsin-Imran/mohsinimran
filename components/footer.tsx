@@ -1,15 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
+import SharePage from "@/components/share-page"
 
 const navigate = [
-  { name: "About", href: "/#about" },
-  { name: "Services", href: "/services" },
-  { name: "Skills", href: "/#skills" },
-  { name: "Experience", href: "/#experience" },
-  { name: "Projects", href: "/#projects" },
-  { name: "FAQ", href: "/#faq" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/#contact" },
+  { name: "About me", href: "/#about" },
+  { name: "Service pages", href: "/services" },
+  { name: "Tech stack", href: "/#skills" },
+  { name: "Work history", href: "/#experience" },
+  { name: "Case studies", href: "/#projects" },
+  { name: "Questions", href: "/#faq" },
+  { name: "Articles", href: "/blog" },
+  { name: "Contact form", href: "/#contact" },
 ]
 
 const socials = [
@@ -44,19 +45,19 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative z-20 border-t border-white/10 bg-[#050d14] text-[#f4f1ea]">
+    <footer id="footer" className="relative z-20 border-t border-[var(--site-line)] bg-[var(--site-footer)] text-[var(--site-ink)]">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.3fr_0.7fr_0.9fr] lg:px-8 lg:py-24">
         <div>
           <Link href="/" className="flex items-center gap-3">
-            <span className="relative h-12 w-12 overflow-hidden rounded-full">
-              <Image src="/logo.png?v=2" alt="Mohsin Imran logo" fill sizes="48px" className="object-cover" />
+            <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
+              <Image src="/logo.png?v=2" alt="" fill sizes="48px" className="object-cover" />
             </span>
             <span>
               <span className="block text-lg font-semibold">Mohsin Imran</span>
-              <span className="block text-sm text-[#9aabba]">Laravel, Next.js, and AI products</span>
+              <span className="block text-sm text-[var(--site-soft)]">Laravel and Next.js portfolio</span>
             </span>
           </Link>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#b7c3cf]">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-[var(--site-muted)]">
             Freelance full stack developer for SaaS, APIs, WordPress, eCommerce, and technical SEO. Remote, worldwide.
           </p>
           <div className="mt-6 flex gap-2">
@@ -67,20 +68,21 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-[#d5ddd4] transition hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--site-line)] text-[var(--site-nav)] transition hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
               >
                 {social.icon}
               </a>
             ))}
           </div>
+          <SharePage />
         </div>
 
         <nav aria-label="Footer">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#7CFFB2]">Navigate</p>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--site-label)]">Navigate</p>
           <ul className="mt-4 grid grid-cols-2 gap-y-2 lg:grid-cols-1">
             {navigate.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="text-sm text-[#b7c3cf] transition hover:text-[#7CFFB2]">
+                <a href={link.href} className="text-sm text-[var(--site-muted)] transition hover:text-[var(--site-label)]">
                   {link.name}
                 </a>
               </li>
@@ -89,10 +91,10 @@ export default function Footer() {
         </nav>
 
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#7CFFB2]">Start a project</p>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--site-label)]">Start a project</p>
           <ul className="mt-4 space-y-2">
             <li>
-              <a href="mailto:mnmemon549@gmail.com" className="text-sm text-[#d5ddd4] transition hover:text-[#7CFFB2]">
+              <a href="mailto:mnmemon549@gmail.com" className="text-sm text-[var(--site-nav)] transition hover:text-[var(--site-label)]">
                 mnmemon549@gmail.com
               </a>
             </li>
@@ -101,7 +103,7 @@ export default function Footer() {
                 href="https://calendly.com/mohsin-imran/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[#d5ddd4] transition hover:text-[#7CFFB2]"
+                className="text-sm text-[var(--site-nav)] transition hover:text-[var(--site-label)]"
               >
                 Book a 30-min call
               </a>
@@ -110,10 +112,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 pb-28 text-sm text-[#8ea0b3] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:pb-5 lg:px-8">
+      <div className="border-t border-[var(--site-line)]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 pb-28 text-sm text-[var(--site-soft)] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:pb-5 lg:px-8">
           <p>© {new Date().getFullYear()} Mohsin Imran. All rights reserved.</p>
-          <a href="https://aibookmaker.site" className="transition hover:text-[#7CFFB2]">
+          <a href="https://aibookmaker.site" className="transition hover:text-[var(--site-label)]">
             mohsinimran.online
           </a>
         </div>

@@ -15,6 +15,7 @@ import {
 import { primarySeoDescription, primarySeoTitle, seoFaqs, seoKeywords, seoServices, siteUrl } from "@/lib/seo"
 import SiteActions from "@/components/site-actions"
 import CustomCursor from "@/components/custom-cursor"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -99,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {jsonLdScripts.map((schema, index) => (
           <script
@@ -113,11 +114,13 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`font-sans bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}
+        className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}
       >
-        {children}
-        <CustomCursor />
-        <SiteActions />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} themes={["light", "dark"]}>
+          {children}
+          <CustomCursor />
+          <SiteActions />
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

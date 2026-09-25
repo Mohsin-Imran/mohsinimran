@@ -113,12 +113,12 @@ export default function Projects() {
   const project = projects[active]
 
   return (
-    <section id="projects" className="relative z-20 scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24">
+    <section id="projects" className="relative z-20 scroll-mt-24 border-t border-[var(--site-line)] bg-[var(--site-bg)] px-4 py-20 text-[var(--site-ink)] sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Case studies</p>
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--site-label)]">Case studies</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Featured Projects</h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#9aabba] sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-[var(--site-muted)] sm:text-base">
             Pick a project. The preview, the story, and the live link all stay in one place.
           </p>
         </div>
@@ -133,11 +133,11 @@ export default function Projects() {
                 onClick={() => setActive(index)}
                 className={`inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm transition ${
                   selected
-                    ? "bg-[#7CFFB2] font-semibold text-[#071018]"
-                    : "border border-white/10 text-[#d5ddd4] hover:border-[#7CFFB2]/40"
+                    ? "bg-[#7CFFB2] font-semibold text-[var(--site-on-mint)]"
+                    : "border border-[var(--site-line)] bg-[var(--site-card)] text-[var(--site-nav)] hover:border-[var(--site-label-line)]"
                 }`}
               >
-                <span className={`tabular-nums ${selected ? "text-[#071018]/50" : "text-[#7CFFB2]"}`}>
+                <span className={`tabular-nums ${selected ? "text-[#071018]/50" : "text-[var(--site-label)]"}`}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {item.title}
@@ -156,15 +156,15 @@ export default function Projects() {
             className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12"
           >
             <div>
-              <p className="text-sm font-medium tabular-nums text-[#7CFFB2]">
+              <p className="text-sm font-medium tabular-nums text-[var(--site-label)]">
                 {String(active + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
               </p>
-              <h3 className="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">{project.title}</h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.18em] text-[#9aabba]">{project.role}</p>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-[#b7c3cf]">{project.description}</p>
+              <p className="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">{project.title}</p>
+              <p className="mt-3 text-sm uppercase tracking-[0.18em] text-[var(--site-soft)]">{project.role}</p>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--site-muted)]">{project.description}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="rounded-full border border-white/10 px-3 py-1 text-xs text-[#d5ddd4]">
+                  <span key={tech} className="rounded-full border border-[var(--site-line)] bg-[var(--site-card)] px-3 py-1 text-xs text-[var(--site-chip)]">
                     {tech}
                   </span>
                 ))}
@@ -172,7 +172,7 @@ export default function Projects() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href={`/portfolio/${project.slug}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7CFFB2] px-5 py-3 text-sm font-semibold text-[#071018] transition hover:bg-[#b6ffd4]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7CFFB2] px-5 py-3 text-sm font-semibold text-[var(--site-on-mint)] transition hover:bg-[#b6ffd4]"
                 >
                   View case study
                   <ArrowUpRight className="h-4 w-4" />
@@ -181,7 +181,7 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold transition hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--site-line-strong)] px-5 py-3 text-sm font-semibold transition hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
                 >
                   Open live site
                 </a>
@@ -189,15 +189,15 @@ export default function Projects() {
             </div>
 
             <div className="relative overflow-hidden">
-              <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[#7CFFB2]/10 blur-3xl" />
-              <div className="hover-card group relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0c1826] shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-                <div className="flex items-center gap-2 border-b border-white/10 bg-[#101c2c] px-4 py-3">
+              <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[var(--site-label-soft)] blur-3xl" />
+              <div className="hover-card group relative overflow-hidden rounded-[1.6rem] border border-[var(--site-line)] bg-[var(--site-card)] shadow-[0_18px_50px_rgba(7,16,24,0.08)]">
+                <div className="flex items-center gap-2 border-b border-[var(--site-line)] bg-[var(--site-chrome)] px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-                  <span className="ml-3 truncate text-xs text-[#8ea0b3]">{project.link.replace(/^https?:\/\//, "")}</span>
+                  <span className="ml-3 truncate text-xs text-[var(--site-soft)]">{project.link.replace(/^https?:\/\//, "")}</span>
                 </div>
-                <div className="relative bg-[#081018] sm:h-[360px]">
+                <div className="relative bg-[var(--site-bg)] sm:h-[360px]">
                   <Image
                     src={project.image}
                     alt={`${project.title} website preview`}

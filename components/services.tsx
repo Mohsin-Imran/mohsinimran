@@ -84,12 +84,12 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="relative scroll-mt-24 overflow-hidden border-t border-white/10 bg-[#0a1420] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24"
+      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--site-line)] bg-[var(--site-bg)] px-4 py-20 text-[var(--site-ink)] sm:px-6 lg:px-8 lg:py-24"
     >
       <motion.div
         aria-hidden="true"
         style={{ y: glowY }}
-        className="pointer-events-none absolute -right-20 top-16 h-64 w-64 rounded-full bg-[#7CFFB2]/10 blur-3xl"
+        className="pointer-events-none absolute -right-20 top-16 h-64 w-64 rounded-full bg-[var(--site-label-soft)] blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl">
@@ -100,11 +100,11 @@ export default function Services() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Services</p>
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--site-label)]">Services</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             Full stack development services
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-[#9aabba] sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[var(--site-muted)] sm:text-lg">
             Laravel, Next.js, AI, WordPress, technical SEO, and product design — each with its own service page.
           </p>
         </motion.div>
@@ -119,8 +119,8 @@ export default function Services() {
                 onClick={() => setActiveFilter(filter)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   active
-                    ? "bg-[#7CFFB2] text-[#071018]"
-                    : "border border-white/10 bg-white/[0.03] text-[#c9d2dc] hover:border-[#7CFFB2]/40 hover:text-[#7CFFB2]"
+                    ? "bg-[#7CFFB2] text-[var(--site-on-mint)]"
+                    : "border border-[var(--site-line)] bg-[var(--site-card)] text-[var(--site-nav)] hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
                 }`}
               >
                 {filter}
@@ -140,27 +140,28 @@ export default function Services() {
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.4, delay: (index % 3) * 0.06 }}
               >
-                <Link
-                  href={`/services/${service.slug}`}
-                  aria-label={`Open ${service.title} service page`}
-                  className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#7CFFB2]/35 hover:bg-white/[0.05]"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#7CFFB2]/20 bg-[#7CFFB2]/10 text-[#7CFFB2]">
+                <div className="group relative flex h-full flex-col rounded-2xl border border-[var(--site-line)] bg-[var(--site-card)] p-5 shadow-[0_10px_30px_rgba(7,16,24,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[var(--site-label-line)]">
+                  <div className="pointer-events-none flex items-start justify-between gap-4">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--site-label-line)] bg-[var(--site-label-soft)] text-[var(--site-label)]">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <ArrowUpRight className="h-4 w-4 text-[#8ea0b3] transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#7CFFB2]" />
+                    <ArrowUpRight className="h-4 w-4 text-[var(--site-soft)] transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--site-label)]" />
                   </div>
-                  <h3 className="mt-5 text-lg font-semibold tracking-tight text-[#f4f1ea]">{service.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#9aabba]">{service.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="mt-5 text-lg font-semibold tracking-tight text-[var(--site-ink)] after:absolute after:inset-0"
+                  >
+                    {service.title}
+                  </Link>
+                  <p className="pointer-events-none mt-2 flex-1 text-sm leading-relaxed text-[var(--site-muted)]">{service.description}</p>
+                  <div className="pointer-events-none mt-5 flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-[#c9d2dc]">
+                      <span key={tag} className="rounded-full border border-[var(--site-line)] px-2.5 py-1 text-xs text-[var(--site-chip)]">
                         {tag}
                       </span>
                     ))}
                   </div>
-                </Link>
+                </div>
               </motion.div>
             )
           })}

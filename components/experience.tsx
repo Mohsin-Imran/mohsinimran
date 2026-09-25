@@ -119,34 +119,34 @@ function ExperienceCard({
     >
       <motion.article
         style={{ scale }}
-        className={`rounded-[1.4rem] border p-5 shadow-[0_18px_50px_rgba(0,0,0,0.45)] transition-colors duration-300 hover:border-[#7CFFB2]/50 sm:p-6 ${
-          current ? "border-[#7CFFB2]/40 bg-[#102033]" : "border-white/10 bg-[#0c1826]"
+        className={`rounded-[1.4rem] border bg-[var(--site-card)] p-5 shadow-[0_16px_40px_rgba(7,16,24,0.06)] transition-colors duration-300 hover:border-[var(--site-label-line)] sm:p-6 ${
+          current ? "border-[var(--site-label-line)]" : "border-[var(--site-line)]"
         }`}
       >
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-          <p className="text-sm text-[#9aabba]">
+          <p className="text-sm text-[var(--site-soft)]">
             {job.startDate} — {job.endDate}
           </p>
           {current && (
-            <span className="rounded-full bg-[#7CFFB2] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#071018]">
+            <span className="rounded-full bg-[#7CFFB2] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--site-on-mint)]">
               Now
             </span>
           )}
-          <span className="text-sm text-[#8ea0b3]">{job.location}</span>
+          <span className="text-sm text-[var(--site-soft)]">{job.location}</span>
         </div>
-        <h3 className="mt-3 text-2xl font-semibold tracking-tight">{job.position}</h3>
-        <p className="mt-1 text-base text-[#7CFFB2]">{job.company}</p>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#b7c3cf] sm:text-base">{job.summary}</p>
+        <p className="mt-3 text-2xl font-semibold tracking-tight">{job.position}</p>
+        <p className="mt-1 text-base text-[var(--site-label)]">{job.company}</p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--site-muted)] sm:text-base">{job.summary}</p>
         <ul className="mt-4 grid gap-2 sm:grid-cols-3">
           {job.points.map((point) => (
-            <li key={point} className="rounded-xl border border-white/10 bg-black/25 px-3 py-3 text-sm leading-relaxed text-[#d5ddd4]">
+            <li key={point} className="rounded-xl border border-[var(--site-line)] bg-[var(--site-bg)] px-3 py-3 text-sm leading-relaxed text-[var(--site-nav)]">
               {point}
             </li>
           ))}
         </ul>
         <div className="mt-4 flex flex-wrap gap-2">
           {job.technologies.map((tech) => (
-            <span key={tech} className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-[#c9d2dc]">
+            <span key={tech} className="rounded-full border border-[var(--site-line)] px-2.5 py-1 text-xs text-[var(--site-chip)]">
               {tech}
             </span>
           ))}
@@ -160,13 +160,13 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="experience-stack relative scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24"
+      className="experience-stack relative scroll-mt-24 border-t border-[var(--site-line)] bg-[var(--site-bg)] px-4 py-20 text-[var(--site-ink)] sm:px-6 lg:px-8 lg:py-24"
     >
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[240px_1fr] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Career</p>
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--site-label)]">Career</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Experience</h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#9aabba]">
+          <p className="mt-4 text-sm leading-relaxed text-[var(--site-muted)]">
             From Laravel products to live chat and marketplace backends. Six roles, newest first.
           </p>
         </div>
