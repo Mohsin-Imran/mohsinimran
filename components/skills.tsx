@@ -194,6 +194,25 @@ const groups = [
       },
     ],
   },
+  {
+    index: "05",
+    title: "Automation",
+    note: "AI workflows and WhatsApp follow-up.",
+    skills: [
+      {
+        name: "AI automation",
+        description: "Workflows that take a repeated job off the team: draft, sort, reply, or hand the result to the app.",
+        points: ["ChatGPT and OpenRouter inside the product", "Prompts tied to real business data", "Human review before anything sends"],
+        usedFor: ["Support", "Content", "Internal tools"],
+      },
+      {
+        name: "WhatsApp automation",
+        description: "WhatsApp as a working channel: leads, reminders, and replies that land in the same system as the site.",
+        points: ["Inbound leads into the CRM", "Booking and payment reminders", "Replies that stay on the business number"],
+        usedFor: ["Leads", "Bookings", "Follow-up"],
+      },
+    ],
+  },
 ]
 
 export default function Skills() {
