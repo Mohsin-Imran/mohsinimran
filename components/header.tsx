@@ -63,7 +63,7 @@ export default function Header() {
       >
         <Link href="/" className="flex items-center gap-3">
           <div className="relative h-10 w-10 overflow-hidden rounded-full">
-            <Image src="/logo.png?v=2" alt="" fill sizes="40px" className="object-cover" />
+            <Image src="/logo.png?v=2" alt="Mohsin Imran logo" aria-hidden="true" fill sizes="40px" className="object-cover" />
           </div>
           <span className="truncate text-sm font-semibold tracking-tight text-[var(--site-ink)] sm:text-base">
             Mohsin Imran
@@ -134,7 +134,7 @@ export default function Header() {
               <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
                   <span className="relative h-10 w-10 overflow-hidden rounded-full">
-                    <Image src="/logo.png?v=2" alt="" fill sizes="40px" className="object-cover" />
+                    <Image src="/logo.png?v=2" alt="Mohsin Imran logo" aria-hidden="true" fill sizes="40px" className="object-cover" />
                   </span>
                   <span className="text-sm font-semibold text-[var(--site-ink)]">Mohsin Imran</span>
                 </Link>

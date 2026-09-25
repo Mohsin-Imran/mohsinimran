@@ -50,7 +50,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-3">
             <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
-              <Image src="/logo.png?v=2" alt="" fill sizes="48px" className="object-cover" />
+              <Image src="/logo.png?v=2" alt="Site logo" aria-hidden="true" fill sizes="48px" className="object-cover" />
             </span>
             <span>
               <span className="block text-lg font-semibold">Mohsin Imran</span>

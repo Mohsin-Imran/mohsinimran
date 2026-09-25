@@ -75,7 +75,7 @@ export default function PortfolioHero() {
               Mohsin Imran
             </span>
             <span className="mt-4 block text-lg font-medium leading-snug text-[var(--site-label)] sm:text-2xl">
-              Laravel developer for hire
+              Laravel developer for hire, SaaS and AI products
             </span>
           </h1>
 

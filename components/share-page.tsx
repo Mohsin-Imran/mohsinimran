@@ -25,6 +25,10 @@ export default function SharePage() {
       name: "X",
       href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(label)}`,
     },
+    {
+      name: "Facebook",
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    },
   ]
 
   return (
