@@ -94,8 +94,8 @@ export default function Footer() {
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--site-label)]">Start a project</p>
           <ul className="mt-4 space-y-2">
             <li>
-              <a href="mailto:mnmemon549@gmail.com" className="text-sm text-[var(--site-nav)] transition hover:text-[var(--site-label)]">
-                mnmemon549@gmail.com
+              <a href="mailto:mohsinmemon5499@gmail.com" className="text-sm text-[var(--site-nav)] transition hover:text-[var(--site-label)]">
+                mohsinmemon5499@gmail.com
               </a>
             </li>
             <li>

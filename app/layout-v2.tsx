@@ -131,7 +131,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: '+92-3214475956',
     contactType: 'Customer Support',
-    email: 'mmnemon549@gmail.com',
+    email: 'mohsinmemon5499@gmail.com',
     areaServed: ['PK', 'US', 'UK', 'AE', 'CA', 'AU'],
     availableLanguage: ['en', 'ur'],
   },
@@ -150,7 +150,7 @@ const personSchema = {
   image: 'https://mohsinimran.online/images/profile.jpeg',
   description: 'Award-winning Full Stack Developer specializing in AI-Driven Development, SaaS Applications, Laravel, React, and Web Design',
   jobTitle: ['Full Stack Developer', 'Web Designer', 'SaaS Architect', 'AI Integration Specialist'],
-  email: 'mmnemon549@gmail.com',
+  email: 'mohsinmemon5499@gmail.com',
   telephone: '+92-3214475956',
   nationality: 'Remote',
   alumniOf: {
@@ -243,7 +243,7 @@ const faqSchema = {
       name: 'How to hire Mohsin Imran?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Book a call on Calendly at calendly.com/mohsin-imran/30min or email mmnemon549@gmail.com for consultation.',
+        text: 'Book a call on Calendly at calendly.com/mohsin-imran/30min or email mohsinmemon5499@gmail.com for consultation.',
       },
     },
   ],

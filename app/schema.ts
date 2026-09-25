@@ -8,7 +8,7 @@ export function generatePersonSchema() {
     description:
       'Full Stack Web Application Developer and AI Product Expert in Pakistan specializing in Laravel, Next.js, React, custom SaaS development, AI integrations, WordPress, eCommerce and SEO-optimized web development.',
     jobTitle: ['Full Stack Web Application Developer', 'AI Product Expert', 'Freelance Full Stack Developer', 'Laravel Developer', 'Next.js Developer', 'AI Developer'],
-    email: 'mnmemon549@gmail.com',
+    email: 'mohsinmemon5499@gmail.com',
     sameAs: [
       'https://www.linkedin.com/in/mohsinimran-fullstack/',
       'https://github.com/Mohsin-Imran',
@@ -151,7 +151,7 @@ export function generateOrganizationSchema() {
     contact: {
       '@type': 'ContactPoint',
       contactType: 'Customer Support',
-      email: 'mnmemon549@gmail.com',
+      email: 'mohsinmemon5499@gmail.com',
     },
   }
 }
@@ -164,7 +164,7 @@ export function generateLocalBusinessSchema() {
     description: 'Full Stack Web Application Developer, Laravel Developer, Next.js Developer and AI Product Expert in Karachi, Pakistan.',
     url: 'https://mohsinimran.online',
     image: 'https://mohsinimran.online/images/profile.jpeg',
-    email: 'mnmemon549@gmail.com',
+    email: 'mohsinmemon5499@gmail.com',
     priceRange: 'Negotiable',
     areaServed: ['Pakistan', 'Worldwide'],
     serviceArea: {

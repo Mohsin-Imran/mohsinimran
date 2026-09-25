@@ -89,9 +89,9 @@ export default function Contact() {
           </p>
 
           <div className="mt-8 space-y-3">
-            <a href="mailto:mnmemon549@gmail.com" className="hover-card block rounded-2xl border border-[var(--site-line)] bg-[var(--site-card)] px-5 py-4">
+            <a href="mailto:mohsinmemon5499@gmail.com" className="hover-card block rounded-2xl border border-[var(--site-line)] bg-[var(--site-card)] px-5 py-4">
               <p className="text-xs uppercase tracking-[0.16em] text-[var(--site-label)]">Email</p>
-              <p className="mt-1 text-sm">mnmemon549@gmail.com</p>
+              <p className="mt-1 text-sm">mohsinmemon5499@gmail.com</p>
             </a>
             <a
               href="https://calendly.com/mohsin-imran/30min"
@@ -171,7 +171,7 @@ export default function Contact() {
           )}
           {submitStatus === "error" && (
             <p className="mt-4 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700">
-              The message did not send. Try again, or email mnmemon549@gmail.com.
+              The message did not send. Try again, or email mohsinmemon5499@gmail.com.
             </p>
           )}
         </form>

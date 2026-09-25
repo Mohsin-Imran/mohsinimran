@@ -72,7 +72,7 @@ export default function ServicesPage() {
               Book a Product Call
             </a>
             <a
-              href="mailto:mnmemon549@gmail.com?subject=Service%20Inquiry"
+              href="mailto:mohsinmemon5499@gmail.com?subject=Service%20Inquiry"
               className="rounded-full border border-[var(--site-line-strong)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
             >
               Ask About Services

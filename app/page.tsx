@@ -8,6 +8,7 @@ import { buildPageMetadata, primarySeoDescription, primarySeoTitle, seoKeywords 
 
 const AboutMe = dynamic(() => import("@/components/about-me"))
 const Services = dynamic(() => import("@/components/services"))
+const Packages = dynamic(() => import("@/components/packages"))
 const Skills = dynamic(() => import("@/components/skills"))
 const Experience = dynamic(() => import("@/components/experience"))
 const Projects = dynamic(() => import("@/components/projects"))
@@ -34,6 +35,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects />
+      <Packages />
       <Call />
       <Faq />
       <Contact />

@@ -38,7 +38,7 @@ export default function Call() {
             Book a product call
           </a>
           <a
-            href="mailto:mnmemon549@gmail.com?subject=Free%20Website%20Audit%20Request"
+            href="mailto:mohsinmemon5499@gmail.com?subject=Free%20Website%20Audit%20Request"
             className="inline-flex items-center justify-center rounded-full border border-[var(--site-line-strong)] px-6 py-3 text-sm font-semibold transition hover:border-[var(--site-label-line)] hover:text-[var(--site-label)]"
           >
             Get a free website audit

@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
       port: 587,
       secure: false, // Use TLS
       auth: {
-        user: "mohsin.centosquare@gmail.com",
-        pass: "mynsceelhfgbuqwx",
+        user: "mohsinmemon5499@gmail.com",
+        pass: "xymqtlocnrwujhbr",
       },
       tls: {
         rejectUnauthorized: false,
@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
 
     // Email content
     const mailOptions = {
-      from: '"Portfolio Contact Form" <mohsin.centosquare@gmail.com>',
-      to: "mohsin.centosquare@gmail.com",
+      from: '"Portfolio Contact Form" <mohsinmemon5499@gmail.com>',
+      to: "mohsinmemon5499@gmail.com",
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
         <!DOCTYPE html>

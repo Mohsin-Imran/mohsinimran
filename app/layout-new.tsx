@@ -74,7 +74,7 @@ const jsonLd = [
     image: 'https://mohsinimran.online/images/profile.jpeg',
     description: 'Full Stack Developer & Web Designer - AI-Driven Full-Stack Engineer',
     jobTitle: ['Full Stack Developer', 'Web Designer', 'SaaS Developer'],
-    email: 'mmnemon549@gmail.com',
+    email: 'mohsinmemon5499@gmail.com',
     sameAs: [
       'https://linkedin.com/in/mohsin-imran',
       'https://github.com/mohsinimran',
