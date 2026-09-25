@@ -21,7 +21,7 @@ const projectMedia: Record<string, { image: string; link: string }> = {
   marqu: { image: "/p2.png", link: "https://marquteam.com/" },
   "rice-export-website": { image: "/p5.png", link: "https://www.shafiagro.com/" },
   "247-home-rescue": { image: "/p4.png", link: "https://247homerescue.co.uk/" },
-  "student-lms-platform": { image: "/p6.png", link: "https://learning.iheartlearningacademy.com" },
+  "student-lms-platform": { image: "/p6.png", link: "https://aibookmaker.site" },
 }
 
 export function generateStaticParams() {

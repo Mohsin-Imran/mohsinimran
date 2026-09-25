@@ -113,7 +113,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 pb-28 text-sm text-[#8ea0b3] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:pb-5 lg:px-8">
           <p>© {new Date().getFullYear()} Mohsin Imran. All rights reserved.</p>
-          <a href="https://mohsinimran.online" className="transition hover:text-[#7CFFB2]">
+          <a href="https://aibookmaker.site" className="transition hover:text-[#7CFFB2]">
             mohsinimran.online
           </a>
         </div>

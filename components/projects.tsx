@@ -104,7 +104,7 @@ const projects = [
       "Courses, assignments, and progress, with payments and live chat for students and staff.",
     image: "/p6.png",
     technologies: ["Laravel", "MySQL", "Stripe", "Realtime"],
-    link: "https://learning.iheartlearningacademy.com",
+    link: "https://aibookmaker.site",
   },
 ]
 
