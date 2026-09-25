@@ -3,141 +3,142 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
-export default function PortfolioHero() {
-  const texts = [
-    "Laravel & Next.js Development Specialist",
-    "Custom SaaS Development Consultant",
-    "Nodejs & React.js Developer",
-    "AI API Integration Specialist",
-    "Backend API Development Expert",
-    "WordPress eCommerce Development Specialist",
-    "SEO-Focused Web Development Professional",
-    "eCommerce Website Development Expert",
-  ];
+const roles = [
+  "Laravel & Next.js",
+  "SaaS products",
+  "AI integrations",
+  "Backend APIs",
+  "WordPress & eCommerce",
+]
 
-  const [displayText, setDisplayText] = useState(texts[0])
+export default function PortfolioHero() {
+  const [displayText, setDisplayText] = useState(roles[0])
   const [index, setIndex] = useState(0)
-  const [subIndex, setSubIndex] = useState(texts[0].length)
+  const [subIndex, setSubIndex] = useState(roles[0].length)
   const [reverse, setReverse] = useState(false)
 
   useEffect(() => {
-    if (index === texts.length) setIndex(0)
+    if (index === roles.length) setIndex(0)
 
     const timeout = setTimeout(() => {
-      setDisplayText((prev) =>
-        reverse
-          ? prev.substring(0, prev.length - 1)
-          : texts[index].substring(0, subIndex + 1)
+      setDisplayText(
+        reverse ? roles[index].substring(0, subIndex - 1) : roles[index].substring(0, subIndex + 1)
       )
 
-      if (!reverse && subIndex === texts[index].length) {
-        setTimeout(() => setReverse(true), 1000)
+      if (!reverse && subIndex === roles[index].length) {
+        setTimeout(() => setReverse(true), 1100)
         return
       }
 
       if (reverse && subIndex === 0) {
         setReverse(false)
-        setIndex((prev) => (prev + 1) % texts.length)
+        setIndex((prev) => (prev + 1) % roles.length)
         return
       }
 
       setSubIndex((prev) => prev + (reverse ? -1 : 1))
-    }, reverse ? 50 : 100)
+    }, reverse ? 40 : 80)
 
     return () => clearTimeout(timeout)
   }, [subIndex, index, reverse])
 
   return (
-    <section id="home" className="min-h-screen bg-background text-foreground pt-24">
-      <main className="container mx-auto px-6 py-12 lg:px-12 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          {/* Left Content */}
-          <div className="flex flex-col justify-center space-y-6">
-            <h1 className="animate-fade-in-left animation-delay-200 text-3xl font-bold leading-tight text-yellow-500 sm:text-5xl lg:text-5xl">
-              {/* Freelance Full Stack Developer - Laravel, Next.js & AI Integration Expert */}
-              Hi, I'm Mohsin M Imran
-            </h1>
+    <section id="home" className="relative min-h-screen scroll-mt-24 overflow-hidden bg-[#071018] text-[#f4f1ea]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 18% 20%, rgba(124,255,178,0.16), transparent 32%), radial-gradient(circle at 82% 10%, rgba(120,150,255,0.18), transparent 28%), radial-gradient(circle at 70% 80%, rgba(124,255,178,0.08), transparent 30%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+          maskImage: "radial-gradient(circle at 50% 40%, black, transparent 75%)",
+        }}
+      />
 
-            <div className="animate-fade-in-left animation-delay-400 text-xl leading-snug sm:text-2xl lg:text-3xl">
-              I'm Mohsin,{" "}
-              <span className="text-yellow-500 font-semibold">
-                {displayText}
-                <span className="animate-pulse">|</span>
+      <div className="relative mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-4 pb-20 pt-28 sm:px-6 sm:pt-32 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-8 lg:pb-16 lg:pt-28">
+        <div>
+          <p className="inline-flex items-center gap-2 rounded-full border border-[#7CFFB2]/30 bg-[#7CFFB2]/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[#7CFFB2]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#7CFFB2]" />
+            Available for new projects
+          </p>
+
+          <h1 className="mt-6 max-w-xl text-4xl font-semibold leading-[0.95] tracking-tight text-[#f7f4ee] sm:text-6xl lg:text-7xl">
+            Mohsin Imran
+          </h1>
+
+          <p className="mt-5 min-h-[2.5rem] text-xl text-[#d5ddd4] sm:text-2xl">
+            Building{" "}
+            <span className="font-medium text-[#7CFFB2]">
+              {displayText}
+              <span className="ml-0.5 inline-block w-[2px] animate-pulse bg-[#7CFFB2] align-middle text-transparent">
+                |
               </span>
-            </div>
+            </span>
+          </p>
 
-            <p className="animate-fade-in-left animation-delay-600 text-base leading-relaxed text-white lg:text-md">
-              I help startups, agencies, and business owners build SEO-optimized web applications using Laravel, Next.js, React, WordPress, WooCommerce, Shopify, and AI integrations. From MVP development and SaaS product development to AI API automation, RESTful API integration, WebSocket development, and backend architecture, I turn ideas into fast, secure, conversion-ready digital products.
-            </p>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-[#b7c3cf] sm:text-lg">
+            I build full stack SaaS products and AI products. Laravel developer for hire for
+            startups and businesses that need a product built to rank and convert.
+          </p>
 
-            {/* Value List */}
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a
-                href="#projects"
-                className="bg-white text-center text-black font-semibold text-sm py-3 px-10 rounded-full
-        transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                View My Work
-              </a>
-              <a
-                href="https://calendly.com/mohsin-imran/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#FDC700] hover:bg-[#e5b307] text-center text-gray-900 font-semibold text-sm py-3 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                Book a Product Call
-              </a>
-              {/* <a
-                href="mailto:mnmemon549@email.com"
-                className="border border-yellow-400 text-yellow-400 font-semibold text-sm py-3 px-10 rounded-full transition-all duration-300 hover:bg-yellow-400 hover:text-black"
-              >
-                Get a Free Website Audit
-              </a> */}
-            </div>
-            <ul className="space-y-1">
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
-                <span>
-                  Laravel and Next.js architecture for scalable SaaS products, startup MVPs, and business portals.
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
-                <span>
-                  AI API integrations, AI automation, backend APIs, payment gateways, and CRM workflows.
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-[#FBC300]"></span>
-                <span>
-                  SEO-ready content structure, page speed optimization, schema markup, Core Web Vitals, and conversion rate optimization.
-                </span>
-              </li>
-            </ul>
-
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#projects"
+              className="hover-press inline-flex items-center justify-center rounded-full bg-[#7CFFB2] px-6 py-3 text-sm font-semibold text-[#071018] hover:bg-[#b6ffd4]"
+            >
+              View my work
+            </a>
+            <a
+              href="https://calendly.com/mohsin-imran/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-[#f4f1ea] transition hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+            >
+              Book a product call
+            </a>
           </div>
 
-          {/* Right Image */}
-          <div className="flex items-center justify-center order-first lg:order-last">
-            <div className="relative animate-scale-in animation-delay-400">
-              <div className="relative overflow-hidden rounded-3xl p-2">
-                <Image
-                  src="/images/profile.jpeg"
-                  alt="Mohsin Imran - Full Stack Laravel and Next.js Developer"
-                  width={448}
-                  height={560}
-                  priority
-                  sizes="(min-width: 1024px) 448px, (min-width: 640px) 384px, 320px"
-                  className="h-auto w-full max-w-xs rounded-2xl object-cover transition-transform duration-500 hover:scale-105 sm:max-w-sm lg:max-w-md"
-                />
-              </div>
-            </div>
-          </div>
-
+          <ul className="mt-10 grid gap-3 sm:grid-cols-3">
+            {[
+              ["Laravel + Next.js", "SaaS and MVPs"],
+              ["AI workflows", "APIs and automation"],
+              ["SEO-ready builds", "Speed and structure"],
+            ].map(([title, detail]) => (
+              <li key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                <p className="text-sm font-medium text-[#f4f1ea]">{title}</p>
+                <p className="mt-1 text-xs text-[#8ea0b3]">{detail}</p>
+              </li>
+            ))}
+          </ul>
         </div>
-      </main>
+
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="absolute -left-6 top-10 hidden h-28 w-28 rounded-full bg-[#7CFFB2]/20 blur-2xl lg:block" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c1826] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+            <Image
+              src="/images/profile.jpeg"
+              alt="Mohsin Imran, full stack developer"
+              width={640}
+              height={800}
+              priority
+              sizes="(min-width: 1024px) 420px, 80vw"
+              className="h-auto w-full rounded-[1.6rem] object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-5 left-3 right-3 rounded-2xl border border-white/10 bg-[#0c1826]/90 px-4 py-3 backdrop-blur-md sm:left-auto sm:right-[-1rem] sm:w-56">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#7CFFB2]">Currently</p>
+            <p className="mt-1 text-sm font-medium text-[#f4f1ea]">Product engineering for SaaS, AI, and web apps</p>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

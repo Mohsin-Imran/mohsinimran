@@ -1,9 +1,86 @@
+import type { Metadata } from "next"
+
 export const siteUrl = "https://mohsinimran.online"
 
-export const primarySeoTitle = "Full Stack Developer & AI Product Expert | Laravel, Next.js"
+export const primarySeoTitle = "Laravel Developer for Hire | SaaS & AI Products"
 
 export const primarySeoDescription =
-  "Hire Mohsin Imran, a full stack web application developer in Pakistan and AI product expert for Laravel, Next.js, SaaS, AI integrations and technical SEO."
+  "Hire Mohsin Imran to build full stack SaaS products and AI products. Laravel developer for hire for Next.js, APIs, and technical SEO. Remote, worldwide."
+
+export const seoKeywords = [
+  "Laravel developer for hire",
+  "hire Laravel developer",
+  "freelance Laravel developer",
+  "full stack SaaS developer",
+  "SaaS product developer",
+  "AI product developer",
+  "AI web app developer",
+  "Next.js developer for hire",
+  "Laravel Next.js developer",
+  "SaaS MVP developer",
+  "technical SEO for SaaS",
+  "Laravel developer Pakistan",
+]
+
+export function buildPageMetadata({
+  title,
+  description,
+  path = "/",
+  keywords = seoKeywords,
+  type = "website",
+}: {
+  title: string
+  description: string
+  path?: string
+  keywords?: string[]
+  type?: "website" | "article"
+}): Metadata {
+  const url = path === "/" ? siteUrl : `${siteUrl}${path}`
+
+  return {
+    title: { absolute: title },
+    description,
+    keywords: [...new Set(keywords)],
+    authors: [{ name: "Mohsin Imran", url: siteUrl }],
+    creator: "Mohsin Imran",
+    publisher: "Mohsin Imran",
+    alternates: { canonical: url },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type,
+      siteName: "Mohsin Imran",
+      locale: "en_US",
+      images: [
+        {
+          url: `${siteUrl}/images/profile.jpeg`,
+          width: 1200,
+          height: 630,
+          alt: "Mohsin Imran, Laravel developer for hire",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${siteUrl}/images/profile.jpeg`],
+      creator: "@mohsinimran",
+    },
+  }
+}
 
 export const seoServices = [
   {

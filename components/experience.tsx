@@ -1,53 +1,36 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { Briefcase, MapPin, Calendar, Building2, ChevronDown } from "lucide-react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 
-interface ExperienceItem {
-  id: number
-  position: string
-  company: string
-  location: string
-  startDate: string
-  endDate: string
-  description: string[]
-  technologies: string[]
-}
-
-const experiences: ExperienceItem[] = [
+const experiences = [
   {
     id: 1,
     position: "Backend Architect",
-    company: "Vurks",
+    company: "LusionTech",
     location: "On-site / Remote",
     startDate: "June 2025",
     endDate: "Present",
-    description: [
-      "As Backend Architect at Vurks, I design and implement the core systems that power our platform, including APIs, databases, and server-side logic. My focus is on building scalable, secure, and high-performing backend solutions that ensure seamless connectivity between businesses and professionals. By optimizing data flows and system architecture, I help create a reliable foundation for Vurks’ growing ecosystem.",
+    summary: "Core systems for a freelance marketplace: APIs, data, and the backend professionals and businesses run on.",
+    points: [
+      "Design the APIs, databases, and server logic behind the platform.",
+      "Keep payments, chat, and profiles on a structure that can grow.",
+      "Focus on security and speed as more users connect.",
     ],
     technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "REST API"],
   },
-  // {
-  //   id: 1,
-  //   position: "Backend Architect",
-  //   company: "Chatknot",
-  //   location: "On-site / Remote",
-  //   startDate: "June 2025",
-  //   endDate: "Present",
-  //   description: [
-  //     "As Backend Architect at Chatknot, I design and implement the core systems that power our platform, including APIs, databases, and server-side logic. My focus is on building scalable, secure, and high-performing backend solutions that ensure seamless connectivity between businesses and professionals. By optimizing data flows and system architecture, I help create a reliable foundation for Chatknot’ growing ecosystem.",
-  //   ],
-  //   technologies: ["PHP", "Laravel","MySQL", "JavaScript", "REST API"],
-  // },
   {
     id: 2,
     position: "Software Engineer",
-    company: "Chatknot",
+    company: "LusionTech",
     location: "On-site / Remote",
     startDate: "June 2024",
     endDate: "June 2025",
-    description: [
-      "I design and maintain the core infrastructure that powers our live chat platform. I develop scalable APIs, optimize database performance, and ensure seamless real-time communication between users. My focus is on building secure, efficient server-side logic to enhance system reliability and performance. By continuously improving our backend architecture, I help make ChatKnot a fast, reliable, and innovative live chat solution for websites worldwide.",
+    summary: "Backend for a live chat product used on websites, built to stay fast while people talk in real time.",
+    points: [
+      "Built and maintained the APIs that power live chat.",
+      "Tuned the database so messages stay quick under load.",
+      "Kept server logic secure and reliable for sites worldwide.",
     ],
     technologies: ["PHP", "Laravel", "React", "MySQL", "JavaScript", "REST API"],
   },
@@ -58,8 +41,11 @@ const experiences: ExperienceItem[] = [
     location: "Remote",
     startDate: "Oct 2024",
     endDate: "Dec 2024",
-    description: [
-      "As a Full Stack PHP Laravel Developer, I specialize in designing, developing, and maintaining robust web applications using Laravel, PHP, and MySQL. With expertise in both frontend and backend development, I have successfully integrated secure payment gateways such as PayPal and Stripe to enhance user experience. I am proficient in building and optimizing RESTful APIs to facilitate seamless third-party integrations, ensuring high performance, security, and scalability of web applications. My focus is on delivering efficient, scalable, and user-friendly solutions that meet business objectives",
+    summary: "Laravel applications with payments and APIs, from the database through the interface.",
+    points: [
+      "Shipped web apps in Laravel, PHP, and MySQL.",
+      "Integrated PayPal and Stripe for secure checkout.",
+      "Built REST APIs for third-party tools and faster screens.",
     ],
     technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "REST API"],
   },
@@ -70,8 +56,11 @@ const experiences: ExperienceItem[] = [
     location: "On-site",
     startDate: "Sep 2023",
     endDate: "Sep 2024",
-    description: [
-      "As a Full Stack PHP Laravel Developer, I developed and maintained web applications using Laravel, PHP, and MySQL. I worked on frontend and backend development, integrating secure payment gateways like PayPal and Stripe. Additionally, I built and optimized REST APIs for seamless third-party integrations, ensuring performance, security, and scalability of web applications",
+    summary: "A year of product work across Laravel backends, interfaces, and payment flows.",
+    points: [
+      "Developed and maintained Laravel applications.",
+      "Worked both sides: screens and the API behind them.",
+      "Added PayPal, Stripe, and REST integrations.",
     ],
     technologies: ["PHP", "Laravel", "MySQL", "Bootstrap", "jQuery"],
   },
@@ -82,11 +71,11 @@ const experiences: ExperienceItem[] = [
     location: "On-site",
     startDate: "Mar 2023",
     endDate: "Aug 2023",
-    description: [
-      "Built dynamic web applications using Laravel framework",
-      "Designed and optimized database schemas for improved performance",
-      "Implemented RESTful APIs for mobile and web applications",
-      "Worked on payment integration and third-party API integrations",
+    summary: "Laravel apps, database design, and APIs for web and mobile.",
+    points: [
+      "Built dynamic applications on Laravel.",
+      "Designed schemas so queries stayed fast.",
+      "Shipped REST APIs and payment integrations.",
     ],
     technologies: ["PHP", "Laravel", "MySQL", "Bootstrap", "jQuery"],
   },
@@ -97,182 +86,96 @@ const experiences: ExperienceItem[] = [
     location: "On-site",
     startDate: "Nov 2022",
     endDate: "Feb 2023",
-    description: [
-      "Developed backend systems using Laravel and PHP",
-      "Created responsive user interfaces with HTML, CSS, and JavaScript",
-      "Performed code reviews and maintained code quality standards",
-      "Collaborated with designers to implement pixel-perfect designs",
+    summary: "Backend systems and the interfaces designers handed over.",
+    points: [
+      "Developed Laravel and PHP backends.",
+      "Built responsive UI in HTML, CSS, and JavaScript.",
+      "Reviewed code and matched the design closely.",
     ],
     technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript"],
   },
 ]
 
-export default function Experience() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [expandedCard, setExpandedCard] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
-  const toggleCard = (id: number) => {
-    setExpandedCard(expandedCard === id ? null : id)
-  }
+function ExperienceCard({
+  job,
+  index,
+}: {
+  job: (typeof experiences)[number]
+  index: number
+}) {
+  const cardRef = useRef<HTMLLIElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start start", "end start"],
+  })
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.94])
+  const current = job.endDate === "Present"
 
   return (
-    <section
-      ref={sectionRef}
-      id="experience"
-      className="min-h-screen bg-[#0A0A0A] py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    <li
+      ref={cardRef}
+      className={`sticky top-24 ${index === experiences.length - 1 ? "" : "mb-[22vh]"}`}
+      style={{ zIndex: index + 1 }}
     >
-      {/* Background decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+      <motion.article
+        style={{ scale }}
+        className={`rounded-[1.4rem] border p-5 shadow-[0_18px_50px_rgba(0,0,0,0.45)] transition-colors duration-300 hover:border-[#7CFFB2]/50 sm:p-6 ${
+          current ? "border-[#7CFFB2]/40 bg-[#102033]" : "border-white/10 bg-[#0c1826]"
+        }`}
+      >
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <p className="text-sm text-[#9aabba]">
+            {job.startDate} — {job.endDate}
+          </p>
+          {current && (
+            <span className="rounded-full bg-[#7CFFB2] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#071018]">
+              Now
+            </span>
+          )}
+          <span className="text-sm text-[#8ea0b3]">{job.location}</span>
+        </div>
+        <h3 className="mt-3 text-2xl font-semibold tracking-tight">{job.position}</h3>
+        <p className="mt-1 text-base text-[#7CFFB2]">{job.company}</p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#b7c3cf] sm:text-base">{job.summary}</p>
+        <ul className="mt-4 grid gap-2 sm:grid-cols-3">
+          {job.points.map((point) => (
+            <li key={point} className="rounded-xl border border-white/10 bg-black/25 px-3 py-3 text-sm leading-relaxed text-[#d5ddd4]">
+              {point}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {job.technologies.map((tech) => (
+            <span key={tech} className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-[#c9d2dc]">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </motion.article>
+    </li>
+  )
+}
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2
-            className={`text-5xl md:text-6xl font-bold text-white mb-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-              }`}
-          >
-            {" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">Experience</span>
-          </h2>
-          <div
-            className={`h-1 w-32 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-              }`}
-          />
+export default function Experience() {
+  return (
+    <section
+      id="experience"
+      className="experience-stack relative scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24"
+    >
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[240px_1fr] lg:gap-16">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Career</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Experience</h2>
+          <p className="mt-4 text-sm leading-relaxed text-[#9aabba]">
+            From Laravel products to live chat and marketplace backends. Six roles, newest first.
+          </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-yellow-500/50 via-yellow-500/50 to-purple-500/50 hidden lg:block" />
-
-          {/* Experience Cards */}
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={exp.id}
-                style={{ transitionDelay: `${index * 200}ms` }}
-                className={`relative transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : `opacity-0 ${index % 2 === 0 ? "-translate-x-20" : "translate-x-20"}`}`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-8 hidden lg:block z-20">
-                  <div className="relative">
-                    <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse" />
-                    <div className="absolute inset-0 w-6 h-6 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-ping opacity-75" />
-                  </div>
-                </div>
-
-                {/* Card */}
-                <div className={`lg:w-[calc(50%-3rem)] ${index % 2 === 0 ? "lg:mr-auto lg:pr-16" : "lg:ml-auto lg:pl-16"}`}>
-                  <div
-                    className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/20 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/20 hover:-translate-y-2 cursor-pointer"
-                    onClick={() => toggleCard(exp.id)}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 to-yellow-500/0 group-hover:from-yellow-500/5 group-hover:to-yellow-500/5 rounded-2xl transition-all duration-500" />
-
-                    <div className="relative z-10">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h3 className="text-[22px] font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
-                            {exp.company} - {exp.position} 
-                          </h3>
-                          <div className="flex items-center gap-2 text-yellow-400 mb-2">
-                            <Building2 className="w-4 h-4" />
-                            <span className="font-medium">{exp.company}</span>
-                          </div>
-                        </div>
-                        <div className="flex-shrink-0 ml-4">
-                          <div className="bg-gradient-to-r from-yellow-500/20 to-yellow-500/20 rounded-lg px-4 py-2 border border-yellow-500/30">
-                            <Briefcase className="w-6 h-6 text-yellow-400" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center gap-2 text-gray-300">
-                          <Calendar className="w-4 h-4 text-yellow-400" />
-                          <span className="text-sm">{exp.startDate} - {exp.endDate}</span>
-                          {exp.endDate === "Present" && (
-                            <span className="ml-2 px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded-full border border-green-500/30">
-                              Current
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex items-start gap-2 text-gray-300">
-                          <MapPin className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm">{exp.location}</span>
-                        </div>
-                      </div>
-
-                      <div className={`overflow-hidden transition-all duration-500 ${expandedCard === exp.id ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
-                        <div className="mb-4 pt-4 border-t border-yellow-500/20">
-                          <ul className="space-y-2">
-                            {exp.description.map((desc, i) => (
-                              <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
-                                <span className="text-yellow-400 mt-1.5">•</span>
-                                <span>{desc}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div>
-                          <h4 className="text-sm font-semibold text-yellow-400 mb-2">Technologies Used:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.technologies.map((tech, i) => (
-                              <span
-                                key={i}
-                                className="px-3 py-1 bg-yellow-500/10 text-yellow-300 text-xs rounded-full border border-yellow-500/30 hover:bg-yellow-500/20 transition-colors duration-300"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-center mt-4 pt-4 border-t border-yellow-500/20">
-                        <ChevronDown className={`w-5 h-5 text-yellow-400 transition-transform duration-300 ${expandedCard === exp.id ? "rotate-180" : ""}`} />
-                      </div>
-                    </div>
-
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-500/20 to-transparent rounded-tr-2xl rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20 flex justify-center">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-100" />
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-200" />
-          </div>
-        </div>
+        <ol className="space-y-6 pb-8">
+          {experiences.map((job, index) => (
+            <ExperienceCard key={job.id} job={job} index={index} />
+          ))}
+        </ol>
       </div>
     </section>
   )

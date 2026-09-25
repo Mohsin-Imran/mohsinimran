@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import {
+  generateBreadcrumbSchema,
   generateFAQSchema,
   generateLocalBusinessSchema,
   generateOrganizationSchema,
@@ -11,93 +12,47 @@ import {
   generateServiceSchema,
   generateWebsiteSchema,
 } from "./schema"
-import { primarySeoDescription, primarySeoTitle, seoFaqs, seoServices, siteUrl } from "@/lib/seo"
+import { primarySeoDescription, primarySeoTitle, seoFaqs, seoKeywords, seoServices, siteUrl } from "@/lib/seo"
+import SiteActions from "@/components/site-actions"
+import CustomCursor from "@/components/custom-cursor"
 import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `Mohsin Imran | ${primarySeoTitle}`,
+    default: `${primarySeoTitle} | Mohsin Imran`,
     template: "%s | Mohsin Imran",
   },
   description: primarySeoDescription,
-  keywords: [
-    "Mohsin Imran",
-    "AI Developer",
-    "AI Engineer",
-    "AI Integration Developer",
-    "AI Developer",
-    "OpenAI API Developer",
-    "AI Automation",
-    "AI Agent Developer",
-    "AI Product Expert",
-    "AI Product Developer",
-    "AI Web App Developer Pakistan",
-    "Full Stack Developer Pakistan",
-    "Laravel Developer",
-    "Next.js Developer",
-    "React Developer",
-    "SEO Specialist",
-    "Web Developer Pakistan",
-    "Full Stack Developer Karachi",
-    "Laravel Developer Pakistan",
-    "Next.js SEO Developer",
-    "SaaS Developer",
-    "WordPress SEO Developer",
-    "Laravel + Next.js developer for hire",
-    "Custom SaaS development",
-    "React developer freelance",
-    "WordPress developer Karachi",
-    "eCommerce website developer",
-    "ChatGPT API integration developer",
-    "OpenRouter integration developer",
-    "AI product expert Pakistan",
-    "full stack developer AI product expert",
-    "SEO-optimized web development",
-    "Backend API developer",
-    "full-stack development",
-    "backend architecture",
-    "API integration",
-    "RESTful API",
-    "scalable web applications",
-    "MVP development",
-    "SaaS product development",
-    "page speed optimization",
-    "mobile-responsive design",
-    "Stripe PayPal payment integration",
-    "AWS DigitalOcean hosting",
-    "zero-downtime deployment",
-    "CRM integration",
-    "WebSocket development",
-    "technical consultant",
-  ],
+  keywords: seoKeywords,
   authors: [{ name: "Mohsin Imran", url: siteUrl }],
   creator: "Mohsin Imran",
   publisher: "Mohsin Imran",
   icons: {
-    icon: "/images/profile.jpeg",
-    apple: "/images/profile.jpeg",
+    icon: "/logo.png?v=2",
+    apple: "/logo.png?v=2",
+    shortcut: "/logo.png?v=2",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Mohsin Imran Portfolio",
-    title: `Mohsin Imran | ${primarySeoTitle}`,
+    siteName: "Mohsin Imran",
+    title: `${primarySeoTitle} | Mohsin Imran`,
     description: primarySeoDescription,
     images: [
       {
         url: "https://mohsinimran.online/images/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Mohsin Imran - Full Stack Laravel and Next.js Developer",
+        alt: "Mohsin Imran, Laravel developer for hire",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Mohsin Imran | ${primarySeoTitle}`,
+    title: `${primarySeoTitle} | Mohsin Imran`,
     description: primarySeoDescription,
     images: ["https://mohsinimran.online/images/profile.jpeg"],
     creator: "@mohsinimran",
@@ -135,6 +90,7 @@ const jsonLdScripts = [
   generateLocalBusinessSchema(),
   ...seoServices.map((service) => generateServiceSchema(service)),
   generateFAQSchema(seoFaqs),
+  generateBreadcrumbSchema([{ name: "Home", url: siteUrl }]),
 ]
 
 export default function RootLayout({
@@ -160,6 +116,8 @@ export default function RootLayout({
         className={`font-sans bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}
       >
         {children}
+        <CustomCursor />
+        <SiteActions />
         <Analytics />
       </body>
     </html>

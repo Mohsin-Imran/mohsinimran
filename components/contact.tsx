@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState, useEffect, useRef, type FormEvent } from "react"
+import { useState, type FormEvent } from "react"
 
 interface FormData {
   firstName: string
@@ -13,8 +12,22 @@ interface FormData {
   message: string
 }
 
+const services = [
+  "Web Development",
+  "Mobile App Development",
+  "UI/UX Design",
+  "Backend Development",
+  "Full Stack Development",
+  "Free Website Audit",
+  "AI Integration",
+  "Technical SEO",
+  "Consulting",
+]
+
+const fieldClass =
+  "w-full rounded-xl border border-white/10 bg-[#081018] px-4 py-3 text-sm text-[#f4f1ea] outline-none transition placeholder:text-[#8ea0b3] focus:border-[#7CFFB2]/60 focus:ring-2 focus:ring-[#7CFFB2]/20"
+
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -25,24 +38,6 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -52,9 +47,7 @@ export default function Contact() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
 
@@ -71,7 +64,7 @@ export default function Contact() {
       } else {
         setSubmitStatus("error")
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -85,295 +78,103 @@ export default function Contact() {
     }))
   }
 
-  const contactInfo = [
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      ),
-      label: "Email",
-      value: "mnmemon549@gmail.com",
-      delay: "delay-200",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-          />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      label: "Availability",
-      value: "Remote projects worldwide",
-      delay: "delay-300",
-    }
-    // {
-    //   icon: (
-    //     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    //       <path
-    //         strokeLinecap="round"
-    //         strokeLinejoin="round"
-    //         strokeWidth={2}
-    //         d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0c2.21 0 4 4 4 8s-1.79 8-4 8-4-4-4-8 1.79-8 4-8z"
-    //       />
-    //     </svg>
-    //   ),
-    //   label: "Website",
-    //   value: "https://mohsinimran.online",
-    //   link: "https://mohsinimran.online",
-    //   delay: "delay-400",
-    // }
-
-  ]
-
-
   return (
-    <section ref={sectionRef} id="contact" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#0A0A0A]">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+    <section id="contact" className="relative z-20 scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Contact</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Book a call</h2>
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-[#9aabba] sm:text-base">
+            Share the product, the timeline, and what you need. I reply with the next move for Laravel, Next.js, AI, WordPress, or a technical SEO audit.
+          </p>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Title */}
-        <div
-          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-        >
-          <h2 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4">
-            Contact / <span className="text-yellow-400">Book a Call</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full" />
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
-          <div
-            className={`transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
-          >
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-yellow-500/20 shadow-2xl">
-              <h3 className="text-3xl font-bold text-white mb-2">Discuss Your Website, SaaS or SEO Audit</h3>
-              <p className="text-gray-400 mb-8">Share your project goals, or request a free website audit for technical SEO, page speed, mobile-responsive design and conversion improvements.</p>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Fields */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="relative group">
-                    <input
-                      type="text"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-slate-900/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all peer"
-                      placeholder="First Name"
-                    />
-                    <label className="absolute left-4 -top-2.5 bg-slate-900 px-2 text-sm text-yellow-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-yellow-400 peer-focus:text-sm">
-                      First Name
-                    </label>
-                  </div>
-                  <div className="relative group">
-                    <input
-                      type="text"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-slate-900/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all peer"
-                      placeholder="Last Name"
-                    />
-                    <label className="absolute left-4 -top-2.5 bg-slate-900 px-2 text-sm text-yellow-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-yellow-400 peer-focus:text-sm">
-                      Last Name
-                    </label>
-                  </div>
-                </div>
-
-                {/* Email and Phone */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="relative group">
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-slate-900/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all peer"
-                      placeholder="Email Address"
-                    />
-                    <label className="absolute left-4 -top-2.5 bg-slate-900 px-2 text-sm text-yellow-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-yellow-400 peer-focus:text-sm">
-                      Email Address
-                    </label>
-                  </div>
-                  <div className="relative group">
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-slate-900/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all peer"
-                      placeholder="Phone Number"
-                    />
-                    <label className="absolute left-4 -top-2.5 bg-slate-900 px-2 text-sm text-yellow-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-yellow-400 peer-focus:text-sm">
-                      Phone Number
-                    </label>
-                  </div>
-                </div>
-
-                {/* Service Selection */}
-                <div className="relative">
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full bg-slate-900/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all appearance-none cursor-pointer"
-                  >
-                    <option value="Web Development">Web Development</option>
-                    <option value="Mobile App Development">Mobile App Development</option>
-                    <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="Backend Development">Backend Development</option>
-                    <option value="Full Stack Development">Full Stack Development</option>
-                    <option value="Free Website Audit">Free Website Audit</option>
-                    <option value="AI Integration">AI Integration</option>
-                    <option value="Technical SEO">Technical SEO</option>
-                    <option value="Consulting">Consulting</option>
-                  </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div className="relative group">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full bg-slate-900/50 border border-yellow-500/30 rounded-lg px-4 py-3 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all resize-none peer"
-                    placeholder="Type Your Message Here"
-                  />
-                  <label className="absolute left-4 -top-2.5 bg-slate-900 px-2 text-sm text-yellow-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-yellow-400 peer-focus:text-sm">
-                    Type Your Message Here
-                  </label>
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-500 text-white font-semibold py-4 rounded-lg hover:from-yellow-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                          fill="none"
-                        />
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        />
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : (
-                    "Send Message"
-                  )}
-                </button>
-
-                {/* Status Messages */}
-                {submitStatus === "success" && (
-                  <div className="bg-green-500/20 border border-green-500/50 text-green-400 px-4 py-3 rounded-lg animate-fadeInUp">
-                    Mail sent successfully! We'll get back to you soon.
-                  </div>
-                )}
-                {submitStatus === "error" && (
-                  <div className="bg-red-500/20 border border-red-500/50 text-red-400 px-4 py-3 rounded-lg animate-fadeInUp">
-                    Failed to send message. Please try again.
-                  </div>
-                )}
-              </form>
+          <div className="mt-8 space-y-3">
+            <a href="mailto:mnmemon549@gmail.com" className="hover-card block rounded-2xl border border-white/10 bg-[#0c1826] px-5 py-4">
+              <p className="text-xs uppercase tracking-[0.16em] text-[#7CFFB2]">Email</p>
+              <p className="mt-1 text-sm">mnmemon549@gmail.com</p>
+            </a>
+            <a
+              href="https://calendly.com/mohsin-imran/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-card block rounded-2xl border border-white/10 bg-[#0c1826] px-5 py-4"
+            >
+              <p className="text-xs uppercase tracking-[0.16em] text-[#7CFFB2]">Call</p>
+              <p className="mt-1 text-sm">30 minutes on Calendly</p>
+            </a>
+            <div className="rounded-2xl border border-white/10 bg-[#0c1826] px-5 py-4">
+              <p className="text-xs uppercase tracking-[0.16em] text-[#7CFFB2]">Availability</p>
+              <p className="mt-1 text-sm">Remote projects worldwide</p>
             </div>
           </div>
-
-          {/* Contact Info Cards */}
-          <div
-            className={`space-y-6 transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
-          >
-            <div className="rounded-2xl border border-yellow-500/20 bg-gradient-to-br from-yellow-500/10 via-slate-900/70 to-slate-950/80 p-6 shadow-2xl shadow-yellow-500/10 transition-all duration-500 hover:border-yellow-400/50">
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-yellow-300">Next Step</p>
-                  <h4 className="mt-2 text-2xl font-bold text-white">Free Project Review</h4>
-                </div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-black shadow-lg shadow-yellow-400/30">
-                  <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6M9 9h6m-6 4h4m-7 8h10a2 2 0 002-2V5a2 2 0 00-2-2H8L4 7v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                {[
-                  "Website or SaaS audit",
-                  "SEO and speed review",
-                  "Tech stack recommendation",
-                  "Clear estimate and timeline",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-black">
-                      ✓
-                    </span>
-                    <span className="text-sm font-medium text-gray-200">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 rounded-xl border border-white/10 bg-black/30 p-4">
-                <p className="text-sm leading-relaxed text-gray-300">
-                  Send your project details and I will reply with the best next move for Laravel, Next.js, AI integration, WordPress, eCommerce or technical SEO.
-                </p>
-              </div>
-            </div>
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className={`group bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/20 hover:border-yellow-400/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/20 animate-fadeInRight ${info.delay}`}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-yellow-500/50">
-                    {info.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-yellow-400 font-semibold mb-1">{info.label}</h4>
-                    <p className="text-white text-sm leading-relaxed break-words">{info.value}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+
+        <form onSubmit={handleSubmit} className="rounded-[1.6rem] border border-white/10 bg-[#0c1826] p-5 sm:p-8">
+          <h3 className="text-2xl font-semibold tracking-tight">Tell me about the project</h3>
+          <p className="mt-2 text-sm text-[#9aabba]">A short note is enough. I will follow up with scope and timing.</p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <label className="block text-xs text-[#9aabba]">
+              First name
+              <input name="firstName" value={formData.firstName} onChange={handleChange} required className={`${fieldClass} mt-2`} placeholder="First name" />
+            </label>
+            <label className="block text-xs text-[#9aabba]">
+              Last name
+              <input name="lastName" value={formData.lastName} onChange={handleChange} required className={`${fieldClass} mt-2`} placeholder="Last name" />
+            </label>
+            <label className="block text-xs text-[#9aabba]">
+              Email
+              <input type="email" name="email" value={formData.email} onChange={handleChange} required className={`${fieldClass} mt-2`} placeholder="Email address" />
+            </label>
+            <label className="block text-xs text-[#9aabba]">
+              Phone
+              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className={`${fieldClass} mt-2`} placeholder="Phone number" />
+            </label>
+          </div>
+
+          <label className="mt-4 block text-xs text-[#9aabba]">
+            Service
+            <select name="service" value={formData.service} onChange={handleChange} className={`${fieldClass} mt-2`}>
+              {services.map((service) => (
+                <option key={service} value={service}>
+                  {service}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="mt-4 block text-xs text-[#9aabba]">
+            Message
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={5}
+              className={`${fieldClass} mt-2 resize-none`}
+              placeholder="What are you building?"
+            />
+          </label>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="hover-press mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#7CFFB2] px-6 py-3 text-sm font-semibold text-[#071018] hover:bg-[#b6ffd4] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {isSubmitting ? "Sending..." : "Send message"}
+          </button>
+
+          {submitStatus === "success" && (
+            <p className="mt-4 rounded-xl border border-[#7CFFB2]/30 bg-[#7CFFB2]/10 px-4 py-3 text-sm text-[#d8ffe9]">
+              Message sent. I will reply soon.
+            </p>
+          )}
+          {submitStatus === "error" && (
+            <p className="mt-4 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-200">
+              The message did not send. Try again, or email mnmemon549@gmail.com.
+            </p>
+          )}
+        </form>
       </div>
     </section>
   )

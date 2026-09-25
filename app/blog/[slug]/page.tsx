@@ -2,7 +2,9 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import BlogArticle from "@/components/blog-article"
 import Header from "@/components/header"
+import Footer from "@/components/footer"
 import { blogPages } from "@/lib/seo-pages"
+import { buildPageMetadata, seoKeywords } from "@/lib/seo"
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -18,25 +20,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!page) return {}
 
-  return {
-    title: {
-      absolute: `${page.title} | Mohsin Imran`,
-    },
+  return buildPageMetadata({
+    title: `${page.title} | Mohsin Imran`,
     description: page.description,
-    alternates: {
-      canonical: `https://mohsinimran.online/blog/${page.slug}`,
-    },
-    openGraph: {
-      title: page.title,
-      description: page.description,
-      url: `https://mohsinimran.online/blog/${page.slug}`,
-      type: "article",
-    },
-    twitter: {
-      title: page.title,
-      description: page.description,
-    },
-  }
+    path: `/blog/${page.slug}`,
+    keywords: [...page.keywords, ...seoKeywords],
+    type: "article",
+  })
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -49,6 +39,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <Header />
       <BlogArticle post={page} />
+      <Footer />
     </>
   )
 }

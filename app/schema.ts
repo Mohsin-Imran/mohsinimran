@@ -8,7 +8,7 @@ export function generatePersonSchema() {
     description:
       'Full Stack Web Application Developer and AI Product Expert in Pakistan specializing in Laravel, Next.js, React, custom SaaS development, AI integrations, WordPress, eCommerce and SEO-optimized web development.',
     jobTitle: ['Full Stack Web Application Developer', 'AI Product Expert', 'Freelance Full Stack Developer', 'Laravel Developer', 'Next.js Developer', 'AI Developer'],
-    email: 'mmnemon549@gmail.com',
+    email: 'mnmemon549@gmail.com',
     sameAs: [
       'https://www.linkedin.com/in/mohsinimran-fullstack/',
       'https://github.com/Mohsin-Imran',
@@ -37,7 +37,15 @@ export function generatePersonSchema() {
     ],
     worksFor: {
       '@type': 'Organization',
-      name: 'Independent Developer',
+      name: 'LusionTech',
+    },
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Laravel Developer',
+      occupationLocation: {
+        '@type': 'Country',
+        name: 'Pakistan',
+      },
     },
   }
 }
@@ -106,7 +114,10 @@ export function generateServiceSchema(service: {
     provider: {
       '@type': 'Person',
       name: service.provider || 'Mohsin Imran',
+      url: 'https://mohsinimran.online',
     },
+    areaServed: 'Worldwide',
+    url: 'https://mohsinimran.online/services',
   }
 }
 
@@ -131,7 +142,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: 'Mohsin Imran Portfolio',
     url: 'https://mohsinimran.online',
-    logo: 'https://mohsinimran.online/images/profile.jpeg',
+    logo: 'https://mohsinimran.online/logo.png',
     description: 'Full Stack Web Application Developer and AI Product Expert in Pakistan for Laravel, Next.js, React, custom SaaS, AI integration, WordPress, eCommerce and technical SEO projects.',
     sameAs: [
       'https://www.linkedin.com/in/mohsinimran-fullstack/',
@@ -140,7 +151,7 @@ export function generateOrganizationSchema() {
     contact: {
       '@type': 'ContactPoint',
       contactType: 'Customer Support',
-      email: 'mmnemon549@gmail.com',
+      email: 'mnmemon549@gmail.com',
     },
   }
 }
@@ -153,8 +164,9 @@ export function generateLocalBusinessSchema() {
     description: 'Full Stack Web Application Developer, Laravel Developer, Next.js Developer and AI Product Expert in Karachi, Pakistan.',
     url: 'https://mohsinimran.online',
     image: 'https://mohsinimran.online/images/profile.jpeg',
-    email: 'mmnemon549@gmail.com',
+    email: 'mnmemon549@gmail.com',
     priceRange: 'Negotiable',
+    areaServed: ['Pakistan', 'Worldwide'],
     serviceArea: {
       '@type': 'Place',
       name: 'Karachi, Pakistan',

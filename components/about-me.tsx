@@ -1,125 +1,111 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 import Image from "next/image"
+import { motion, useScroll, useTransform } from "framer-motion"
+
+const facts = [
+  { value: "Full stack", label: "Laravel, Next.js, and React" },
+  { value: "AI products", label: "APIs, chat, and automation" },
+  { value: "Worldwide", label: "Startups, agencies, and stores" },
+]
 
 export default function AboutMe() {
-  const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current)
-    }
-  }, [])
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  })
+  const photoY = useTransform(scrollYProgress, [0, 1], [28, -28])
 
   return (
     <section
       ref={sectionRef}
       id="about"
-      className="bg-[#0A0A0A] text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Title */}
-        <h2
-          className={`text-4xl md:text-5xl font-bold text-center mb-16 text-yellow-400 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-            }`}
-        >
-          About Me
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full" />
-        </h2>
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <motion.div style={{ y: photoY }} className="relative mx-auto w-full max-w-md">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c1826] p-2">
+            <Image
+              src="/images/profile.jpeg"
+              alt="Mohsin Imran, full stack web application developer and AI product expert"
+              width={640}
+              height={760}
+              sizes="(min-width: 1024px) 420px, 90vw"
+              className="h-auto w-full rounded-[1.6rem] object-cover"
+            />
+          </div>
+        </motion.div>
 
-        {/* Content Grid */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
-          {/* Left Side - Image */}
-          <div
-            className={`w-full lg:w-[40%] flex justify-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-              }`}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <div className="relative group">
-              <Image
-                src="/images/profile.jpeg"
-                alt="Mohsin Imran - Full Stack Web Application Developer and AI Product Expert"
-                width={448}
-                height={448}
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                className="w-full max-w-md rounded-2xl object-cover  transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">About</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              I build full stack SaaS products and AI products
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
+            className="mt-6 space-y-4 text-base leading-relaxed text-[#b7c3cf] sm:text-lg"
+          >
+            <p>
+              I am Mohsin Imran. I build full stack SaaS products and AI products for founders, startups, agencies, and service businesses.
+            </p>
+            <p>
+              That means the product, the backend, and pages that can rank — from the first version through launch.
+            </p>
+          </motion.div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {facts.map((fact, index) => (
+              <motion.div
+                key={fact.value}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.4, delay: 0.12 + index * 0.06 }}
+                className="hover-card rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3"
+              >
+                <p className="text-sm font-medium text-[#f4f1ea]">{fact.value}</p>
+                <p className="mt-1 text-xs leading-relaxed text-[#8ea0b3]">{fact.label}</p>
+              </motion.div>
+            ))}
           </div>
 
-          <div
-            className={`w-full lg:w-[60%] space-y-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-              }`}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-white-400">
-              Full Stack Web Application Developer & AI Product Expert
-            </h3>
-
-            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              I am Mohsin Imran, a freelance full stack developer, AI product expert, and product engineer. I build Laravel and Next.js applications for founders, startups, agencies, and service businesses that need reliable backend architecture, polished React interfaces, AI-powered product features, SEO-friendly pages, and long-term scalability.
-            </p>
-
-            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              My work covers custom SaaS development, AI web app development, AI automation, backend API development with RESTful API or GraphQL, database design with MySQL or MongoDB, WordPress and eCommerce websites, WooCommerce or Shopify stores, AI API integration, OpenAI and OpenRouter integration, CRM integration with HubSpot, GoHighLevel or Zoho, cloud hosting on AWS or DigitalOcean, and technical SEO improvements for clients worldwide.
-            </p>
-
-            {/* Contact Info */}
-
-
-            {/* Address */}
-            {/* <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-yellow-500/20">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-gray-400 font-medium block mb-1">
-                    Address
-                  </span>
-                  <p className="text-white">
-                    Alsa Chamma Homes, 606, 53 Mir Hammal Khan Rd, Garden West
-                    Remote
-                  </p>
-                </div>
-              </div>
-            </div> */}
-
-            {/* Resume Button */}
-            <div className="flex flex-wrap gap-3">
-
-              {/* View Resume */}
-             <a
-                href="/resume/mohsinimran_resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-black font-semibold text-sm py-3 px-10 rounded-full
-                  transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1
-                  cursor-pointer text-center max-[450px]:text-left"
-              >
-                View Resume
-              </a>
-
-              <a
-                href="https://calendly.com/mohsin-imran/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#FDC700] hover:bg-[#e5b307] text-white font-semibold text-sm py-3 px-10 rounded-full
-                transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                Book a Product Call
-              </a>
-
-            </div>
-
-
-          </div>
+            <a
+              href="/resume/mohsinimran_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-press inline-flex items-center justify-center rounded-full bg-[#7CFFB2] px-6 py-3 text-sm font-semibold text-[#071018] hover:bg-[#b6ffd4]"
+            >
+              View resume
+            </a>
+            <a
+              href="https://calendly.com/mohsin-imran/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-[#f4f1ea] transition hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+            >
+              Book a product call
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

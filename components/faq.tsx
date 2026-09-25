@@ -1,33 +1,50 @@
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
 import { seoFaqs } from "@/lib/seo"
 
 export default function Faq() {
+  const [open, setOpen] = useState(0)
+
   return (
-    <section id="faq" className="bg-[#0A0A0A] px-4 py-20 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold text-yellow-400 md:text-5xl">
-            Frequently Asked Questions
-          </h2>
-          <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-yellow-500" />
+    <section id="faq" className="relative z-20 scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Questions</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">FAQ</h2>
+          <p className="mt-4 text-sm leading-relaxed text-[#9aabba]">
+            Cost, timeline, support, AI, and SEO — the questions founders ask before a project starts.
+          </p>
         </div>
 
-        <div className="space-y-4">
-          {seoFaqs.map((faq) => (
-            <details
-              key={faq.question}
-              className="group rounded-lg border border-yellow-500/30 bg-white/[0.03] p-5"
-            >
-              <summary className="cursor-pointer list-none text-lg font-semibold text-white">
-                <span className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-semibold">{faq.question}</h3>
-                  <span className="text-2xl leading-none text-yellow-400 group-open:rotate-45">
+        <div className="divide-y divide-white/10 border-y border-white/10">
+          {seoFaqs.map((faq, index) => {
+            const selected = open === index
+            return (
+              <div key={faq.question}>
+                <button
+                  type="button"
+                  onClick={() => setOpen(selected ? -1 : index)}
+                  className="flex w-full items-start justify-between gap-4 py-5 text-left"
+                  aria-expanded={selected}
+                >
+                  <h3 className="min-w-0 text-base font-semibold sm:text-lg">{faq.question}</h3>
+                  <span className={`mt-1 shrink-0 text-lg leading-none text-[#7CFFB2] transition ${selected ? "rotate-45" : ""}`}>
                     +
                   </span>
-                </span>
-              </summary>
-              <p className="mt-4 leading-relaxed text-gray-300">{faq.answer}</p>
-            </details>
-          ))}
+                </button>
+                <motion.p
+                  initial={false}
+                  animate={{ height: selected ? "auto" : 0, opacity: selected ? 1 : 0 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="overflow-hidden text-sm leading-relaxed text-[#b7c3cf] sm:text-base"
+                >
+                  <span className="block pb-5">{faq.answer}</span>
+                </motion.p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

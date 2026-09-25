@@ -1,126 +1,300 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import {
-  BadgeDollarSign,
-  Blocks,
-  Bolt,
-  Code,
-  Database,
-  Figma,
-  FileCode,
-  Flame,
-  Github,
-  Globe,
-  Leaf,
-  Layers,
-  Radio,
-  Server,
-  Workflow,
-} from "lucide-react"
+import { useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
-const skillsData = [
-  { name: "PHP", icon: FileCode, description: "Proficient in PHP for dynamic web applications, including Laravel for backend development." },
-  { name: "Laravel", icon: Server, description: "Expertise in building scalable web apps using Laravel's powerful features." },
-  { name: "React", icon: Blocks, description: "Skilled in creating dynamic SPAs with React and state management." },
-  { name: "Next.js", icon: Globe, description: "Experienced in building performant, server-side rendered applications with Next.js." },
-  { name: "Tailwind CSS", icon: Layers, description: "Expert in utility-first CSS with Tailwind for rapid, responsive, and maintainable styling." },
-  { name: "Socket.IO", icon: Radio, description: "Proficient in real-time, bidirectional communication using Socket.IO for features like live chat and notifications." },
-  { name: "Database", icon: Database, description: "Proficient in database design, optimization, and management." },
-  { name: "Stripe", icon: BadgeDollarSign, description: "Experienced in integrating secure payment gateways." },
-  { name: "PayPal", icon: BadgeDollarSign, description: "Experienced in integrating secure payment gateways." },
-  { name: "MySQL", icon: Database, description: "Advanced in MySQL for efficient database management and SQL queries." },
-  { name: "MongoDB", icon: Leaf, description: "Proficient in NoSQL databases and integrating MongoDB with PHP and Laravel." },
-  { name: "WordPress", icon: Workflow, description: "Experience in customizing WordPress themes and plugins." },
-  { name: "Firebase", icon: Flame, description: "Experienced with Firebase for real-time databases and authentication." },
-  { name: "HTML", icon: Code, description: "Expert in HTML5 for structuring modern, semantic web pages." },
-  { name: "JavaScript", icon: Code, description: "Strong in client-side scripting, DOM manipulation, and ES6+ features." },
-  { name: "Bootstrap", icon: Blocks, description: "Proficient in Bootstrap for rapid, responsive UI development." },
-  { name: "CSS", icon: Layers, description: "Advanced in styling and creating responsive, mobile-first designs." },
-  { name: "GitHub", icon: Github, description: "Experienced in version control and collaboration using Git and GitHub." },
-  { name: "Figma", icon: Figma, description: "Skilled in UI/UX design, prototyping, and collaboration using Figma." },
-  { name: "Performance", icon: Bolt, description: "Focused on optimizing web performance and load times." },
-]
-
-const skillDescriptions = [
-  { title: "PHP", description: "Proficient in PHP for dynamic web applications, including Laravel for backend development." },
-  { title: "Laravel", description: "Expertise in building scalable web apps using Laravel's powerful features." },
-  { title: "React", description: "Skilled in creating dynamic SPAs with React and state management." },
-  { title: "CSS & Bootstrap", description: "Advanced in styling and creating responsive, mobile-first designs." },
-  { title: "GitHub", description: "Experienced in version control and collaboration using Git and GitHub." },
-  { title: "MongoDB", description: "Proficient in NoSQL databases and integrating MongoDB with PHP and Laravel." },
-  { title: "PayPal & Stripe", description: "Experienced in integrating secure payment gateways." },
-  { title: "REST API", description: "Expertise in building and consuming RESTful APIs." },
-  { title: "JavaScript", description: "Strong in client-side scripting, DOM manipulation, and ES6+ features." },
-  { title: "WordPress", description: "Experience in customizing WordPress themes and plugins." },
-  { title: "MySQL", description: "Advanced in MySQL for efficient database management and SQL queries." },
+const groups = [
+  {
+    index: "01",
+    title: "Backend",
+    note: "APIs, apps, and the systems behind them.",
+    skills: [
+      {
+        name: "Laravel",
+        description: "Most of the products I ship start here: SaaS backends, admin panels, and business apps.",
+        points: ["Auth, roles, and admin workflows", "Queues, mail, and payment hooks", "APIs that a Next.js or mobile app can use"],
+        usedFor: ["SaaS", "Marketplaces", "CRMs"],
+      },
+      {
+        name: "Node.js",
+        description: "JavaScript on the server when the product needs realtime or a lighter API beside Laravel.",
+        points: ["REST services and webhooks", "Realtime chat and notifications", "Tools that share types with the frontend"],
+        usedFor: ["APIs", "Realtime", "Integrations"],
+      },
+      {
+        name: "Python",
+        description: "Scripts and backend jobs when data work or automation is cleaner in Python.",
+        points: ["Data cleanup and exports", "Automation beside the main app", "Small services that do one job well"],
+        usedFor: ["Automation", "Data", "Scripts"],
+      },
+      {
+        name: "PHP",
+        description: "The language under Laravel, and the one I use for custom business logic.",
+        points: ["Laravel application code", "Legacy fixes and custom modules", "Secure form and payment handling"],
+        usedFor: ["Laravel", "Business apps", "APIs"],
+      },
+      {
+        name: "REST API",
+        description: "The contract between the product, the dashboard, and anything else that needs the data.",
+        points: ["Versioned endpoints and clear errors", "Auth for web and mobile clients", "Webhooks for payments and CRMs"],
+        usedFor: ["Mobile", "Dashboards", "Partners"],
+      },
+      {
+        name: "Socket.IO",
+        description: "Live updates so users do not refresh to see a new message or status.",
+        points: ["Chat and friend requests", "Live order or job status", "Notifications inside the product"],
+        usedFor: ["Chat", "Marketplaces", "Dashboards"],
+      },
+    ],
+  },
+  {
+    index: "02",
+    title: "Frontend",
+    note: "Interfaces that load fast and stay clear.",
+    skills: [
+      {
+        name: "Next.js",
+        description: "The frontend I use for product sites and SaaS screens that need to load fast and rank.",
+        points: ["Server-rendered pages and metadata", "App routes, forms, and dashboards", "Images and fonts tuned for speed"],
+        usedFor: ["SaaS", "Marketing sites", "SEO"],
+      },
+      {
+        name: "React",
+        description: "Component screens and the state those screens need, inside Next.js or on their own.",
+        points: ["Reusable UI for dashboards", "Forms, filters, and tables", "Client state next to an API"],
+        usedFor: ["Dashboards", "Portals", "SPAs"],
+      },
+      {
+        name: "JavaScript",
+        description: "The behavior layer: what happens after the page loads, and how it talks to the API.",
+        points: ["ES6+ application code", "DOM updates and form logic", "Connecting UI events to backend calls"],
+        usedFor: ["Interfaces", "APIs", "Widgets"],
+      },
+      {
+        name: "Tailwind CSS",
+        description: "How I style most new interfaces, without a large custom stylesheet to maintain.",
+        points: ["Responsive layouts from mobile up", "Consistent spacing and type", "Fast iteration on product UI"],
+        usedFor: ["Next.js", "Landing pages", "SaaS UI"],
+      },
+      {
+        name: "Bootstrap",
+        description: "When a project is already on Bootstrap, I extend it instead of rewriting the CSS.",
+        points: ["Responsive grids and components", "Theme tweaks for existing sites", "Admin screens that need to ship fast"],
+        usedFor: ["Laravel", "Admin", "Legacy sites"],
+      },
+      {
+        name: "HTML",
+        description: "The page structure search engines and screen readers actually read.",
+        points: ["Semantic headings and landmarks", "Forms that stay usable", "Content that can rank"],
+        usedFor: ["SEO", "Accessibility", "Content"],
+      },
+      {
+        name: "CSS",
+        description: "Layout detail when a utility class is not enough, especially on mobile.",
+        points: ["Mobile-first layouts", "Custom components and motion", "Fixes for older templates"],
+        usedFor: ["Responsive UI", "Polish", "Templates"],
+      },
+    ],
+  },
+  {
+    index: "03",
+    title: "Data",
+    note: "Databases, auth, and payments.",
+    skills: [
+      {
+        name: "MySQL",
+        description: "The database behind most Laravel products: users, orders, and the reports on top of them.",
+        points: ["Tables, indexes, and relations", "Queries that stay fast", "Migrations as the product changes"],
+        usedFor: ["Laravel", "SaaS", "Reports"],
+      },
+      {
+        name: "MongoDB",
+        description: "Document storage when the shape of the data does not fit a strict table.",
+        points: ["Flexible records for product data", "Used beside PHP or Node", "Queries scoped to what the screen needs"],
+        usedFor: ["Catalogs", "Node.js", "Content"],
+      },
+      {
+        name: "Database",
+        description: "Designing the data first so the app does not slow down after launch.",
+        points: ["Schema before features pile up", "Backups and safe changes", "Queries reviewed for speed"],
+        usedFor: ["Architecture", "Scale", "Admin"],
+      },
+      {
+        name: "Firebase",
+        description: "Auth and live data for smaller features that should not wait on a full backend.",
+        points: ["Sign-in and user sessions", "Realtime reads for light features", "A bridge until the main API is ready"],
+        usedFor: ["Auth", "Realtime", "MVPs"],
+      },
+      {
+        name: "Stripe",
+        description: "Checkout and subscriptions so the product can charge without a custom payments stack.",
+        points: ["One-time and recurring billing", "Webhooks for paid access", "Test mode before anything goes live"],
+        usedFor: ["SaaS", "Marketplaces", "Memberships"],
+      },
+      {
+        name: "PayPal",
+        description: "A second way to pay, for stores and clients whose customers already use it.",
+        points: ["Checkout beside Stripe or alone", "Order confirmation back into the app", "Clear success and failure states"],
+        usedFor: ["Stores", "Invoices", "Services"],
+      },
+    ],
+  },
+  {
+    index: "04",
+    title: "Delivery",
+    note: "Sites, design, and how the work ships.",
+    skills: [
+      {
+        name: "WordPress",
+        description: "Business sites clients can edit after launch, without calling a developer for every line of copy.",
+        points: ["Custom themes and page layouts", "Plugins, forms, and SEO setup", "Speed work on existing installs"],
+        usedFor: ["Company sites", "Blogs", "Lead pages"],
+      },
+      {
+        name: "Shopify",
+        description: "Stores with a clear catalog, a checkout people finish, and a theme that matches the brand.",
+        points: ["Product and collection pages", "Theme sections and apps", "Checkout and shipping basics"],
+        usedFor: ["eCommerce", "Catalogs", "Brands"],
+      },
+      {
+        name: "GoHighLevel",
+        description: "Funnels, sites, and CRM in one place for businesses that live on leads and follow-up.",
+        points: ["Service pages and funnels", "Forms that land in the CRM", "Pipelines and appointment flows"],
+        usedFor: ["Agencies", "Local business", "Funnels"],
+      },
+      {
+        name: "Figma",
+        description: "Screens agreed before build, so development is not a guess about spacing and states.",
+        points: ["Page layouts and components", "Mobile and desktop frames", "Handoff the build can follow"],
+        usedFor: ["SaaS UI", "Landing pages", "Redesigns"],
+      },
+      {
+        name: "Canva",
+        description: "Graphics for launches, social, and simple brand pieces that do not need a full design file.",
+        points: ["Social and ad creatives", "Simple brand layouts", "Assets that match the site"],
+        usedFor: ["Marketing", "Social", "Decks"],
+      },
+      {
+        name: "Cursor",
+        description: "The editor I write in. AI drafts get reviewed, then they ship like any other code.",
+        points: ["Feature work across the repo", "Refactors with the project in context", "Review before anything is merged"],
+        usedFor: ["Daily coding", "Refactors", "Reviews"],
+      },
+      {
+        name: "GitHub",
+        description: "Where the work is saved, reviewed, and rolled back if a release needs it.",
+        points: ["Branches per feature", "History a teammate can follow", "Deployments tied to a commit"],
+        usedFor: ["Collaboration", "Releases", "Backups"],
+      },
+      {
+        name: "Performance",
+        description: "Pages that feel instant: less weight, better Core Web Vitals, and a faster first load.",
+        points: ["Image size and font loading", "Less JavaScript on the first view", "Lighthouse checks before launch"],
+        usedFor: ["Core Web Vitals", "SEO", "Conversions"],
+      },
+    ],
+  },
 ]
 
 export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [groupIndex, setGroupIndex] = useState(0)
+  const [skillIndex, setSkillIndex] = useState(0)
+  const group = groups[groupIndex]
+  const skill = group.skills[skillIndex] ?? group.skills[0]
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setIsVisible(true)
-    }, { threshold: 0.1 })
-
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => sectionRef.current && observer.unobserve(sectionRef.current)
-  }, [])
+  const selectGroup = (nextGroup: number) => {
+    setGroupIndex(nextGroup)
+    setSkillIndex(0)
+  }
 
   return (
-    <section ref={sectionRef} id="skills" className="min-h-screen bg-[#0A0A0A] py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
-        <h2
-          className={`text-4xl md:text-5xl font-bold text-yellow-400 text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-            }`}
-        >
-          Skills & Tech Stack
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full" />
+    <section id="skills" className="scroll-mt-24 border-t border-white/10 bg-[#071018] px-4 py-20 text-[#f4f1ea] sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#7CFFB2]">Capabilities</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Skills & Tech Stack</h2>
+          </div>
+          <p className="max-w-xs text-sm leading-relaxed text-[#8ea0b3]">
+            Pick a group, then a tool. The detail on the right is the one I use most in that area.
+          </p>
+        </div>
 
-        </h2>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left - Icons Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {skillsData.map((skill, index) => {
-              const Icon = skill.icon
-
+        <div className="grid overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0c1826] lg:grid-cols-[280px_1fr]">
+          <div className="border-b border-white/10 lg:border-b-0 lg:border-r">
+            {groups.map((item, index) => {
+              const active = index === groupIndex
               return (
-                <div
-                  key={skill.name}
-                  className={`group relative bg-gradient-to-br from-yellow-500/10 to-yellow-600/20 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/40 hover:border-yellow-400 transition-all duration-500 hover:scale-110 hover:shadow-[0_0_25px_rgba(234,179,8,0.4)] cursor-pointer ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                    }`}
-                  style={{ transitionDelay: isVisible ? `${index * 50}ms` : "0ms" }}
+                <button
+                  key={item.title}
+                  type="button"
+                  onClick={() => selectGroup(index)}
+                  className={`flex w-full items-start gap-4 px-6 py-5 text-left transition ${
+                    active ? "bg-[#7CFFB2] text-[#071018]" : "text-[#d5ddd4] hover:bg-white/[0.03]"
+                  }`}
                 >
-                  <div className="flex items-center justify-center">
-                    <Icon className="h-12 w-12 text-yellow-400" />
-                  </div>
-                  <p className="text-center text-white mt-3 text-sm font-medium">{skill.name}</p>
-                </div>
+                  <span className={`mt-1 text-xs font-medium tracking-[0.16em] ${active ? "text-[#071018]/70" : "text-[#7CFFB2]"}`}>
+                    {item.index}
+                  </span>
+                  <span>
+                    <span className="block text-lg font-semibold tracking-tight">{item.title}</span>
+                    <span className={`mt-1 block text-sm ${active ? "text-[#071018]/75" : "text-[#8ea0b3]"}`}>{item.note}</span>
+                  </span>
+                </button>
               )
             })}
           </div>
 
-          {/* Right - Descriptions */}
-          <div className="space-y-3">
-            {skillDescriptions.map(skill => (
-              <div
-                key={skill.title}
-                className="group bg-transparent border border-yellow-500/40 rounded-lg p-3 hover:border-yellow-400 hover:bg-yellow-500/5 transition-colors duration-200"
+          <div className="flex flex-col p-6 sm:p-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.28, ease: "easeOut" }}
               >
-                <p className="text-white text-sm leading-relaxed">
-                  <span className="text-yellow-400 font-semibold">
-                    {skill.title}:
-                  </span>{" "}
-                  {skill.description}
-                </p>
-              </div>
-            ))}
-          </div>
+                <p className="text-xs uppercase tracking-[0.2em] text-[#7CFFB2]">{group.title}</p>
+                <h3 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">{skill.name}</h3>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-[#b7c3cf]">{skill.description}</p>
+                <ul className="mt-6 grid gap-2 sm:grid-cols-3">
+                  {skill.points.map((point) => (
+                    <li key={point} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-relaxed text-[#d5ddd4]">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-wrap items-center gap-2">
+                  <span className="text-xs uppercase tracking-[0.16em] text-[#8ea0b3]">Used for</span>
+                  {skill.usedFor.map((item) => (
+                    <span key={item} className="rounded-full border border-[#7CFFB2]/25 bg-[#7CFFB2]/10 px-3 py-1 text-xs text-[#7CFFB2]">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
+            <div className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-6">
+              {group.skills.map((item, index) => {
+                const active = index === skillIndex
+                return (
+                  <button
+                    key={item.name}
+                    type="button"
+                    onClick={() => setSkillIndex(index)}
+                    className={`rounded-full px-4 py-2 text-sm transition ${
+                      active
+                        ? "bg-white text-[#071018]"
+                        : "border border-white/15 text-[#d5ddd4] hover:border-[#7CFFB2]/50 hover:text-[#7CFFB2]"
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
